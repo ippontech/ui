@@ -1,0 +1,84 @@
+@use '../../quark/breakpoint';
+@use '../../quark/gap';
+@use 'sass:math';
+
+$ippon-grid-columns: 4, 12;
+$ippon-grid-max-columns: math.max($ippon-grid-columns...);
+
+@mixin ippon-grid-layout-column($layout, $columns) {
+  &.-#{$layout}-#{$columns} {
+    grid-template-columns: repeat(#{$columns}, 1fr);
+  }
+}
+
+@mixin ippon-grid-layout($layout) {
+  @each $columns in $ippon-grid-columns {
+    @include ippon-grid-layout-column($layout, $columns);
+  }
+}
+
+@mixin ippon-grid-layout-breakpoint-column($layout, $breakpoint, $columns) {
+  &.-#{$layout}-#{$breakpoint}-#{$columns} {
+    grid-template-columns: repeat(#{$columns}, 1fr);
+  }
+}
+
+@mixin ippon-grid-layout-breakpoint($layout, $breakpoint) {
+  @each $columns in $ippon-grid-columns {
+    @include ippon-grid-layout-breakpoint-column($layout, $breakpoint, $columns);
+  }
+}
+
+@mixin ippon-grid-slot-column {
+  @for $column from 1 through $ippon-grid-max-columns {
+    &.-col-#{$column} {
+      grid-column: span #{$column};
+    }
+  }
+}
+
+@mixin ippon-grid-slot-breakpoint-column($breakpoint) {
+  @for $column from 1 through $ippon-grid-max-columns {
+    &.-col-#{$breakpoint}-#{$column} {
+      grid-column: span #{$column};
+    }
+  }
+}
+
+.ippon-grid {
+  display: grid;
+
+  @include gap.gaps;
+  @include gap.media-gaps;
+  @include gap.container-gaps;
+  @include ippon-grid-layout('media');
+  @include ippon-grid-layout('container');
+
+  &--slot {
+    @include ippon-grid-slot-column;
+  }
+
+  @each $breakpoint, $breakpoint-value in breakpoint.$media-breakpoints {
+    &--slot {
+      @media (min-width: $breakpoint-value) {
+        @include ippon-grid-slot-breakpoint-column($breakpoint);
+      }
+    }
+
+    @media (min-width: $breakpoint-value) {
+      @include ippon-grid-layout-breakpoint('media', $breakpoint);
+    }
+  }
+
+  @each $breakpoint, $container-value in breakpoint.$container-breakpoints {
+    &--slot {
+      @container (min-width: #{$container-value}) {
+        @include ippon-grid-slot-breakpoint-column($breakpoint);
+      }
+    }
+
+    @container (min-width: #{$container-value}) {
+      @include ippon-grid-layout-breakpoint('container', $breakpoint);
+    }
+  }
+}

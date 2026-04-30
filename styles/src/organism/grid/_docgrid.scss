@@ -1,0 +1,11 @@
+.ipp-doc-container {
+  container-type: inline-size;
+}
+
+.ipp-doc-slot {
+  box-sizing: border-box;
+  border: var(--ippon-size-4) solid var(--ippon-color-brand-border);
+  background-color: var(--ippon-color-brand-surface-primary);
+  padding: var(--ippon-size-16);
+  color: var(--ippon-color-brand-text-icon-on-primary);
+}

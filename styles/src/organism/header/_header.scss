@@ -1,0 +1,8 @@
+.ippon-header {
+  display: flex;
+  gap: var(--ippon-size-32);
+  align-items: center;
+  border-bottom: 1px solid var(--ippon-color-neutral-border);
+  background-color: var(--ippon-color-neutral-surface-primary);
+  padding: var(--ippon-size-32) var(--ippon-size-48);
+}

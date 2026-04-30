@@ -1,0 +1,19 @@
+mixin ippon-color(color)
+  - const id = `ippon-color-${color}`;
+  - const colorVar = `--ippon-color-${color}`;
+  section
+    h3= color
+    table.ipp-doc-table
+      thead
+        tr
+          th.ipp-doc-table--cell Name
+          th.ipp-doc-table--cell Value
+          th.ipp-doc-table--cell Preview
+      tbody(id=id)
+    script(type='module').
+      import { ipponTokenColor } from '[[TIKUI_BASEPATH]]token/color/color.js';
+
+      (() => {
+        const colorsList = document.getElementById('#{id}');
+        ipponTokenColor(colorsList, '#{colorVar}');
+      })();

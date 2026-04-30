@@ -1,0 +1,17 @@
+mixin ippon-typography(typography)
+  - const id = `ippon-typography-${typography}`;
+  - const typographyVar = `--ippon-typography-${typography}`;
+  - const ucFirstTypography = typography.charAt(0).toUpperCase() + typography.slice(1);
+  section
+    h3(
+      style=`font-size: var(${typographyVar}-size); font-family: var(${typographyVar}-font); font-weight: var(${typographyVar}-weight); line-height: var(${typographyVar}-line-height); text-transform: var(${typographyVar}-transform);`
+    )= ucFirstTypography
+    table.ipp-doc-table
+      tbody(id=id)
+    script(type='module').
+      import { ipponTokenTypography } from '[[TIKUI_BASEPATH]]token/typography/typography.js';
+
+      (() => {
+        const typographyList = document.getElementById('#{id}');
+        ipponTokenTypography(typographyList, '#{typographyVar}');
+      })();

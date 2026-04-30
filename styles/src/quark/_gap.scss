@@ -1,0 +1,34 @@
+@use '../token/size';
+@use 'breakpoint';
+
+@mixin gaps {
+  @each $size in size.$sizes {
+    &.-gap-#{$size} {
+      gap: var(--ippon-size-#{$size});
+    }
+  }
+}
+
+@mixin media-gaps {
+  @each $breakpoint, $breakpoint-value in breakpoint.$media-breakpoints {
+    @media (min-width: $breakpoint-value) {
+      @each $size in size.$sizes {
+        &.-gap-#{$breakpoint}-#{$size} {
+          gap: var(--ippon-size-#{$size});
+        }
+      }
+    }
+  }
+}
+
+@mixin container-gaps {
+  @each $breakpoint, $container-value in breakpoint.$container-breakpoints {
+    @container (min-width: #{$container-value}) {
+      @each $size in size.$sizes {
+        &.-gap-#{$breakpoint}-#{$size} {
+          gap: var(--ippon-size-#{$size});
+        }
+      }
+    }
+  }
+}

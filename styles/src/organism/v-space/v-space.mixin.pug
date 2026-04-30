@@ -1,0 +1,7 @@
+mixin ippon-v-space(options)
+  - const { gap, align, tag } = options || {};
+  - const gapClass = gap ? `-gap-${gap}` : null;
+  - const alignClass = align ? `-${align}` : null;
+
+  #{tag || 'div'}.ippon-v-space(class=[gapClass, alignClass])
+    block

@@ -1,0 +1,14 @@
+include /molecule/tabs/tabs.mixin.pug
+include /atom/tab/tab.mixin.pug
+
+include header.mixin.pug
+
++ippon-header
+  +ippon-header--slot Logo
+  +ippon-header--slot
+    +ippon-tabs({ id: 'main-navigation' })
+      +ippon-tab({ id: 'tab-1', controls: 'main-navigation' }) Tab 1
+      +ippon-tab({ id: 'tab-2', controls: 'main-navigation', selected: true }) Tab 2
+      +ippon-tab({ id: 'tab-3', controls: 'main-navigation', href: '#tab3' }) Tab 3
+      +ippon-tab({ id: 'tab-4', controls: 'main-navigation' }) Tab 4
+      +ippon-tab({ id: 'tab-5', controls: 'main-navigation' }) Tab 5

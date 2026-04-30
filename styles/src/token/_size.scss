@@ -1,0 +1,9 @@
+@use '../function/conversion';
+
+$sizes: 2, 4, 8, 10, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 64, 886, 999;
+
+:root {
+  @each $size in $sizes {
+    --ippon-size-#{$size}: #{conversion.to-rem($size * 1px)};
+  }
+}

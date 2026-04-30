@@ -1,0 +1,14 @@
+mixin ippon-progress(options)
+  - const { min = 0, max = 100, value = 0 } = options || {};
+  - const percentage = ((value - min) / (max - min)) * 100;
+  - const style = `--ippon-progress-percentage: ${Math.min(Math.max(percentage, 0), 100)}%`;
+  - const busy = value < max;
+
+  .ippon-progress(
+    role='progressbar',
+    aria-valuenow=value,
+    aria-valuemin=min,
+    aria-valuemax=max,
+    aria-busy=busy,
+    style=style
+  )

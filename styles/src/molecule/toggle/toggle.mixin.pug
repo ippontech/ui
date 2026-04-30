@@ -1,0 +1,36 @@
+include /atom/ion/ion.mixin.pug
+include /atom/button/button.mixin.pug
+
+mixin ippon-toggle--title
+  .ippon-toggle--title
+    block
+
+mixin ippon-toggle--button(options)
+  - const { id, open } = options || {};
+  - const expanded = open ? 'true' : 'false';
+  button.ippon-toggle--button(class=openClass, id=id, aria-expanded=expanded)
+    +ippon-ion({ name: 'chevron-forward', additionalClass: 'ippon-toggle--icon' })
+    block
+
+mixin ippon-toggle--actions
+  .ippon-toggle--actions
+    block
+
+mixin ippon-toggle--header
+  .ippon-toggle--header
+    block
+
+mixin ippon-toggle--body(options)
+  - const { labelledBy } = options || {};
+  .ippon-toggle--body(role='region', aria-labelledby=labelledBy)
+    block
+
+mixin ippon-toggle--content
+  .ippon-toggle--content
+    block
+
+mixin ippon-toggle(options)
+  - const { open } = options || {};
+  - const openClass = open ? '-open' : null;
+  .ippon-toggle(class=openClass)
+    block

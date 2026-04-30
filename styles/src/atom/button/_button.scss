@@ -1,0 +1,242 @@
+@use '../../quark/typography';
+
+@keyframes ippon-button-loading-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes ippon-button-loading-spin {
+  from {
+    rotate: 0deg;
+  }
+
+  to {
+    rotate: 360deg;
+  }
+}
+
+.ippon-button {
+  @include typography.label-medium;
+
+  --_color-primary: var(--ippon-color-brand-surface-primary);
+  --_color-primary-hover: var(--ippon-color-brand-surface-primary-hover);
+  --_color-primary-active: var(--ippon-color-brand-surface-primary-active);
+  --_color-secondary: var(--ippon-color-brand-surface-secondary);
+  --_color-secondary-hover: var(--ippon-color-brand-surface-secondary-hover);
+  --_color-secondary-active: var(--ippon-color-brand-surface-secondary-active);
+  --_color-outline: transparent;
+  --_color-text-primary: var(--ippon-color-brand-text-icon-on-primary);
+  --_color-text-secondary: var(--ippon-color-brand-text-icon-on-secondary);
+  --_color-border: var(--ippon-color-brand-border);
+  --_icon-size: var(--ippon-size-20);
+  --_padding-vertical: var(--ippon-size-8);
+  --_padding-horizontal: var(--ippon-size-16);
+  --_background-color: var(--_color-primary);
+  --_border-color: var(--_color-primary);
+  --_color: var(--_color-text-primary);
+  --_border-width: 1px;
+  --_inner-padding-vertical: calc(var(--_padding-vertical) - var(--_border-width));
+  --_inner-padding-horizontal: calc(var(--_padding-horizontal) - var(--_border-width));
+
+  display: inline-flex;
+  gap: var(--ippon-size-8);
+  align-items: center;
+  border: var(--_border-width) solid var(--_border-color);
+  border-radius: var(--ippon-radius-m);
+  background-color: var(--_background-color);
+  padding: var(--_inner-padding-vertical) var(--_inner-padding-horizontal);
+  vertical-align: middle;
+  color: var(--_color);
+  cursor: pointer;
+
+  &:has(&--icon:is(:last-child)) {
+    padding-right: var(--_inner-padding-vertical);
+  }
+
+  &:has(&--icon:is(:first-child)) {
+    padding-left: var(--_inner-padding-vertical);
+  }
+
+  &--icon {
+    line-height: 1;
+    font-size: var(--_icon-size);
+    font-weight: 400;
+  }
+
+  &.-small {
+    @include typography.label-small;
+
+    --_padding-vertical: var(--ippon-size-8);
+    --_padding-horizontal: var(--ippon-size-12);
+    --_icon-size: var(--ippon-size-16);
+  }
+
+  &.-large {
+    @include typography.label-large;
+
+    --_padding-vertical: var(--ippon-size-12);
+    --_padding-horizontal: var(--ippon-size-16);
+    --_icon-size: var(--ippon-size-24);
+  }
+
+  &:hover {
+    --_background-color: var(--_color-primary-hover);
+    --_border-color: var(--_color-primary-hover);
+  }
+
+  &:active {
+    --_background-color: var(--_color-primary-active);
+    --_border-color: var(--_color-primary-active);
+  }
+
+  &:disabled:not(.-loading) {
+    --_background-color: var(--ippon-color-neutral-200);
+    --_border-color: var(--ippon-color-neutral-200);
+    --_color: var(--ippon-color-neutral-500);
+
+    cursor: not-allowed;
+  }
+
+  &.-secondary {
+    --_background-color: var(--_color-secondary);
+    --_border-color: var(--_color-secondary);
+    --_color: var(--_color-text-secondary);
+
+    &:hover {
+      --_background-color: var(--_color-secondary-hover);
+      --_border-color: var(--_color-secondary-hover);
+    }
+
+    &:active {
+      --_background-color: var(--_color-secondary-active);
+      --_border-color: var(--_color-secondary-active);
+    }
+
+    &:disabled:not(.-loading) {
+      --_background-color: var(--ippon-color-neutral-200);
+      --_border-color: var(--ippon-color-neutral-200);
+      --_color: var(--ippon-color-neutral-500);
+    }
+  }
+
+  &.-outline {
+    --_background-color: var(--_color-outline);
+    --_color: var(--_color-text-secondary);
+    --_border-color: var(--_color-border);
+
+    &:hover {
+      --_background-color: var(--_color-secondary-hover);
+    }
+
+    &:active {
+      --_background-color: var(--_color-secondary-active);
+    }
+
+    &:disabled:not(.-loading) {
+      --_background-color: var(--ippon-color-neutral-200);
+      --_border-color: var(--ippon-color-neutral-200);
+      --_color: var(--ippon-color-neutral-500);
+    }
+  }
+
+  &.-text {
+    --_background-color: transparent;
+    --_border-color: transparent;
+    --_color: var(--_color-text-secondary);
+
+    &:hover {
+      --_background-color: var(--_color-secondary-hover);
+      --_border-color: transparent;
+    }
+
+    &:active {
+      --_background-color: var(--_color-secondary-active);
+      --_border-color: transparent;
+    }
+
+    &:disabled:not(.-loading) {
+      --_background-color: transparent;
+      --_border-color: transparent;
+    }
+  }
+
+  &.-loading {
+    animation: ippon-button-loading-pulse 1.5s ease-in-out infinite;
+    cursor: progress;
+  }
+
+  &--icon.-loading {
+    animation: ippon-button-loading-spin 1s linear infinite;
+  }
+
+  &.-success {
+    --_color-primary: var(--ippon-color-success-surface-primary);
+    --_color-primary-hover: var(--ippon-color-success-surface-primary-hover);
+    --_color-primary-active: var(--ippon-color-success-surface-primary-active);
+    --_color-secondary: var(--ippon-color-success-surface-secondary);
+    --_color-secondary-hover: var(--ippon-color-success-surface-secondary-hover);
+    --_color-secondary-active: var(--ippon-color-success-surface-secondary-active);
+    --_color-outline: transparent;
+    --_color-text-primary: var(--ippon-color-success-text-icon-on-primary);
+    --_color-text-secondary: var(--ippon-color-success-text-icon-on-secondary);
+    --_color-border: var(--ippon-color-success-border);
+  }
+
+  &.-error {
+    --_color-primary: var(--ippon-color-error-surface-primary);
+    --_color-primary-hover: var(--ippon-color-error-surface-primary-hover);
+    --_color-primary-active: var(--ippon-color-error-surface-primary-active);
+    --_color-secondary: var(--ippon-color-error-surface-secondary);
+    --_color-secondary-hover: var(--ippon-color-error-surface-secondary-hover);
+    --_color-secondary-active: var(--ippon-color-error-surface-secondary-active);
+    --_color-outline: var(--ippon-color-neutral-surface-secondary);
+    --_color-text-primary: var(--ippon-color-error-text-icon-on-primary);
+    --_color-text-secondary: var(--ippon-color-error-text-icon-on-secondary);
+    --_color-border: var(--ippon-color-error-border);
+  }
+
+  &.-information {
+    --_color-primary: var(--ippon-color-information-2-surface-primary);
+    --_color-primary-hover: var(--ippon-color-information-2-surface-primary-hover);
+    --_color-primary-active: var(--ippon-color-information-2-surface-primary-active);
+    --_color-secondary: var(--ippon-color-information-2-surface-secondary);
+    --_color-secondary-hover: var(--ippon-color-information-2-surface-secondary-hover);
+    --_color-secondary-active: var(--ippon-color-information-2-surface-secondary-active);
+    --_color-outline: transparent;
+    --_color-text-primary: var(--ippon-color-information-2-text-icon-on-primary);
+    --_color-text-secondary: var(--ippon-color-information-2-text-icon-on-secondary);
+    --_color-border: var(--ippon-color-information-2-border);
+  }
+
+  &.-warning {
+    --_color-primary: var(--ippon-color-warning-surface-primary);
+    --_color-primary-hover: var(--ippon-color-warning-surface-primary-hover);
+    --_color-primary-active: var(--ippon-color-warning-surface-primary-active);
+    --_color-secondary: var(--ippon-color-warning-surface-secondary);
+    --_color-secondary-hover: var(--ippon-color-warning-surface-secondary-hover);
+    --_color-secondary-active: var(--ippon-color-warning-surface-secondary-active);
+    --_color-outline: var(--ippon-color-neutral-surface-secondary);
+    --_color-text-primary: var(--ippon-color-warning-text-icon-on-primary);
+    --_color-text-secondary: var(--ippon-color-warning-text-icon-on-secondary);
+    --_color-border: var(--ippon-color-warning-border);
+  }
+
+  &.-neutral {
+    --_color-primary: var(--ippon-color-neutral-surface-primary);
+    --_color-primary-hover: var(--ippon-color-neutral-surface-primary-hover);
+    --_color-primary-active: var(--ippon-color-neutral-surface-primary-active);
+    --_color-secondary: var(--ippon-color-neutral-surface-secondary);
+    --_color-secondary-hover: var(--ippon-color-neutral-surface-secondary-hover);
+    --_color-secondary-active: var(--ippon-color-neutral-surface-secondary-active);
+    --_color-outline: var(--ippon-color-neutral-surface-secondary);
+    --_color-text-primary: var(--ippon-color-neutral-text-icon-on-primary);
+    --_color-text-secondary: var(--ippon-color-neutral-text-icon-on-secondary);
+    --_color-border: var(--ippon-color-neutral-border);
+  }
+}

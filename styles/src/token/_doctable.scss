@@ -1,0 +1,14 @@
+.ipp-doc-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--ippon-typography-font);
+
+  &--cell {
+    padding: 0.5rem;
+    text-align: left;
+
+    &.-minimal {
+      width: 0;
+    }
+  }
+}

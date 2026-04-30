@@ -1,0 +1,31 @@
+include /atom/text/text.mixin.pug
+include /atom/icon/icon.mixin.pug
+include /organism/h-space/h-space.mixin.pug
+include /organism/v-space/v-space.mixin.pug
+
+include button-card.mixin.pug
+
+mixin ippon-button-card-example(options)
+  +ippon-button-card(options)
+    +ippon-h-space({ gap: 16, align: 'middle' })
+      +ippon-icon({ name: 'hardware-chip', variant: 'sharp', size: 24, color: 'brand-primary' })
+      +ippon-v-space({ gap: 4, align: 'left' })
+        +ippon-text({ variant: 'body', color: 'neutral-tertiary-inversed' }) Some key
+        +ippon-text({ variant: 'label', size: 'large' }) Description value
+      +ippon-icon({ name: 'chevron-forward', size: 24 })
+
++ippon-button-card-example({ shadow: 'l1', size: 'small' })
+
++ippon-button-card-example({ shadow: 'l2' })
+
++ippon-button-card-example({ shadow: 'l3', size: 'large' })
+
++ippon-button-card-example({ shadow: 'l4' })
+
++ippon-button-card-example({ shadow: 'l5' })
+
++ippon-button-card-example({ border: true })
+
++ippon-button-card-example({ border: true, shadow: 'l5' })
+
++ippon-button-card-example({ border: true, fullWidth: true })

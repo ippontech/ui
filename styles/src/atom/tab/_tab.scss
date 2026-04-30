@@ -1,0 +1,48 @@
+@use '../../quark/typography';
+
+.ippon-tab {
+  appearance: none;
+  display: inline-flex;
+  position: relative;
+  gap: var(--ippon-size-4);
+  border: 0;
+  background: transparent;
+  padding: var(--ippon-size-8) var(--ippon-size-12) var(--ippon-size-10);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+
+  @include typography.body-medium-bold;
+
+  &:hover {
+    color: var(--ippon-color-information-2-text-icon-secondary);
+  }
+
+  &[aria-selected='true'] {
+    color: var(--ippon-color-information-2-text-icon-secondary);
+    cursor: default;
+  }
+
+  &[aria-selected='true']::after {
+    bottom: calc(-1 * var(--_height));
+  }
+
+  &::after {
+    --_height: var(--ippon-size-2);
+    --_double-height: calc(var(--_height) * 2);
+    --_radius: var(--ippon-radius-m);
+    --_padding: var(--ippon-size-8);
+
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    right: var(--_padding);
+    bottom: calc(-1 * var(--_double-height));
+    left: var(--_padding);
+    border: var(--_height) solid var(--ippon-color-information-2-surface-primary);
+    border-radius: var(--_radius);
+    height: var(--_double-height);
+    content: '';
+  }
+}

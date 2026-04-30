@@ -1,0 +1,146 @@
+@use 'sass:map';
+
+@mixin display-large {
+  text-transform: var(--ippon-typography-display-large-transform);
+  line-height: var(--ippon-typography-display-large-line-height);
+  font-family: var(--ippon-typography-display-large-font);
+  font-size: var(--ippon-typography-display-large-size);
+  font-weight: var(--ippon-typography-display-large-weight);
+}
+
+@mixin display-medium {
+  text-transform: var(--ippon-typography-display-medium-transform);
+  line-height: var(--ippon-typography-display-medium-line-height);
+  font-family: var(--ippon-typography-display-medium-font);
+  font-size: var(--ippon-typography-display-medium-size);
+  font-weight: var(--ippon-typography-display-medium-weight);
+}
+
+@mixin display-small {
+  text-transform: var(--ippon-typography-display-small-transform);
+  line-height: var(--ippon-typography-display-small-line-height);
+  font-family: var(--ippon-typography-display-small-font);
+  font-size: var(--ippon-typography-display-small-size);
+  font-weight: var(--ippon-typography-display-small-weight);
+}
+
+@mixin title-1 {
+  text-transform: var(--ippon-typography-title-1-transform);
+  line-height: var(--ippon-typography-title-1-line-height);
+  font-family: var(--ippon-typography-title-1-font);
+  font-size: var(--ippon-typography-title-1-size);
+  font-weight: var(--ippon-typography-title-1-weight);
+}
+
+@mixin title-2 {
+  text-transform: var(--ippon-typography-title-2-transform);
+  line-height: var(--ippon-typography-title-2-line-height);
+  font-family: var(--ippon-typography-title-2-font);
+  font-size: var(--ippon-typography-title-2-size);
+  font-weight: var(--ippon-typography-title-2-weight);
+}
+
+@mixin title-3 {
+  text-transform: var(--ippon-typography-title-3-transform);
+  line-height: var(--ippon-typography-title-3-line-height);
+  font-family: var(--ippon-typography-title-3-font);
+  font-size: var(--ippon-typography-title-3-size);
+  font-weight: var(--ippon-typography-title-3-weight);
+}
+
+@mixin title-4 {
+  text-transform: var(--ippon-typography-title-4-transform);
+  line-height: var(--ippon-typography-title-4-line-height);
+  font-family: var(--ippon-typography-title-4-font);
+  font-size: var(--ippon-typography-title-4-size);
+  font-weight: var(--ippon-typography-title-4-weight);
+}
+
+@mixin title-5 {
+  text-transform: var(--ippon-typography-title-5-transform);
+  line-height: var(--ippon-typography-title-5-line-height);
+  font-family: var(--ippon-typography-title-5-font);
+  font-size: var(--ippon-typography-title-5-size);
+  font-weight: var(--ippon-typography-title-5-weight);
+}
+
+$-body-large-weights: (
+  'normal': var(--ippon-typography-body-large-weight),
+  'bold': var(--ippon-typography-body-large-weight-bold),
+);
+
+@mixin -body-large($weight: 'normal') {
+  line-height: var(--ippon-typography-body-large-line-height);
+  font-family: var(--ippon-typography-body-large-font);
+  font-size: var(--ippon-typography-body-large-size);
+  font-weight: map.get($-body-large-weights, $weight);
+}
+
+@mixin body-large {
+  @include -body-large('normal');
+}
+
+@mixin body-large-bold {
+  @include -body-large('bold');
+}
+
+$-body-medium-weights: (
+  'normal': var(--ippon-typography-body-medium-weight),
+  'bold': var(--ippon-typography-body-medium-weight-bold),
+);
+
+@mixin -body-medium($weight: 'normal') {
+  line-height: var(--ippon-typography-body-medium-line-height);
+  font-family: var(--ippon-typography-body-medium-font);
+  font-size: var(--ippon-typography-body-medium-size);
+  font-weight: map.get($-body-medium-weights, $weight);
+}
+
+@mixin body-medium {
+  @include -body-medium('normal');
+}
+
+@mixin body-medium-bold {
+  @include -body-medium('bold');
+}
+
+$-body-small-weights: (
+  'normal': var(--ippon-typography-body-small-weight),
+  'bold': var(--ippon-typography-body-small-weight-bold),
+);
+
+@mixin -body-small($weight: 'normal') {
+  line-height: var(--ippon-typography-body-small-line-height);
+  font-family: var(--ippon-typography-body-small-font);
+  font-size: var(--ippon-typography-body-small-size);
+  font-weight: map.get($-body-small-weights, $weight);
+}
+
+@mixin body-small {
+  @include -body-small('normal');
+}
+
+@mixin body-small-bold {
+  @include -body-small('bold');
+}
+
+@mixin label-large {
+  line-height: var(--ippon-typography-label-large-line-height);
+  font-family: var(--ippon-typography-label-large-font);
+  font-size: var(--ippon-typography-label-large-size);
+  font-weight: var(--ippon-typography-label-large-weight);
+}
+
+@mixin label-medium {
+  line-height: var(--ippon-typography-label-medium-line-height);
+  font-family: var(--ippon-typography-label-medium-font);
+  font-size: var(--ippon-typography-label-medium-size);
+  font-weight: var(--ippon-typography-label-medium-weight);
+}
+
+@mixin label-small {
+  line-height: var(--ippon-typography-label-small-line-height);
+  font-family: var(--ippon-typography-label-small-font);
+  font-size: var(--ippon-typography-label-small-size);
+  font-weight: var(--ippon-typography-label-small-weight);
+}

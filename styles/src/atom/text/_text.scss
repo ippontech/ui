@@ -1,0 +1,74 @@
+@use '../../quark/typography';
+@use '../../quark/font';
+@use '../../quark/placeholder';
+
+.ippon-text {
+  @include font.colors;
+
+  margin: 0;
+  padding: 0;
+
+  &.-placeholder {
+    min-width: 10rem;
+  }
+
+  &.-body {
+    @include typography.body-medium;
+
+    &.-placeholder {
+      @include placeholder.placeholder(var(--ippon-typography-body-medium-line-height));
+    }
+
+    &.-bold {
+      @include typography.body-medium-bold;
+    }
+
+    &.-small {
+      @include typography.body-small;
+
+      &.-placeholder {
+        @include placeholder.placeholder(var(--ippon-typography-body-small-line-height));
+      }
+
+      &.-bold {
+        @include typography.body-small-bold;
+      }
+    }
+
+    &.-large {
+      @include typography.body-large;
+
+      &.-placeholder {
+        @include placeholder.placeholder(var(--ippon-typography-body-large-line-height));
+      }
+
+      &.-bold {
+        @include typography.body-large-bold;
+      }
+    }
+  }
+
+  &.-label {
+    @include typography.label-medium;
+
+    &.-placeholder {
+      @include placeholder.placeholder(var(--ippon-typography-label-medium-line-height));
+    }
+
+    &.-small {
+      @include typography.label-small;
+
+      &.-placeholder {
+        @include placeholder.placeholder(var(--ippon-typography-label-small-line-height));
+      }
+    }
+
+    &.-large {
+      @include typography.label-large;
+
+      &.-placeholder {
+        @include placeholder.placeholder(var(--ippon-typography-label-large-line-height));
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+@use '../abstract-card';
+@use '../../quark/shadow';
+
+.ippon-card {
+  @include abstract-card.ippon-card;
+}

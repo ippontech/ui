@@ -1,0 +1,14 @@
+{
+  "documentation": "tikui",
+  "port": 4220,
+  "reloadPort": 4221,
+  "expose": {
+    "node_modules/@fontsource/open-sans/files": "fonts/open-sans/files",
+    "node_modules/@fontsource/open-sans/400.css": "fonts/open-sans/400.css",
+    "node_modules/@fontsource/open-sans/600.css": "fonts/open-sans/600.css",
+    "node_modules/@fontsource/open-sans/700.css": "fonts/open-sans/700.css",
+    "node_modules/@fontsource/saira-extra-condensed/files": "fonts/saira-extra-condensed/files",
+    "node_modules/@fontsource/saira-extra-condensed/700.css": "fonts/saira-extra-condensed/700.css",
+    "node_modules/@ippon/icons/dist": "icons"
+  }
+}

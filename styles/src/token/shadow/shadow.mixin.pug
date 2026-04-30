@@ -1,0 +1,13 @@
+mixin ippon-shadow(level)
+  - const id = `ippon-shadow-${level}`;
+  - const shadowVar = `--ippon-shadow-${level}`;
+  section
+    h3= level
+    table.ipp-doc-table
+      tbody(id=id)
+    script(type='module').
+      import { ipponTokenShadow } from '[[TIKUI_BASEPATH]]token/shadow/shadow.js';
+      (() => {
+        const shadowList = document.getElementById('#{id}');
+        ipponTokenShadow(shadowList, '#{shadowVar}');
+      })();

@@ -1,0 +1,20 @@
+@use 'true' as *;
+@use '../../src/function/conversion';
+
+@include test-module('Conversion') {
+  @include test('Should convert 0 to 0') {
+    @include assert-equal(conversion.to-rem(0), 0);
+  }
+
+  @include test('Should convert 16px to 1rem') {
+    @include assert-equal(conversion.to-rem(16px), 1rem);
+  }
+
+  @include test('Should convert 32px to 2rem') {
+    @include assert-equal(conversion.to-rem(32px), 2rem);
+  }
+
+  @include test('Should convert 8px to 0.5rem') {
+    @include assert-equal(conversion.to-rem(8px), 0.5rem);
+  }
+}

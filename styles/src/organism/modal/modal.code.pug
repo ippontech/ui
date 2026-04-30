@@ -1,0 +1,68 @@
+include /atom/button/button.mixin.pug
+include /atom/meter/meter.mixin.pug
+include /atom/title/title.mixin.pug
+include /atom/text/text.mixin.pug
+include /atom/icon/icon.mixin.pug
+include /organism/h-space/h-space.mixin.pug
+include /organism/v-space/v-space.mixin.pug
+
+include modal.mixin.pug
+
++ippon-button({ command: 'show-modal', commandfor: 'modal' }) Open modal
++ippon-modal({ id: 'modal' })
+  +ippon-modal--header
+    +ippon-h-space({ gap: 16, align: 'middle' })
+      +ippon-icon({ name: 'list', variant: 'outline', color: 'brand-primary' })
+      +ippon-h-space--slot({ expand: true })
+        ippon-v-space
+          hgroup
+            +ippon-title({ level: 5 }) Modal title
+            +ippon-text({ tag: 'p', variant: 'body', size: 'small', color: 'neutral-tertiary-inversed' }) Modal description
+      +ippon-button({ variant: 'text', color: 'neutral', icon: { name: 'close' }, command: 'close', commandfor: 'modal' })
+  +ippon-modal--separator
+  +ippon-modal--body
+    +ippon-text({ variant: 'body' }) Body
+  +ippon-modal--footer
+    +ippon-h-space({ gap: 24, align: 'middle' })
+      +ippon-button({ command: 'close', commandfor: 'modal', iconRight: { name: 'close' } }) Close
+      +ippon-button({ command: 'close', variant: 'outline', iconRight: { name: 'reload' } }) Other
+
++ippon-button({ command: 'show-modal', commandfor: 'modal-actions' }) Open modal with actions
++ippon-modal({ id: 'modal-actions' })
+  +ippon-modal--header
+    +ippon-h-space({ gap: 16, align: 'middle' })
+      +ippon-icon({ name: 'list', variant: 'outline', color: 'brand-primary' })
+      +ippon-h-space--slot({ expand: true })
+        ippon-v-space
+          hgroup
+            +ippon-title({ level: 5 }) Modal title
+            +ippon-text({ tag: 'p', variant: 'body', size: 'small', color: 'neutral-tertiary-inversed' }) Modal description
+      +ippon-button({ variant: 'text', color: 'neutral', icon: { name: 'close' }, command: 'close', commandfor: 'modal-actions' })
+  +ippon-modal--actions
+    +ippon-h-space({ gap: 24, align: 'middle' })
+      +ippon-button({ variant: 'text', size: 'small' }) Select all
+      +ippon-button({ color: 'neutral', variant: 'text', size: 'small' }) Unselect all
+  +ippon-modal--body
+    +ippon-text({ variant: 'body' }) Body
+  +ippon-modal--footer
+    +ippon-h-space({ gap: 24, align: 'middle' })
+      +ippon-button({ command: 'close', commandfor: 'modal-actions', iconRight: { name: 'close' } }) Close
+      +ippon-button({ command: 'close', variant: 'outline', iconRight: { name: 'reload' } }) Other
+
++ippon-button({ command: 'show-modal', commandfor: 'modal-loading' }) Open loading modal
++ippon-modal({ id: 'modal-loading' })
+  +ippon-modal--header
+    +ippon-h-space({ gap: 16, align: 'middle' })
+      +ippon-icon({ name: 'hourglass', variant: 'outline', color: 'brand-primary', size: 32 })
+      +ippon-h-space--slot({ expand: true })
+        ippon-v-space
+          hgroup
+            +ippon-title({ level: 5 }) Loading title
+            +ippon-text({ tag: 'p', variant: 'body', size: 'small', color: 'neutral-tertiary-inversed' }) Please wait...
+  +ippon-modal--separator
+  +ippon-modal--body
+    +ippon-v-space({ gap: 16 })
+      +ippon-meter({ value: 60, min: 0, max: 100 })
+      +ippon-text({ variant: 'body' }) 60%
+  +ippon-modal--footer
+    +ippon-button({ command: 'close', commandfor: 'modal-loading', variant: 'outline', color: 'neutral', iconRight: { name: 'close' } }) Close (demo only)

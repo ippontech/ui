@@ -1,0 +1,25 @@
+include grid.mixin.pug
+
+mixin ippon-grid--slot-example(classes)
+  .ippon-grid--slot(class=classes)
+    .ipp-doc-slot= `Slot (${classes})`
+
++ippon-grid('-media-4 -media-tab-12 -gap-16 -gap-desktop-s-32')
+  +ippon-grid--slot-example('-col-2 -col-tab-4')
+  +ippon-grid--slot-example('-col-2 -col-tab-4')
+  +ippon-grid--slot-example('-col-4 -col-tab-4')
+  +ippon-grid--slot-example('-col-4 -col-tab-6')
+  +ippon-grid--slot-example('-col-4 -col-tab-6')
+  +ippon-grid--slot-example('-col-1 -col-tab-2')
+  +ippon-grid--slot-example('-col-3 -col-tab-10')
+
+hr
+
++ippon-grid('-container-4 -container-m-12 -gap-16 -gap-l-32')
+  +ippon-grid--slot-example('-col-2 -col-m-4')
+  +ippon-grid--slot-example('-col-2 -col-m-4')
+  +ippon-grid--slot-example('-col-4 -col-m-4')
+  +ippon-grid--slot-example('-col-4 -col-m-6')
+  +ippon-grid--slot-example('-col-4 -col-m-6')
+  +ippon-grid--slot-example('-col-1 -col-m-2')
+  +ippon-grid--slot-example('-col-3 -col-m-10')

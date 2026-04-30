@@ -1,0 +1,30 @@
+include /atom/ion/ion.mixin.pug
+
+mixin ippon-button(options)
+  - const { disabled, loading, color, variant, icon, iconLeft, iconRight, size, command, commandfor } = options || {};
+  - const colorClass = color ? `-${color}` : null;
+  - const variantClass = variant ? `-${variant}` : null;
+  - const sizeClass = size ? `-${size}` : null;
+  - const loadingClass = loading ? '-loading' : null;
+  - const realIconLeft = iconLeft ?? icon;
+  - const realIconRight = loading && iconRight ? { name: 'sync' } : iconRight;
+  - const iconRightClass = loading && iconRight ? 'ippon-button--icon -loading' : 'ippon-button--icon';
+  - const hasIcon = !!(realIconLeft || realIconRight);
+
+  button.ippon-button(
+    class=[colorClass, variantClass, sizeClass, loadingClass],
+    disabled=disabled || loading,
+    aria-busy=loading ? 'true' : undefined,
+    command=command,
+    commandfor=commandfor
+  )
+    if realIconLeft
+      +ippon-ion({ ...realIconLeft, additionalClass: 'ippon-button--icon' })
+    if block
+      if hasIcon
+        span.ippon-button--text
+          block
+      else
+        block
+    if realIconRight
+      +ippon-ion({ ...realIconRight, additionalClass: iconRightClass })

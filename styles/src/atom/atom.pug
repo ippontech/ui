@@ -1,0 +1,34 @@
+extends /layout-documentation
+
+block append vars
+  - active = 'atom';
+
+block title
+  title Tikui - Atoms
+
+block content
+  .tikui-vertical-spacing.-s32
+    .tikui-vertical-spacing--line
+      h1#atoms.tikui-title-main Atoms
+    .tikui-vertical-spacing--line
+      include /documentation/atomic-design/quote/atom
+    .tikui-vertical-spacing--line
+      include:componentDoc(height=620) badge/badge.md
+    .tikui-vertical-spacing--line
+      include:componentDoc(height=680) button/button.md
+    .tikui-vertical-spacing--line
+      include:componentDoc(height=50) icon/icon.md
+    .tikui-vertical-spacing--line
+      include:componentDoc(height=60) ion/ion.md
+    .tikui-vertical-spacing--line
+      include:componentDoc(height=150) meter/meter.md
+    .tikui-vertical-spacing--line
+      include:componentDoc(height=150) progress/progress.md
+    .tikui-vertical-spacing--line
+      include:componentDoc(height=60) tab/tab.md
+    .tikui-vertical-spacing--line
+      include:componentDoc(height=220) text/text.md
+    .tikui-vertical-spacing--line
+      include:componentDoc(height=1050) title/title.md
+    .tikui-vertical-spacing--line
+      include:componentDoc(height=350) title-display/title-display.md

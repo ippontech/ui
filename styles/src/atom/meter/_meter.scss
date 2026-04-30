@@ -1,0 +1,23 @@
+.ippon-meter {
+  --_bar-color: var(--ippon-color-information-2-surface-primary);
+  --_background-color: var(--ippon-color-neutral-surface-tertiary);
+  --_height: var(--ippon-size-8);
+  --ippon-meter-percentage: 0%;
+
+  display: block;
+  position: relative;
+  background-color: var(--_background-color);
+  width: 100%;
+  height: var(--_height);
+  overflow: hidden;
+
+  &::before {
+    position: absolute;
+    inset: 0 auto 0 0;
+    transition: width 0.3s ease-in-out;
+    border-radius: var(--_border-radius);
+    background-color: var(--_bar-color);
+    width: var(--ippon-meter-percentage);
+    content: '';
+  }
+}

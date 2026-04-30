@@ -1,0 +1,49 @@
+{
+  "name": "@ippon-ui/styles",
+  "version": "1.0.0",
+  "description": "Pattern Library tool",
+  "keywords": [
+    "ui",
+    "ui kit",
+    "design system",
+    "pattern library"
+  ],
+  "homepage": "https://github.com/tikui/tikui.git#readme",
+  "bugs": {
+    "url": "https://github.com/tikui/tikui/issues"
+  },
+  "license": "MIT",
+  "packageManager": "pnpm@10.33.0",
+  "author": {
+    "name": "Anthony Rey"
+  },
+  "main": "src/index.pug",
+  "repository": "github:tikui/tikui",
+  "scripts": {
+    "dev": "tikui-core serve",
+    "serve": "tikui-core serve",
+    "build": "tikui-core build",
+    "preview": "tikui-core preview",
+    "lint": "stylelint \"src/**/*.scss\" --fix",
+    "lint:ci": "stylelint \"src/**/*.scss\"",
+    "test:unit": "vitest",
+    "test:unit:ci": "vitest run",
+    "start:component-test": "tikui-core serve"
+  },
+  "devDependencies": {
+    "@fontsource/open-sans": "5.2.7",
+    "@fontsource/saira-extra-condensed": "5.2.7",
+    "@ippon/icons": "workspace:*",
+    "@tikui/core": "7.0.1",
+    "postcss-scss": "4.0.9",
+    "sass": "1.99.0",
+    "sass-true": "10.1.0",
+    "stylelint": "17.6.0",
+    "stylelint-config-concentric-order": "5.5.0",
+    "stylelint-config-standard-scss": "17.0.0",
+    "stylelint-order": "8.1.1",
+    "stylelint-scss": "7.0.0",
+    "tikuidoc-tikui": "9.0.1",
+    "vitest": "4.1.4"
+  }
+}

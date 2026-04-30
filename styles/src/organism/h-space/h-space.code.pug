@@ -1,0 +1,56 @@
+include h-space.mixin.pug
+
+mixin ippon-h-space-rectangle(height = 32)
+  div(
+    style=`width: var(--ippon-size-32); height: var(--ippon-size-${height}); background-color: var(--ippon-color-brand-surface-primary); border-radius: var(--ippon-radius-m)`
+  )
+
+mixin ippon-h-space-equal-rectangles(options)
+  +ippon-h-space-rectangle(options)
+  +ippon-h-space-rectangle(options)
+  +ippon-h-space-rectangle(options)
+
+mixin ippon-h-space-mixed-rectangles
+  +ippon-h-space-rectangle(16)
+  +ippon-h-space-rectangle(8)
+  +ippon-h-space-rectangle(32)
+
++ippon-h-space
+  +ippon-h-space-equal-rectangles
+
++ippon-h-space({ gap: 8 })
+  +ippon-h-space-equal-rectangles
+
++ippon-h-space({ gap: 32, align: 'middle' })
+  +ippon-h-space-mixed-rectangles
+
++ippon-h-space({ gap: 16, align: 'top' })
+  +ippon-h-space-mixed-rectangles
+
++ippon-h-space({ gap: 20, align: 'bottom' })
+  +ippon-h-space-mixed-rectangles
+
++ippon-h-space({ gap: 32, align: 'left' })
+  +ippon-h-space-equal-rectangles
+
++ippon-h-space({ gap: 16, align: 'center' })
+  +ippon-h-space-equal-rectangles
+
++ippon-h-space({ gap: 20, align: 'right' })
+  +ippon-h-space-equal-rectangles
+
++ippon-h-space({ gap: 20, align: 'space-between' })
+  +ippon-h-space-equal-rectangles
+
++ippon-h-space({ gap: 16, align: 'stretch' })
+  +ippon-h-space-rectangle
+  +ippon-h-space--slot({ expand: true })
+    +ippon-h-space-rectangle
+  +ippon-h-space-rectangle
+
++ippon-h-space({ gap: 16, wrap: true })
+  each i in Array(40).fill()
+    +ippon-h-space-rectangle
+
++ippon-h-space({ gap: 16, tag: 'section' })
+  +ippon-h-space-equal-rectangles

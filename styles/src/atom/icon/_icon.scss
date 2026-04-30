@@ -1,0 +1,8 @@
+@use '../../quark/font';
+
+.ippon-icon {
+  line-height: 1;
+
+  @include font.sizes;
+  @include font.colors;
+}

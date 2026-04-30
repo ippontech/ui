@@ -1,0 +1,24 @@
+include /atom/ion/ion.mixin.pug
+
+mixin ippon-badge--icon(options)
+  - const { clickable } = options || {};
+  - const additionalClassValue = `ippon-badge--icon${clickable ? ' -clickable' : ''}`;
+  +ippon-ion({ ...options, additionalClass: additionalClassValue })
+
+mixin ippon-badge(options)
+  - const { iconLeft, iconRight, variant, color, placeholder } = options || {};
+  - const variantClass = variant ? `-${variant}` : null;
+  - const colorClass = color ? `-${color}` : null;
+  - const placeholderClass = placeholder ? '-placeholder' : null;
+  - const hasIcon = !!(iconLeft || iconRight);
+  span.ippon-badge(class=[variantClass, colorClass, placeholderClass])
+    if !placeholder
+      if iconLeft
+        +ippon-badge--icon(iconLeft)
+      if hasIcon
+        span.ippon-badge--text
+          block
+      else
+        block
+      if iconRight
+        +ippon-badge--icon(iconRight)

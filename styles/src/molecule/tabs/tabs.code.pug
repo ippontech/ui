@@ -1,0 +1,9 @@
+include tabs.mixin.pug
+include /atom/tab/tab.mixin.pug
+
++ippon-tabs({ id: 'panel-id' })
+  +ippon-tab({ id: 'tab-1', controls: 'panel-id' }) Tab 1
+  +ippon-tab({ id: 'tab-2', controls: 'panel-id', selected: true }) Tab 2
+  +ippon-tab({ id: 'tab-3', controls: 'panel-id', href: '#tab3' }) Tab 3
+  +ippon-tab({ id: 'tab-4', controls: 'panel-id' }) Tab 4
+  +ippon-tab({ id: 'tab-5', controls: 'panel-id' }) Tab 5

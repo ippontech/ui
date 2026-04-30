@@ -1,0 +1,68 @@
+@use '../../quark/typography';
+@use '../../quark/placeholder';
+
+@mixin ippon-title($level) {
+  $tag: h#{$level};
+  $alternative: -l#{$level};
+  #{$tag}.ippon-title,
+  .ippon-title.#{$alternative} {
+    @content;
+  }
+}
+
+@mixin ippon-title-placeholder($level) {
+  $tag: h#{$level};
+  $alternative: -l#{$level};
+  #{$tag}.ippon-title.-placeholder,
+  .ippon-title.#{$alternative}.-placeholder {
+    @content;
+  }
+}
+
+.ippon-title {
+  margin: 0;
+
+  &.-placeholder {
+    min-width: 12rem;
+  }
+}
+
+@include ippon-title(1) {
+  @include typography.title-1;
+}
+
+@include ippon-title-placeholder(1) {
+  @include placeholder.placeholder(var(--ippon-typography-title-1-line-height));
+}
+
+@include ippon-title(2) {
+  @include typography.title-2;
+}
+
+@include ippon-title-placeholder(2) {
+  @include placeholder.placeholder(var(--ippon-typography-title-2-line-height));
+}
+
+@include ippon-title(3) {
+  @include typography.title-3;
+}
+
+@include ippon-title-placeholder(3) {
+  @include placeholder.placeholder(var(--ippon-typography-title-3-line-height));
+}
+
+@include ippon-title(4) {
+  @include typography.title-4;
+}
+
+@include ippon-title-placeholder(4) {
+  @include placeholder.placeholder(var(--ippon-typography-title-4-line-height));
+}
+
+@include ippon-title(5) {
+  @include typography.title-5;
+}
+
+@include ippon-title-placeholder(5) {
+  @include placeholder.placeholder(var(--ippon-typography-title-5-line-height));
+}

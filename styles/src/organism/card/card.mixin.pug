@@ -1,0 +1,7 @@
+mixin ippon-card(options)
+  - const { shadow, border, size } = options || {};
+  - const shadowClass = shadow ? `-shadow-${shadow}` : null;
+  - const borderClass = border ? '-border' : null;
+  - const sizeClass = size ? `-${size}` : null;
+  .ippon-card(class=[shadowClass, borderClass, sizeClass])
+    block

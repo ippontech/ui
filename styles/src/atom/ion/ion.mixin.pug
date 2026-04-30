@@ -1,0 +1,8 @@
+mixin ippon-ion(options)
+  - const { name, variant, additionalClass, clickable } = options || {};
+  - const safeVariant = ['outline', 'sharp'].includes(variant) ? variant : null;
+  - const suffix = safeVariant ? `-${safeVariant}` : '';
+  - const iconClass = `ippon-ion-${name}${suffix}`;
+  - const selector = clickable ? 'button' : 'span';
+  - const role = clickable ? null : 'presentation';
+  #{selector}(class=[additionalClass, iconClass], role=role)

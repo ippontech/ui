@@ -1,0 +1,38 @@
+include /atom/ion/ion.mixin.pug
+
+include button.mixin.pug
+
+mixin ippon-button-example-variants(options)
+  - const { color, size } = options || {};
+  - const variants = [null, 'secondary', 'outline', 'text'];
+  - const ucFirst = (string) => (string ? string.charAt(0).toUpperCase() + string.slice(1) : '');
+  - const sizeSuffix = size ? ` (${size})` : '';
+  each variant in variants
+    +ippon-button({ color, variant: variant, size })
+      = `${ucFirst(color || 'default')} ${variant || 'primary'}${sizeSuffix}`
+  +ippon-button({ size, color, disabled: true })
+    = 'disabled'
+  +ippon-button({ size, color, loading: true })
+    = 'loading'
+
+mixin ippon-button-example-colors
+  - const colors = ['success', 'error', 'information', 'warning', 'neutral'];
+
+  each color in colors
+    +ippon-button-example-variants({ color })
+
+mixin ippon-button-example-icons(size)
+  +ippon-button({ size, icon: { name: 'heart' } })
+  +ippon-button({ size, variant: 'secondary', iconLeft: { name: 'logo-angular' } }) Icon left
+  +ippon-button({ size, variant: 'outline', iconRight: { name: 'search' } }) Icon right
+  +ippon-button({ size, variant: 'text', iconLeft: { name: 'remove' }, iconRight: { name: 'add' } }) Icon both
+  +ippon-button({ size, disabled: true, iconLeft: { name: 'remove' }, iconRight: { name: 'add' } }) Disabled
+  +ippon-button({ size, loading: true, iconLeft: { name: 'remove' }, iconRight: { name: 'add' } }) Loading
+
++ippon-button-example-variants({ size: 'small' })
++ippon-button-example-variants
++ippon-button-example-variants({ size: 'large' })
++ippon-button-example-colors
++ippon-button-example-icons('small')
++ippon-button-example-icons
++ippon-button-example-icons('large')

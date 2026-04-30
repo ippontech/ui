@@ -1,0 +1,29 @@
+include badge.mixin.pug
+
+mixin ippon-badge-with-options(options)
+  - const { variant, color } = options || {};
+  - const variantText = variant ? variant : 'primary';
+  - const colorText = color ? ` (${color})` : '';
+  - const text = `${variantText}${colorText}`;
+  - const iconLeft = { name: 'alert-circle', variant: 'outline' };
+  - const iconRight = { name: 'close', variant: 'outline' };
+  - const iconLeftClickable = { name: 'alert-circle', variant: 'outline', clickable: true };
+  - const iconRightClickable = { name: 'close', variant: 'outline', clickable: true };
+
+  +ippon-badge({ variant, color })= text
+  +ippon-badge({ variant, color, iconLeft })= `${text} icon left`
+  +ippon-badge({ variant, color, iconRight })= `${text} icon right`
+  +ippon-badge({ variant, color, iconLeft, iconRight })= `${text} icon both`
+  +ippon-badge({ variant, color, iconLeft: iconLeftClickable, iconRight: iconRightClickable })= `${text} clickable`
+
+mixin ippon-badge-for-color(color)
+  +ippon-badge-with-options({ color })
+  +ippon-badge-with-options({ color, variant: 'secondary' })
+
++ippon-badge-for-color
++ippon-badge-for-color('neutral')
++ippon-badge-for-color('success')
++ippon-badge-for-color('error')
++ippon-badge-for-color('warning')
++ippon-badge-for-color('information')
++ippon-badge({ placeholder: true })

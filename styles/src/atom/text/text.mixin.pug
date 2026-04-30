@@ -1,0 +1,12 @@
+mixin ippon-text(options)
+  - const { size, variant, weight, color, tag, placeholder } = options || {};
+  - const sizeClass = size ? `-${size}` : null;
+  - const variantClass = variant ? `-${variant}` : null;
+  - const weightClass = weight ? `-${weight}` : null;
+  - const colorClass = color ? `-color-${color}` : null;
+  - const placeholderClass = placeholder ? '-placeholder' : null;
+  #{tag || 'span'}.ippon-text(
+    class=[sizeClass, variantClass, weightClass, colorClass, placeholderClass]
+  )
+    if !placeholder
+      block

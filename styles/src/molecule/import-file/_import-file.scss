@@ -1,0 +1,38 @@
+.ippon-import-file {
+  --_border-width: 2px;
+  --_padding-inline: calc(var(--ippon-size-32) - var(--_border-width));
+  --_icon-background-color: var(--ippon-color-neutral-surface-secondary);
+  --_icon-color: var(--ippon-color-neutral-text-icon-on-secondary);
+
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: var(--_border-width) dashed var(--ippon-color-neutral-border);
+  border-radius: var(--ippon-radius-m);
+  padding: var(--_padding-inline);
+  cursor: pointer;
+
+  &--input {
+    display: none;
+  }
+
+  &--icon {
+    border-radius: var(--ippon-radius-pill);
+    background-color: var(--_icon-background-color);
+    padding: var(--ippon-size-12);
+    line-height: 0;
+    color: var(--_icon-color);
+  }
+
+  &:hover,
+  &.-dragover {
+    --_border-width: 1px;
+    --_icon-background-color: var(--ippon-color-information-2-surface-primary);
+    --_icon-color: var(--ippon-color-information-2-text-icon-on-primary);
+
+    border: var(--_border-width) dashed var(--ippon-color-information-2-border);
+    background-color: var(--ippon-color-information-2-surface-secondary);
+  }
+}

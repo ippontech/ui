@@ -1,0 +1,36 @@
+@use '../quark/shadow';
+
+%ippon-card {
+  --_border-width: 0px;
+  --_padding-v: var(--ippon-size-16);
+  --_padding--inner-v: calc(var(--_padding-v) - var(--_border-width));
+  --_padding-h: var(--ippon-size-16);
+  --_padding--inner-h: calc(var(--_padding-h) - var(--_border-width));
+
+  box-sizing: border-box;
+  border: var(--_border-width) solid var(--ippon-color-neutral-border);
+  border-radius: var(--ippon-radius-l);
+  background-color: var(--ippon-color-neutral-surface-primary);
+  padding: var(--_padding-v) var(--_padding-h);
+  color: var(--ippon-color-neutral-text-icon-on-primary);
+
+  @include shadow.shadows;
+
+  &.-border {
+    --_border-width: 1px;
+  }
+
+  &.-small {
+    --_padding-h: var(--ippon-size-8);
+    --_padding-v: var(--ippon-size-8);
+  }
+
+  &.-large {
+    --_padding-v: var(--ippon-size-20);
+    --_padding-h: var(--ippon-size-24);
+  }
+}
+
+@mixin ippon-card {
+  @extend %ippon-card;
+}

@@ -1,0 +1,22 @@
+@use '../abstract-card';
+@use '../../quark/shadow';
+
+.ippon-button-card {
+  @include abstract-card.ippon-card;
+
+  display: inline-block;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--ippon-color-neutral-surface-primary-hover);
+  }
+
+  &:active {
+    background-color: var(--ippon-color-neutral-surface-primary-active);
+  }
+
+  &.-full-width {
+    display: block;
+    width: 100%;
+  }
+}

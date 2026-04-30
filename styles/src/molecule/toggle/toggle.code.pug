@@ -1,0 +1,26 @@
+include /atom/button/button.mixin.pug
+include /atom/icon/icon.mixin.pug
+include /atom/text/text.mixin.pug
+include /organism/h-space/h-space.mixin.pug
+
+include toggle.mixin.pug
+
+mixin ippon-toggle-example(options)
+  - const { id, open } = options || {};
+  - const label = 'Toggle Title';
+  +ippon-toggle(options)
+    +ippon-toggle--header
+      +ippon-toggle--button({ id, open, label })
+        +ippon-h-space({ gap: 10, align: 'middle' })
+          +ippon-icon({ name: 'folder', variant: 'outline', size: 16, color: 'warning-primary' })
+          +ippon-text({ variant: 'body', weight: 'bold' })= label
+          +ippon-text({ variant: 'body', weight: 'small', color: 'neutral-tertiary-inversed' }) (3 elements)
+      +ippon-toggle--actions
+        +ippon-button({ color: 'neutral', variant: 'outline' }) Action
+    +ippon-toggle--body({ labelledBy: id })
+      +ippon-toggle--content First
+      +ippon-toggle--content Second
+      +ippon-toggle--content Third
+
++ippon-toggle-example({ id: 'first-toggle' })
++ippon-toggle-example({ id: 'second-toggle', open: true })

@@ -1,0 +1,12 @@
+mixin ippon-title(options)
+  - const { tag = 'div', level, placeholder } = options || {};
+  - const titleTag = `Title ${tag}`;
+  - const titleName = level ? `${titleTag} (alternative level ${level})` : titleTag;
+  - const alternativeClass = level ? `-l${level}` : null;
+  - const placeholderClass = placeholder ? '-placeholder' : null;
+  #{tag}.ippon-title(class=[alternativeClass, placeholderClass])
+    if !placeholder
+      if block
+        block
+      else
+        | #{ titleName }

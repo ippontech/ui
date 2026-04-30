@@ -1,0 +1,45 @@
+@use '../../quark/gap';
+
+.ippon-v-space {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @include gap.gaps;
+
+  &.-left {
+    align-items: flex-start;
+  }
+
+  &.-center {
+    align-items: center;
+  }
+
+  &.-justify {
+    align-items: stretch;
+  }
+
+  &.-right {
+    align-items: flex-end;
+  }
+
+  &--slot {
+    &.-left {
+      align-self: flex-start;
+    }
+
+    &.-center {
+      align-self: center;
+    }
+
+    &.-justify {
+      align-self: stretch;
+    }
+
+    &.-right {
+      align-self: flex-end;
+    }
+  }
+}

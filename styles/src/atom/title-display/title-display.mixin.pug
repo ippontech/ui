@@ -1,0 +1,6 @@
+mixin ippon-title-display(options)
+  - const { tag = 'div', size } = options || {};
+  - const displayTag = `Title display ${tag}`;
+  - const displayName = size ? `${displayTag} (alternative ${size})` : displayTag;
+  - const alternativeClass = size ? `-${size}` : null;
+  #{tag}.ippon-title-display(class=[alternativeClass])= displayName

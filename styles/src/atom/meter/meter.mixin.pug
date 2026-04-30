@@ -1,0 +1,12 @@
+mixin ippon-meter(options)
+  - const { min = 0, max = 100, value = 0 } = options || {};
+  - const percentage = ((value - min) / (max - min)) * 100;
+  - const style = `--ippon-meter-percentage: ${Math.min(Math.max(percentage, 0), 100)}%`;
+
+  .ippon-meter(
+    role='meter',
+    aria-valuenow=value,
+    aria-valuemin=min,
+    aria-valuemax=max,
+    style=style
+  )

@@ -1,0 +1,11 @@
+include /organism/header/header.mixin.pug
+include /atom/title/title.mixin.pug
+
+include layout.mixin.pug
+
++ippon-layout
+  +ippon-layout--header
+    +ippon-header
+      +ippon-header--slot Logo
+  +ippon-layout--body
+    +ippon-title({ tag: 'h1' }) Title

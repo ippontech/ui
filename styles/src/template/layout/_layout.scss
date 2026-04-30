@@ -1,0 +1,20 @@
+.ippon-layout {
+  display: flex;
+  position: fixed;
+  inset: 0;
+  flex-direction: column;
+
+  &--header {
+    flex-shrink: 0;
+    background-color: var(--ippon-color-neutral-surface-primary);
+    color: var(--ippon-color-neutral-text-icon-on-primary);
+  }
+
+  &--body {
+    flex: 1;
+    background-color: var(--ippon-color-neutral-surface-secondary);
+    padding: var(--ippon-size-32) var(--ippon-size-48);
+    overflow-y: auto;
+    color: var(--ippon-color-neutral-text-icon-on-secondary);
+  }
+}

@@ -1,0 +1,13 @@
+include container.mixin.pug
+include ../grid/grid.mixin.pug
+
++ippon-container
+  p Default container (inline-size)
+
+hr
++ippon-container
+  +ippon-grid('-container-4 -container-m-12 -gap-16 -gap-l-32')
+    +ippon-grid--slot Slot 1
+    +ippon-grid--slot Slot 2
+    +ippon-grid--slot Slot 3
+    +ippon-grid--slot Slot 4

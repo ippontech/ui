@@ -1,0 +1,26 @@
+@use '../../quark/typography';
+
+@mixin ippon-title-display($level, $size) {
+  $tag: h#{$level};
+  $alternative: -#{$size};
+  #{$tag}.ippon-title-display,
+  .ippon-title-display.#{$alternative} {
+    @content;
+  }
+}
+
+.ippon-title-display {
+  margin: 0;
+}
+
+@include ippon-title-display(1, 'large') {
+  @include typography.display-large;
+}
+
+@include ippon-title-display(2, 'medium') {
+  @include typography.display-medium;
+}
+
+@include ippon-title-display(3, 'small') {
+  @include typography.display-small;
+}

@@ -1,0 +1,38 @@
+@use '../token/size';
+
+@mixin -color-for-variant($color-name, $variant-name) {
+  &.-color-#{$color-name}-#{$variant-name} {
+    color: var(#{'--ippon-color-' + $color-name + '-text-icon-' + $variant-name});
+  }
+}
+
+@mixin -color-for($color-name) {
+  @include -color-for-variant($color-name, 'primary');
+  @include -color-for-variant($color-name, 'secondary');
+  @include -color-for-variant($color-name, 'on-primary');
+  @include -color-for-variant($color-name, 'on-secondary');
+}
+
+@mixin -neutral {
+  @include -color-for('neutral');
+  @include -color-for-variant('neutral', 'tertiary');
+  @include -color-for-variant('neutral', 'tertiary-inversed');
+}
+
+@mixin sizes {
+  @each $size in size.$sizes {
+    &.-size-#{$size} {
+      font-size: var(--ippon-size-#{$size});
+    }
+  }
+}
+
+@mixin colors {
+  @include -neutral;
+  @include -color-for('brand');
+  @include -color-for('success');
+  @include -color-for('error');
+  @include -color-for('warning');
+  @include -color-for('information');
+  @include -color-for('information-2');
+}

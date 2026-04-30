@@ -1,0 +1,14 @@
+mixin ippon-h-space(options)
+  - const { gap, align, wrap, tag } = options || {};
+  - const gapClass = gap ? `-gap-${gap}` : null;
+  - const alignClass = align ? `-${align}` : null;
+  - const wrapClass = wrap ? '-wrap' : null;
+
+  #{tag || 'div'}.ippon-h-space(class=[gapClass, alignClass, wrapClass])
+    block
+
+mixin ippon-h-space--slot(options)
+  - const { expand } = options || {};
+  - const expandClass = expand ? '-expand' : null;
+  .ippon-h-space--slot(class=expandClass)
+    block

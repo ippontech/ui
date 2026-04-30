@@ -1,0 +1,41 @@
+include v-space.mixin.pug
+
+mixin ippon-v-space-rectangle(width = '100%')
+  div(
+    style=`width: ${width}; height: var(--ippon-size-32); background-color: var(--ippon-color-brand-surface-primary); border-radius: var(--ippon-radius-m)`
+  )
+
++ippon-v-space
+  +ippon-v-space-rectangle
+  +ippon-v-space-rectangle
+  +ippon-v-space-rectangle
+
++ippon-v-space({ gap: 8 })
+  +ippon-v-space-rectangle
+  +ippon-v-space-rectangle
+  +ippon-v-space-rectangle
+
++ippon-v-space({ gap: 32, align: 'center' })
+  +ippon-v-space-rectangle('100px')
+  +ippon-v-space-rectangle('100px')
+  +ippon-v-space-rectangle('100px')
+
++ippon-v-space({ gap: 16, align: 'left' })
+  +ippon-v-space-rectangle('100px')
+  +ippon-v-space-rectangle('100px')
+  +ippon-v-space-rectangle('100px')
+
++ippon-v-space({ gap: 20, align: 'right' })
+  +ippon-v-space-rectangle('100px')
+  +ippon-v-space-rectangle('100px')
+  +ippon-v-space-rectangle('100px')
+
++ippon-v-space({ gap: 24, align: 'justify' })
+  +ippon-v-space-rectangle
+  +ippon-v-space-rectangle
+  +ippon-v-space-rectangle
+
++ippon-v-space({ gap: 16, tag: 'section' })
+  +ippon-v-space-rectangle('100px')
+  +ippon-v-space-rectangle('100px')
+  +ippon-v-space-rectangle('100px')

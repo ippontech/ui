@@ -1,0 +1,25 @@
+include /atom/button/button.mixin.pug
+
+mixin ippon-modal(options)
+  - const { id, additionalClass } = options || {};
+  dialog.ippon-modal(id=id, class=additionalClass)
+    block
+
+mixin ippon-modal--header
+  .ippon-modal--header
+    block
+
+mixin ippon-modal--separator
+  hr.ippon-modal--separator
+
+mixin ippon-modal--actions
+  .ippon-modal--actions
+    block
+
+mixin ippon-modal--body
+  .ippon-modal--body
+    block
+
+mixin ippon-modal--footer
+  .ippon-modal--footer
+    block

@@ -1,0 +1,15 @@
+include /atom/icon/icon.mixin.pug
+include /atom/text/text.mixin.pug
+include /organism/v-space/v-space.mixin.pug
+
+mixin ippon-import-file(options)
+  - const { dragover } = options || {};
+  - const dragoverClass = dragover ? '-dragover' : null;
+  label.ippon-import-file(class=dragoverClass)
+    +ippon-v-space({ gap: 8, align: 'center' })
+      .ippon-import-file--icon
+        +ippon-icon({ name: 'cloud-upload', size: 24 })
+      +ippon-v-space({ gap: 4, align: 'center' })
+        +ippon-text({ variant: 'body', weight: 'bold' }) Drag and drop your files here
+        +ippon-text({ variant: 'body', weight: 'small', color: 'neutral-tertiary-inversed' }) Or click to browse
+    input.ippon-import-file--input(type='file')

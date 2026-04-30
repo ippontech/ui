@@ -1,0 +1,103 @@
+@use '../../function/conversion';
+
+:root {
+  --ippon-typography-display-font: 'Saira Extra Condensed', sans-serif;
+  --ippon-typography-font: 'Open Sans', sans-serif;
+  --ippon-typography-weight-normal: 400;
+  --ippon-typography-weight-semi-bold: 600;
+  --ippon-typography-weight-bold: 700;
+  --ippon-typography-uppercase: uppercase;
+
+  // Display Large
+  --ippon-typography-display-large-line-height: var(--ippon-size-64);
+  --ippon-typography-display-large-size: var(--ippon-size-56);
+  --ippon-typography-display-large-font: var(--ippon-typography-display-font);
+  --ippon-typography-display-large-weight: var(--ippon-typography-weight-bold);
+  --ippon-typography-display-large-transform: var(--ippon-typography-uppercase);
+
+  // Display Medium
+  --ippon-typography-display-medium-line-height: var(--ippon-size-52);
+  --ippon-typography-display-medium-size: var(--ippon-size-44);
+  --ippon-typography-display-medium-font: var(--ippon-typography-display-font);
+  --ippon-typography-display-medium-weight: var(--ippon-typography-weight-bold);
+  --ippon-typography-display-medium-transform: var(--ippon-typography-uppercase);
+
+  // Display Small
+  --ippon-typography-display-small-line-height: var(--ippon-size-44);
+  --ippon-typography-display-small-size: var(--ippon-size-36);
+  --ippon-typography-display-small-font: var(--ippon-typography-display-font);
+  --ippon-typography-display-small-weight: var(--ippon-typography-weight-bold);
+  --ippon-typography-display-small-transform: var(--ippon-typography-uppercase);
+
+  // Title 1
+  --ippon-typography-title-1-line-height: var(--ippon-size-52);
+  --ippon-typography-title-1-size: var(--ippon-size-48);
+  --ippon-typography-title-1-font: var(--ippon-typography-font);
+  --ippon-typography-title-1-weight: var(--ippon-typography-weight-semi-bold);
+  --ippon-typography-title-1-transform: var(--ippon-typography-uppercase);
+
+  // Title 2
+  --ippon-typography-title-2-line-height: var(--ippon-size-48);
+  --ippon-typography-title-2-size: var(--ippon-size-40);
+  --ippon-typography-title-2-font: var(--ippon-typography-font);
+  --ippon-typography-title-2-weight: var(--ippon-typography-weight-semi-bold);
+  --ippon-typography-title-2-transform: var(--ippon-typography-uppercase);
+
+  // Title 3
+  --ippon-typography-title-3-line-height: var(--ippon-size-44);
+  --ippon-typography-title-3-size: var(--ippon-size-32);
+  --ippon-typography-title-3-font: var(--ippon-typography-font);
+  --ippon-typography-title-3-weight: var(--ippon-typography-weight-semi-bold);
+  --ippon-typography-title-3-transform: var(--ippon-typography-uppercase);
+
+  // Title 4
+  --ippon-typography-title-4-line-height: var(--ippon-size-40);
+  --ippon-typography-title-4-size: var(--ippon-size-28);
+  --ippon-typography-title-4-font: var(--ippon-typography-font);
+  --ippon-typography-title-4-weight: var(--ippon-typography-weight-semi-bold);
+
+  // Title 5
+  --ippon-typography-title-5-line-height: var(--ippon-size-36);
+  --ippon-typography-title-5-size: var(--ippon-size-24);
+  --ippon-typography-title-5-font: var(--ippon-typography-font);
+  --ippon-typography-title-5-weight: var(--ippon-typography-weight-bold);
+
+  // Body large
+  --ippon-typography-body-large-line-height: var(--ippon-size-28);
+  --ippon-typography-body-large-size: var(--ippon-size-20);
+  --ippon-typography-body-large-font: var(--ippon-typography-font);
+  --ippon-typography-body-large-weight: var(--ippon-typography-weight-normal);
+  --ippon-typography-body-large-weight-bold: var(--ippon-typography-weight-bold);
+
+  // Body medium
+  --ippon-typography-body-medium-line-height: var(--ippon-size-24);
+  --ippon-typography-body-medium-size: var(--ippon-size-16);
+  --ippon-typography-body-medium-font: var(--ippon-typography-font);
+  --ippon-typography-body-medium-weight: var(--ippon-typography-weight-normal);
+  --ippon-typography-body-medium-weight-bold: var(--ippon-typography-weight-semi-bold);
+
+  // Body small
+  --ippon-typography-body-small-line-height: var(--ippon-size-16);
+  --ippon-typography-body-small-size: var(--ippon-size-12);
+  --ippon-typography-body-small-font: var(--ippon-typography-font);
+  --ippon-typography-body-small-weight: var(--ippon-typography-weight-normal);
+  --ippon-typography-body-small-weight-bold: var(--ippon-typography-weight-bold);
+
+  // Label large
+  --ippon-typography-label-large-line-height: var(--ippon-size-28);
+  --ippon-typography-label-large-size: var(--ippon-size-20);
+  --ippon-typography-label-large-font: var(--ippon-typography-font);
+  --ippon-typography-label-large-weight: var(--ippon-typography-weight-semi-bold);
+
+  // Label medium
+  --ippon-typography-label-medium-line-height: var(--ippon-size-20);
+  --ippon-typography-label-medium-size: var(--ippon-size-16);
+  --ippon-typography-label-medium-font: var(--ippon-typography-font);
+  --ippon-typography-label-medium-weight: var(--ippon-typography-weight-semi-bold);
+
+  // Label small
+  --ippon-typography-label-small-line-height: var(--ippon-size-16);
+  --ippon-typography-label-small-size: var(--ippon-size-12);
+  --ippon-typography-label-small-font: var(--ippon-typography-font);
+  --ippon-typography-label-small-weight: var(--ippon-typography-weight-semi-bold);
+}

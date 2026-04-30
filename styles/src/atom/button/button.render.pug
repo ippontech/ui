@@ -1,0 +1,13 @@
+extends /layout
+
+block body
+  div(
+    style='display: grid; grid-template-columns: repeat(6, auto); gap: 1rem; justify-items: left; align-items: center'
+  )
+    div Primary
+    div Secondary
+    div Outline
+    div Text
+    div Disabled
+    div Loading
+    include button.code.pug

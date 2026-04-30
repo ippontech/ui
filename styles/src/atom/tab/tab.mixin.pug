@@ -1,0 +1,14 @@
+mixin ippon-tab(options)
+  - const { id, controls, selected, href } = options || {};
+  - const selector = href ? 'a' : 'button';
+  - ariaSelected = selected ? 'true' : null;
+  - tabindex = selected ? -1 : null;
+  #{selector}.ippon-tab(
+    role='tab',
+    id=id,
+    aria-controls=controls,
+    aria-selected=ariaSelected,
+    href=href,
+    tabindex=tabindex
+  )
+    block

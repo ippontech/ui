@@ -1,0 +1,27 @@
+@keyframes ippon-placeholder-shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+%ippon-placeholder {
+  animation: ippon-placeholder-shimmer 2s infinite;
+  background: linear-gradient(
+    90deg,
+    var(--ippon-color-neutral-surface-secondary) 0%,
+    var(--ippon-color-neutral-surface-tertiary) 50%,
+    var(--ippon-color-neutral-surface-secondary) 100%
+  );
+  background-size: 62rem 100%;
+  color: transparent;
+}
+
+@mixin placeholder($height) {
+  @extend %ippon-placeholder;
+
+  height: $height;
+}

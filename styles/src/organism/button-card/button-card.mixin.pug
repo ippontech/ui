@@ -1,0 +1,8 @@
+mixin ippon-button-card(options)
+  - const { shadow, border, size, fullWidth } = options || {};
+  - const shadowClass = shadow ? `-shadow-${shadow}` : null;
+  - const borderClass = border ? '-border' : null;
+  - const sizeClass = size ? `-${size}` : null;
+  - const fullWidthClass = fullWidth ? '-full-width' : null;
+  button.ippon-button-card(class=[shadowClass, borderClass, sizeClass, fullWidthClass])
+    block

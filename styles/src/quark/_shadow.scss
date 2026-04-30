@@ -1,0 +1,13 @@
+@use '../token/shadow/shadow';
+
+@mixin -shadow($level) {
+  &.-shadow-l#{$level} {
+    box-shadow: var(--ippon-shadow-l#{$level});
+  }
+}
+
+@mixin shadows {
+  @each $level in shadow.$shadow-levels {
+    @include -shadow($level);
+  }
+}

@@ -1,0 +1,22 @@
+$shadow-levels: 1, 2, 3, 4, 5, 6;
+
+:root {
+  --ippon-shadow-l1:
+    0px 0px 2px color-mix(in srgb, var(--ippon-color-neutral-999) 8%, transparent),
+    0px 2px 4px color-mix(in srgb, var(--ippon-color-neutral-999) 8%, transparent);
+  --ippon-shadow-l2:
+    0px 0px 4px color-mix(in srgb, var(--ippon-color-neutral-999) 8%, transparent),
+    0px 4px 8px color-mix(in srgb, var(--ippon-color-neutral-999) 10%, transparent);
+  --ippon-shadow-l3:
+    0px 0px 6px color-mix(in srgb, var(--ippon-color-neutral-999) 8%, transparent),
+    0px 8px 16px color-mix(in srgb, var(--ippon-color-neutral-999) 10%, transparent);
+  --ippon-shadow-l4:
+    0px 0px 8px color-mix(in srgb, var(--ippon-color-neutral-999) 8%, transparent),
+    0px 10px 20px color-mix(in srgb, var(--ippon-color-neutral-999) 10%, transparent);
+  --ippon-shadow-l5:
+    0px 0px 10px color-mix(in srgb, var(--ippon-color-neutral-999) 8%, transparent),
+    0px 12px 24px color-mix(in srgb, var(--ippon-color-neutral-999) 10%, transparent);
+  --ippon-shadow-l6:
+    0px 0px 12px color-mix(in srgb, var(--ippon-color-neutral-999) 8%, transparent),
+    0px 16px 32px color-mix(in srgb, var(--ippon-color-neutral-999) 10%, transparent);
+}
