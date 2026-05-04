@@ -1,0 +1,33 @@
+variables:
+  # renovate: datasource=npm depName=pnpm
+  PNPM_VERSION: '10.33.0'
+  PNPM_IMAGE: docker-registry.ippon.fr/ui/dockerfiles/pnpm:${PNPM_VERSION}
+
+workflow:
+  auto_cancel:
+    on_new_commit: interruptible
+
+stages:
+  - build
+  - deploy
+
+.common-pnpm:
+  interruptible: true
+  rules:
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+  before_script:
+    - pnpm config set store-dir .pnpm-store
+    - pnpm -r install
+  cache:
+    key:
+      files:
+        - pnpm-lock.yaml
+    paths:
+      - .pnpm-store
+
+.common-pnpm-build:
+  extends: .common-pnpm
+  image:
+    name: $PNPM_IMAGE
+  stage: build

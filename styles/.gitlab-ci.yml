@@ -1,0 +1,3 @@
+include:
+  - 'styles/ci/build.yml'
+  - 'styles/ci/deploy.yml'

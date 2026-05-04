@@ -1,0 +1,10 @@
+icons-build:
+  extends:
+    - .common-pnpm-build
+  script:
+    - pnpm --filter icons build
+  artifacts:
+    paths:
+      - icons/dist
+      - icons/types
+    expire_in: 2 hours

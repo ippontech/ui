@@ -1,0 +1,25 @@
+include:
+  - local: 'ci/common.yml'
+  - local: 'ci/format.yml'
+  - local: 'icons/.gitlab-ci.yml'
+    rules:
+      - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+        changes:
+          - '{icons,styles,ci}/**/*'
+          - '*'
+      - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+  - local: 'styles/.gitlab-ci.yml'
+    rules:
+      - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+        changes:
+          - '{styles,ci}/**/*'
+          - '*'
+      - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+
+build:
+  stage: build
+  script:
+    - echo "Nothing to build"
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+      when: never

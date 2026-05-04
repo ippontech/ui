@@ -1,5 +1,6 @@
 [tools]
 node = "24.14.1"
+pnpm = "10.33.0"
 
 [tasks.setup]
 run = "pnpm -r install"
