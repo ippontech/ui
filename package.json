@@ -1,0 +1,26 @@
+{
+  "name": "@ippon-ui/ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "format:ci": "prettier . --check",
+    "format": "prettier . --write",
+    "build": "pnpm --if-present -r build",
+    "dev": "pnpm --parallel --if-present -r dev",
+    "lint": "pnpm --parallel --if-present -r lint",
+    "test:unit": "pnpm --parallel --if-present -r test:unit",
+    "test:unit:ci": "pnpm --parallel --if-present -r test:unit:ci",
+    "prepare": "[ -n \"$CI\" ] || lefthook install"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.33.0",
+  "devDependencies": {
+    "@prettier/plugin-pug": "3.4.2",
+    "@types/node": "24.12.2",
+    "lefthook": "^2.1.4",
+    "prettier": "3.8.2"
+  }
+}
