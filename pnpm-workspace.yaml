@@ -1,0 +1,8 @@
+packages:
+  - styles
+  - icons
+
+includeWorkspaceRoot: true
+
+onlyBuiltDependencies:
+  - '@parcel/watcher'

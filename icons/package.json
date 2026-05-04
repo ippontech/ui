@@ -1,0 +1,25 @@
+{
+  "name": "@ippon-ui/icons",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "types": "types/index.d.ts",
+  "scripts": {
+    "build": "node index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.33.0",
+  "devDependencies": {
+    "@types/node": "24.12.2",
+    "ionicons": "8.0.13",
+    "oslllo-svg-fixer": "6.0.1",
+    "svgtofont": "6.5.1",
+    "typescript": "5.9.3"
+  },
+  "files": [
+    "dist",
+    "types"
+  ]
+}

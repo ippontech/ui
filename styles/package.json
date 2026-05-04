@@ -33,7 +33,7 @@
   "devDependencies": {
     "@fontsource/open-sans": "5.2.7",
     "@fontsource/saira-extra-condensed": "5.2.7",
-    "@ippon/icons": "workspace:*",
+    "@ippon-ui/icons": "workspace:*",
     "@tikui/core": "7.0.1",
     "postcss-scss": "4.0.9",
     "sass": "1.99.0",

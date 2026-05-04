@@ -9,6 +9,6 @@
     "node_modules/@fontsource/open-sans/700.css": "fonts/open-sans/700.css",
     "node_modules/@fontsource/saira-extra-condensed/files": "fonts/saira-extra-condensed/files",
     "node_modules/@fontsource/saira-extra-condensed/700.css": "fonts/saira-extra-condensed/700.css",
-    "node_modules/@ippon/icons/dist": "icons"
+    "node_modules/@ippon-ui/icons/dist": "icons"
   }
 }

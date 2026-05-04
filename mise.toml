@@ -1,0 +1,23 @@
+[tools]
+node = "24.14.1"
+
+[tasks.setup]
+run = "pnpm -r install"
+
+[tasks.build]
+run = "pnpm build"
+
+[tasks.dev]
+run = "pnpm dev"
+
+[tasks.lint]
+run = "pnpm lint"
+
+[tasks.format]
+run = "pnpm format"
+
+[tasks.test-unit]
+run = "pnpm test:unit"
+
+[tasks.test-unit-ci]
+run = "pnpm test:unit:ci"
