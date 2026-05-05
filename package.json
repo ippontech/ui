@@ -9,6 +9,7 @@
     "build": "pnpm --if-present -r build",
     "dev": "pnpm --parallel --if-present -r dev",
     "lint": "pnpm --parallel --if-present -r lint",
+    "lint:ci": "pnpm --parallel --if-present -r lint:ci",
     "test:unit": "pnpm --parallel --if-present -r test:unit",
     "test:unit:ci": "pnpm --parallel --if-present -r test:unit:ci",
     "prepare": "[ -n \"$CI\" ] || lefthook install"

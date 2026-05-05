@@ -1,10 +1,14 @@
-icons-build:
+build:
   extends:
     - .common-pnpm-build
   script:
-    - pnpm --filter icons build
+    - pnpm format:ci
+    - pnpm lint:ci
+    - pnpm test:unit:ci
+    - pnpm build
   artifacts:
     paths:
       - icons/dist
       - icons/types
+      - styles/dist/
     expire_in: 2 hours

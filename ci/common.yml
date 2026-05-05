@@ -13,9 +13,8 @@ stages:
 
 .common-pnpm:
   interruptible: true
-  rules:
-    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+  image:
+    name: $PNPM_IMAGE
   before_script:
     - pnpm config set store-dir .pnpm-store
     - pnpm -r install
@@ -28,6 +27,16 @@ stages:
 
 .common-pnpm-build:
   extends: .common-pnpm
-  image:
-    name: $PNPM_IMAGE
   stage: build
+  rules:
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+
+.common-pnpm-publish:
+  extends: .common-pnpm
+  stage: deploy
+  rules:
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+      allow_failure: true
+      when: manual
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH

@@ -1,5 +1,0 @@
-format:
-  extends:
-    - .common-pnpm-build
-  script:
-    - pnpm format:ci
