@@ -1,10 +1,32 @@
 {
   "name": "@ippon-ui/styles",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Pattern Library tool",
   "files": [
     "dist"
   ],
+  "exports": {
+    ".": {
+      "sass": "./dist/tikui.css",
+      "default": "./dist/tikui.css"
+    },
+    "./*": {
+      "sass": "./dist/*",
+      "default": "./dist/*"
+    },
+    "./*.css": {
+      "sass": "./dist/*.css",
+      "default": "./dist/*.css"
+    },
+    "./*.woff": {
+      "sass": "./dist/*.woff",
+      "default": "./dist/*.woff"
+    },
+    "./*.woff2": {
+      "sass": "./dist/*.woff2",
+      "default": "./dist/*.woff2"
+    }
+  },
   "keywords": [
     "ui",
     "ui kit",
@@ -20,7 +42,7 @@
   "author": {
     "name": "Anthony Rey"
   },
-  "main": "src/index.pug",
+  "main": "./dist/tikui.css",
   "repository": "github:tikui/tikui",
   "scripts": {
     "dev": "tikui-core serve",

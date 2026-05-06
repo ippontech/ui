@@ -12,7 +12,6 @@ stages:
   - deploy
 
 .common-pnpm:
-  interruptible: true
   image:
     name: $PNPM_IMAGE
   before_script:
@@ -27,6 +26,7 @@ stages:
 
 .common-pnpm-build:
   extends: .common-pnpm
+  interruptible: true
   stage: build
   rules:
     - if: $CI_PIPELINE_SOURCE == 'merge_request_event'

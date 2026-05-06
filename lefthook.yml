@@ -2,7 +2,7 @@ pre-commit:
   parallel: true
   commands:
     format:
-      glob: '**/*.{ts,tsx,js,mjs,mts,cjs,json,yaml,yml,html,css,scss,md,pug}'
+      glob: '**/*.{ts,tsx,js,mjs,mts,cjs,json,yaml,yml,html,css,scss,md,pug,json}'
       run: pnpm exec prettier --check {staged_files}
     stylelint:
       root: 'styles/'
