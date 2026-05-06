@@ -14,10 +14,16 @@ Tikui is a MIT-licensed free software project allowing you to create a web patte
 
 ### Install dependencies
 
-After cloning the repository, please go to the root Tikui directory and run this command:
+After cloning the repository, please run this command:
 
 ```bash
-pnpm install
+mise install
+```
+
+And to install the dependencies:
+
+```bash
+mise setup
 ```
 
 ### Serve
@@ -25,7 +31,7 @@ pnpm install
 In development, you can run the application locally on [localhost:3000](http://localhost:3000/)
 
 ```bash
-pnpm serve
+mise dev
 ```
 
 ### Create a component
@@ -35,10 +41,10 @@ First of all, the source folder `src` follows the [Atomic Design](http://atomicd
 Here is an example of how to create a `button` component:
 
 ```bash
-tikui create -p tikui button src/atom
+mise styles-create-component button -l atom
 ```
 
-> You can read the help from `tikui` and each commands using:
+> If you don't have the good level of information about the command, you can use the `help` command of `tikui`:
 >
 > - `tikui help` to see the global help
 > - `tikui help create` to see a command help, here `create`
@@ -78,14 +84,14 @@ Inside `src/atom/_atom.scss`:
 And inside `button.mixin.pug`:
 
 ```pug
-mixin tikui-button
-  button.tikui-button Button
+mixin ippon-button
+  button.ippon-button Button
 ```
 
 Inside `src/atom/button/_button.scss`:
 
 ```scss
-.tikui-button {
+.ippon-button {
   border: 1px solid #47a;
   border-radius: 3px;
   background-color: #47a;
