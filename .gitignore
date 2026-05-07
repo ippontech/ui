@@ -1,3 +1,6 @@
 /.idea/
 node_modules/
 dist/
+/.claude
+/.github
+/CLAUDE.md
