@@ -1,0 +1,93 @@
+import type { DataSelectableWithChildren } from './DataSelectable.ts';
+import type { IconClassic, IconLogo, IconVariant } from '@ippon-ui/icons';
+import type { IpponIonProps } from './IpponIon.tsx';
+import { IpponIon } from './IpponIon.tsx';
+import { optionalToAlternativeClass } from './CAP.ts';
+import { clsx } from 'clsx';
+import { useState } from 'react';
+
+type IpponButtonIcon = {
+  name: IconClassic | IconLogo;
+  variant?: IconVariant;
+};
+
+type IpponButtonColor = 'success' | 'error' | 'information' | 'warning' | 'neutral';
+
+type IpponButtonVariant = 'secondary' | 'outline' | 'text';
+
+type IpponButtonSize = 'small' | 'large';
+
+type IpponButtonVanillaProps = {
+  color?: IpponButtonColor;
+  variant?: IpponButtonVariant;
+  size?: IpponButtonSize;
+  disabled?: boolean;
+  iconLeft?: IpponButtonIcon;
+  iconRight?: IpponButtonIcon;
+  onClick?: () => void | Promise<void>;
+};
+
+export type IpponButtonProps = DataSelectableWithChildren<IpponButtonVanillaProps>;
+
+const isPromise = (value: unknown): value is Promise<void> =>
+  value !== null && value !== undefined && typeof (value as Promise<void>).then === 'function';
+
+const ButtonIcon = ({ icon, loading }: { icon: IpponButtonIcon; loading?: boolean }) => (
+  <IpponIon
+    {...(icon as IpponIonProps)}
+    className={clsx('ippon-button--icon', { '-loading': loading })}
+  />
+);
+
+const OptionalButtonIcon = ({ icon, loading }: { icon?: IpponButtonIcon; loading?: boolean }) => {
+  if (icon === undefined) {
+    return null;
+  }
+  return <ButtonIcon icon={icon} loading={loading} />;
+};
+
+const LOADING_ICON: IpponButtonIcon = { name: 'sync' };
+
+export const IpponButton = (props: IpponButtonProps) => {
+  const [loading, setLoading] = useState(false);
+  const hasIcon = [props.iconLeft, props.iconRight].some((icon) => icon !== undefined);
+  const isDisabled = props.disabled || loading;
+  const resolvedIconRight = loading && props.iconRight ? LOADING_ICON : props.iconRight;
+
+  const handleClick = () => {
+    if (!props.onClick || loading) {
+      return;
+    }
+
+    const result = props.onClick();
+
+    if (isPromise(result)) {
+      setLoading(true);
+      result.catch(() => {}).finally(() => setLoading(false));
+    }
+  };
+
+  return (
+    <button
+      className={clsx(
+        'ippon-button',
+        optionalToAlternativeClass(props.color),
+        optionalToAlternativeClass(props.variant),
+        optionalToAlternativeClass(props.size),
+        { '-loading': loading },
+      )}
+      disabled={isDisabled}
+      aria-busy={loading || undefined}
+      data-selector={props.dataSelector}
+      onClick={handleClick}
+    >
+      <OptionalButtonIcon icon={props.iconLeft} />
+      {hasIcon && props.children ? (
+        <span className="ippon-button--text">{props.children}</span>
+      ) : (
+        props.children
+      )}
+      <OptionalButtonIcon icon={resolvedIconRight} loading={loading} />
+    </button>
+  );
+};

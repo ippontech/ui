@@ -1,6 +1,7 @@
 packages:
   - styles
   - icons
+  - react
 
 includeWorkspaceRoot: true
 

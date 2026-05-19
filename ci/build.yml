@@ -10,5 +10,6 @@ build:
     paths:
       - icons/dist
       - icons/types
-      - styles/dist/
+      - styles/dist
+      - react/dist
     expire_in: 2 hours
