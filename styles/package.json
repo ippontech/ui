@@ -1,7 +1,12 @@
 {
   "name": "@ippon-ui/styles",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Ippon UI Pattern Library",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ippontech/ui.git",
+    "directory": "styles"
+  },
   "files": [
     "dist"
   ],

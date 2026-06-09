@@ -1,8 +1,13 @@
 {
   "name": "@ippon-ui/react",
   "description": "Ippon UI React Component Library",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ippontech/ui.git",
+    "directory": "react"
+  },
   "author": "Ippon Technologies",
   "type": "module",
   "scripts": {

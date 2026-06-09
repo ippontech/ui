@@ -1,7 +1,12 @@
 {
   "name": "@ippon-ui/ui",
   "version": "0.0.2",
+  "private": true,
   "description": "Ippon UI",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ippontech/ui.git"
+  },
   "main": "index.js",
   "scripts": {
     "format:ci": "prettier . --check",

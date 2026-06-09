@@ -2,5 +2,6 @@
 node_modules/
 dist/
 /.claude
-/.github
+/.github/*
+!/.github/workflows/
 /CLAUDE.md

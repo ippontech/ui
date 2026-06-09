@@ -10,7 +10,11 @@ run = "pnpm -r install"
 run = "ln -sfn .agents .claude && ln -sf ./AGENTS.md ./CLAUDE.md"
 
 [tasks.setup-github-copilot]
-run = "ln -sfn .agents .github"
+run = '''
+mkdir -p .github
+ln -sfn ../.agents/agents .github/agents
+ln -sfn ../.agents/skills .github/skills
+'''
 
 [tasks.build]
 run = "pnpm build"
