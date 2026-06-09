@@ -1,7 +1,9 @@
 {
   "name": "@ippon-ui/react",
-  "version": "0.0.1",
-  "license": "MIT",
+  "description": "Ippon UI React Component Library",
+  "version": "0.0.2",
+  "license": "Apache-2.0",
+  "author": "Ippon Technologies",
   "type": "module",
   "scripts": {
     "dev": "vite",

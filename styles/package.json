@@ -1,7 +1,7 @@
 {
   "name": "@ippon-ui/styles",
-  "version": "0.0.1",
-  "description": "Pattern Library tool",
+  "version": "0.0.2",
+  "description": "Ippon UI Pattern Library",
   "files": [
     "dist"
   ],
@@ -33,17 +33,10 @@
     "design system",
     "pattern library"
   ],
-  "homepage": "https://github.com/tikui/tikui.git#readme",
-  "bugs": {
-    "url": "https://github.com/tikui/tikui/issues"
-  },
-  "license": "MIT",
+  "license": "Apache-2.0",
   "packageManager": "pnpm@10.33.0",
-  "author": {
-    "name": "Anthony Rey"
-  },
+  "author": "Ippon Technologies",
   "main": "./dist/tikui.css",
-  "repository": "github:tikui/tikui",
   "scripts": {
     "dev": "tikui-core serve",
     "serve": "tikui-core serve",

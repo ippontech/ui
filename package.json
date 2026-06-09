@@ -1,7 +1,7 @@
 {
   "name": "@ippon-ui/ui",
-  "version": "0.0.1",
-  "description": "",
+  "version": "0.0.2",
+  "description": "Ippon UI",
   "main": "index.js",
   "scripts": {
     "format:ci": "prettier . --check",
@@ -12,11 +12,12 @@
     "lint:ci": "pnpm --parallel --if-present -r lint:ci",
     "test:unit": "pnpm --parallel --if-present -r test:unit",
     "test:unit:ci": "pnpm --parallel --if-present -r test:unit:ci",
-    "prepare": "[ -n \"$CI\" ] || lefthook install"
+    "copy:license": "cp -f LICENSE icons/LICENCE && cp -f LICENSE react/LICENCE && cp -f LICENSE styles/LICENCE",
+    "prepare": "pnpm copy:license && [ -n \"$CI\" ] || lefthook install"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Ippon Technologies",
+  "license": "Apache-2.0",
   "packageManager": "pnpm@10.33.0",
   "devDependencies": {
     "@prettier/plugin-pug": "3.4.2",
