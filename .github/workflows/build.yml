@@ -17,6 +17,7 @@ jobs:
       - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v4
         with:
+          # renovate: datasource=node-version depName=node
           node-version: 24.14.1
           cache: pnpm
       - run: pnpm -r install --frozen-lockfile
@@ -46,6 +47,7 @@ jobs:
       - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v4
         with:
+          # renovate: datasource=node-version depName=node
           node-version: 24.14.1
           cache: pnpm
           registry-url: https://registry.npmjs.org
@@ -54,3 +56,20 @@ jobs:
         with:
           name: build-artifacts
       - run: pnpm -r publish --access public --no-git-checks
+
+  status-checks:
+    name: status-checks
+    needs: [build]
+    permissions:
+      contents: none
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Validation Status checks
+        run: |
+          echo '${{ toJSON(needs) }}'
+          if [[ (('skipped' == '${{ needs.build.result }}') || ('success' == '${{ needs.build.result }}')) ]]; then
+            exit 0
+          fi
+          exit 1
