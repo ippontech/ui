@@ -1,107 +1,35 @@
-# Tikui
+# @ippon-ui/styles
 
-![Tikui logo](./logo.svg)
+The Ippon UI Pattern Library: design tokens and components as SCSS/CSS, built with [Tikui](https://tikui.org) following [Atomic Design](https://atomicdesign.bradfrost.com).
 
-Tikui is a MIT-licensed free software project allowing you to create a web pattern library.
+## Installation
 
-## Prerequisites
+The package is bundled into your application, so install it as a dev dependency:
 
-- [Node.js](https://nodejs.org) LTS version
-- [pnpm](https://pnpm.io)
-- [@tikui/cli](https://www.npmjs.com/package/@tikui/cli) (install it globally using `pnpm add -g @tikui/cli`)
-
-## Development
-
-### Install dependencies
-
-After cloning the repository, please run this command:
-
-```bash
-mise install
+```sh
+npm install -D @ippon-ui/styles
 ```
 
-And to install the dependencies:
+## Usage
 
-```bash
-mise setup
+Import the fonts, icons and the compiled stylesheet once in your application entry point:
+
+```ts
+import '@ippon-ui/styles/fonts/open-sans/400.css';
+import '@ippon-ui/styles/fonts/open-sans/600.css';
+import '@ippon-ui/styles/fonts/open-sans/700.css';
+import '@ippon-ui/styles/fonts/saira-extra-condensed/700.css';
+import '@ippon-ui/styles/icons/ionicons.css';
+import '@ippon-ui/styles/tikui.css';
 ```
 
-### Serve
+Then use the CSS classes in your markup. Classes follow an alternative-prefix convention: a base class plus `-<modifier>` modifiers.
 
-In development, you can run the application locally on [localhost:3000](http://localhost:3000/)
-
-```bash
-mise dev
+```html
+<button class="ippon-button -information">Save</button>
+<span class="ippon-badge -success">Done</span>
 ```
 
-### Create a component
+## License
 
-First of all, the source folder `src` follows the [Atomic Design](http://atomicdesign.bradfrost.com/table-of-contents/) methodology.
-
-Here is an example of how to create a `button` component:
-
-```bash
-mise styles-create-component button -l atom
-```
-
-> If you don't have the good level of information about the command, you can use the `help` command of `tikui`:
->
-> - `tikui help` to see the global help
-> - `tikui help create` to see a command help, here `create`
-
-You can add inside the `src/atom/atom.pug` file:
-
-```pug
-include:componentDoc(height=55) button/button.md
-```
-
-> Note: [Pug](https://pugjs.org) is the template engine used by **Tikui** and indentations are important.
-
-> You can also use `include:templateDoc button/button.md` if you don't want to see the component render, it's useful on bigger components like templates.
-
-By default, there is only one style file in the `src` folder: `tikui.scss`.
-
-It's because you're free to create your own structure even if we recommend you to follow the Atomic Design methodology.
-
-So you may need to create the file:
-
-```bash
-touch src/atom/_atom.scss
-```
-
-And then, inside `tikui.scss`:
-
-```scss
-@use 'atom/atom';
-```
-
-Inside `src/atom/_atom.scss`:
-
-```scss
-@use 'button/button';
-```
-
-And inside `button.mixin.pug`:
-
-```pug
-mixin ippon-button
-  button.ippon-button Button
-```
-
-Inside `src/atom/button/_button.scss`:
-
-```scss
-.ippon-button {
-  border: 1px solid #47a;
-  border-radius: 3px;
-  background-color: #47a;
-  padding: 5px;
-  line-height: 1.5rem;
-  color: #fff;
-  font-size: 1rem;
-}
-```
-
-As you can see in the browser, there is a documented blue button with an example of code.
-
-More info can be found in the [component documentation](https://tikui.org/doc/component-doc.html) of **Tikui**.
+[Apache-2.0](./LICENCE) © Ippon Technologies

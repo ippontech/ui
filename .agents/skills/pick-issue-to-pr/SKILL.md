@@ -61,7 +61,7 @@ If the branch already exists, reuse it: `git worktree add "$WT" "<branch>"`. Do 
 From the workspace root (only if a `mise.toml` exists there):
 
 ```bash
-mise trust && mise install && mise setup
+mise trust && mise install && mise setup && mise build
 ```
 
 If the project doesn't use mise, run the project's documented install/setup instead.
