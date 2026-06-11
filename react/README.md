@@ -1,75 +1,42 @@
-# React + TypeScript + Vite
+# @ippon-ui/react
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The Ippon UI React component library, wrapping the [`@ippon-ui/styles`](https://www.npmjs.com/package/@ippon-ui/styles) Pattern Library.
 
-Currently, two official plugins are available:
+## Installation
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+The components render the Pattern Library markup, so they require `@ippon-ui/styles` alongside React 19. Both UI packages are bundled into your application, so install them as dev dependencies:
 
-## React Compiler
-
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
-
-Note: This will impact Vite dev & build performances.
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+```sh
+npm install -D @ippon-ui/react @ippon-ui/styles
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+`react` and `react-dom` (`^19`) are peer dependencies provided by your application.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x';
-import reactDom from 'eslint-plugin-react-dom';
+## Usage
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+Import the fonts, icons and stylesheet once in your application entry point:
+
+```ts
+import '@ippon-ui/styles/fonts/open-sans/400.css';
+import '@ippon-ui/styles/fonts/open-sans/600.css';
+import '@ippon-ui/styles/fonts/open-sans/700.css';
+import '@ippon-ui/styles/fonts/saira-extra-condensed/700.css';
+import '@ippon-ui/styles/icons/ionicons.css';
+import '@ippon-ui/styles/tikui.css';
 ```
+
+Then use the components:
+
+```tsx
+import { IpponButton } from '@ippon-ui/react';
+
+export const SaveButton = () => (
+  <IpponButton color="information" onClick={() => console.log('saved')}>
+    Save
+  </IpponButton>
+);
+```
+
+## License
+
+[Apache-2.0](./LICENCE) © Ippon Technologies
