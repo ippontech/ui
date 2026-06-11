@@ -1,0 +1,63 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    ":dependencyDashboard",
+    ":maintainLockFilesWeekly",
+    ":automergeMinor",
+    ":automergePr",
+    ":automergeRequireAllStatusChecks"
+  ],
+  "timezone": "Europe/Paris",
+  "prHourlyLimit": 1,
+  "prCreation": "immediate",
+  "rangeStrategy": "pin",
+  "minimumReleaseAge": "3 days",
+  "internalChecksFilter": "strict",
+  "lockFileMaintenance": {
+    "enabled": true,
+    "automerge": true,
+    "minimumReleaseAgeBehaviour": "timestamp-optional"
+  },
+  "pin": {
+    "minimumReleaseAgeBehaviour": "timestamp-optional"
+  },
+  "packageRules": [
+    {
+      "matchDatasources": ["github-releases"],
+      "enabled": true
+    },
+    {
+      "matchDepNames": ["node"],
+      "groupName": "node"
+    },
+    {
+      "matchDepNames": ["pnpm"],
+      "groupName": "pnpm"
+    },
+    {
+      "matchDepTypes": ["dependencies"],
+      "rangeStrategy": "replace"
+    },
+    {
+      "matchDepTypes": ["peerDependencies"],
+      "rangeStrategy": "widen"
+    }
+  ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "managerFilePatterns": [
+        ".github/workflows/*.{yml,yaml}",
+        ".gitlab-ci.{yml,yaml}",
+        "ci/*.{yml,yaml}",
+        "**/.gitlab-ci.{yml,yaml}",
+        "**/ci/*.{yml,yaml}"
+      ],
+      "matchStrings": [
+        "# renovate: datasource=(?<datasource>[a-zA-Z0-9-._]+?) depName=(?<depName>[^\\s]+?)(?: (?:packageName)=(?<packageName>[^\\s]+?))?(?: versioning=(?<versioning>[^\\s]+?))?(?: extractVersion=(?<extractVersion>[^\\s]+?))?(?: registryUrl=(?<registryUrl>[^\\s]+?))?\\s+[A-Za-z0-9_]+?_VERSION\\s*:\\s*[\"']?(?<currentValue>.+?)[\"']?\\s",
+        "# renovate: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)(?: versioning=(?<versioning>\\S+))?\\s+node-version:\\s*[\"']?(?<currentValue>[^\\s\"']+)"
+      ]
+    }
+  ]
+}
