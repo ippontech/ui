@@ -55,6 +55,14 @@ run = "pnpm --filter react lint"
 [tasks.react-test-unit-ci]
 run = "pnpm --filter react test:unit:ci"
 
+[tasks.react-dev]
+description = "Serve the React components Storybook (requires styles to be built)"
+run = "pnpm --filter react dev"
+
+[tasks.react-build]
+description = "Build the React library then its static Storybook (requires styles to be built)"
+run = "pnpm --filter react build"
+
 [tasks.icons-build]
 run = "pnpm --filter icons build"
 

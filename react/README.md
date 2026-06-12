@@ -37,6 +37,22 @@ export const SaveButton = () => (
 );
 ```
 
+## Documentation
+
+Every component is documented in [Storybook](https://storybook.js.org). Stories live in
+[`stories/`](./stories) (one file per component) and render against the built
+`@ippon-ui/styles` stylesheet.
+
+Build the styles first (from the monorepo root), then serve Storybook on port `4230`:
+
+```sh
+mise build        # builds icons + styles + react
+mise react-dev    # serves Storybook at http://localhost:4230
+```
+
+`mise react-build` builds the React library and then its static Storybook (output in
+`storybook-static/`).
+
 ## License
 
 [Apache-2.0](./LICENCE) © Ippon Technologies

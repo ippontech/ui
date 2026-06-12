@@ -1,4 +1,5 @@
 /*/dist/
+/*/storybook-static/
 /pnpm-lock.yaml
 /icons/svg/
 /styles/.tikui-cache/
