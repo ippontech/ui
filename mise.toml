@@ -43,6 +43,21 @@ run = "pnpm test:unit:ci"
 [tasks.styles-dev]
 run = "pnpm --filter styles dev"
 
+[tasks.styles-lint]
+run = "pnpm --filter styles lint"
+
+[tasks.styles-test-unit-ci]
+run = "pnpm --filter styles test:unit:ci"
+
+[tasks.react-lint]
+run = "pnpm --filter react lint"
+
+[tasks.react-test-unit-ci]
+run = "pnpm --filter react test:unit:ci"
+
+[tasks.icons-build]
+run = "pnpm --filter icons build"
+
 [tasks.styles-create-component]
 dir="styles"
 description="Create a style components using Tikui CLI"

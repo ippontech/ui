@@ -108,7 +108,17 @@ git commit --amend --no-edit   # or adjust the message if the scope changed
 git push --force-with-lease
 ```
 
-- Reply to the review threads where useful.
+- Reply to each review thread (`mcp__github__add_reply_to_pull_request_comment`, or `gh api`) saying what you did.
+
+#### Resolve only what is actually resolved
+
+After replying, **resolve a thread only when its feedback is fully addressed in the pushed commit** and you are confident the change satisfies it. Resolving has no direct MCP or `gh pr` command; use the GraphQL `resolveReviewThread` mutation, keyed on the **thread node id** (the `id` field like `PRRT_…` from `get_review_comments`, _not_ a comment id):
+
+```bash
+gh api graphql -f query='mutation($t:ID!){ resolveReviewThread(input:{threadId:$t}){ thread { isResolved } } }' -f t="PRRT_…"
+```
+
+**Leave the thread open for the reviewer whenever you are not closing the loop yourself**: replying with a question, pushing back or proposing an alternative not yet agreed, only partially addressing it, or deferring it to a follow-up. When in doubt, leave it open. Never resolve a thread you have not replied to.
 
 Repeat until the PR is approved. **The branch ends with a single commit, always.**
 

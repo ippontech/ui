@@ -36,6 +36,11 @@ Common tasks:
 
 See [`AGENTS.md`](./AGENTS.md) for the monorepo structure and conventions.
 
+## Contributing
+
+See [`CONTRIBUTING.md`](./CONTRIBUTING.md) for how to open an issue, the
+development workflow, and the per-package guides.
+
 ## License
 
 [Apache-2.0](./LICENSE) © Ippon Technologies
