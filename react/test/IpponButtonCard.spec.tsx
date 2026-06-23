@@ -159,4 +159,35 @@ describe('IpponButtonCard', () => {
       expect(card).toHaveClass(className);
     });
   });
+
+  describe('Alternative', () => {
+    it.each([
+      {
+        color: 'success',
+        className: '-success',
+      },
+      {
+        color: 'error',
+        className: '-error',
+      },
+      {
+        color: 'information',
+        className: '-information',
+      },
+      {
+        color: 'warning',
+        className: '-warning',
+      },
+    ] as const)('should have $className for $alternative', ({ color, className }) => {
+      render(
+        <IpponButtonCard color={color} dataSelector="ippon-button-card">
+          Content
+        </IpponButtonCard>,
+      );
+
+      const card = screen.getByTestId('ippon-button-card');
+
+      expect(card).toHaveClass(className);
+    });
+  });
 });

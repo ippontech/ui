@@ -1,5 +1,5 @@
-import { describe, it, expect, afterEach } from 'vitest';
-import { render, screen, configure, cleanup } from '@testing-library/react';
+import { afterEach, describe, expect, it } from 'vitest';
+import { cleanup, configure, render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/vitest';
 import { IpponCard } from '../src';
 
@@ -126,6 +126,37 @@ describe('IpponCard', () => {
       );
 
       const card = screen.getByTestId('ippon-card');
+
+      expect(card).toHaveClass(className);
+    });
+  });
+
+  describe('Alternative', () => {
+    it.each([
+      {
+        color: 'success',
+        className: '-success',
+      },
+      {
+        color: 'error',
+        className: '-error',
+      },
+      {
+        color: 'information',
+        className: '-information',
+      },
+      {
+        color: 'warning',
+        className: '-warning',
+      },
+    ] as const)('should have $className for $alternative', ({ color, className }) => {
+      render(
+        <IpponCard color={color} dataSelector="ippon-button-card">
+          Content
+        </IpponCard>,
+      );
+
+      const card = screen.getByTestId('ippon-button-card');
 
       expect(card).toHaveClass(className);
     });

@@ -1,5 +1,8 @@
 include card.mixin.pug
 
+mixin ippon-card-color(color)
+  +ippon-card({ shadow: 'l1', color }) Card with color #{ color }
+
 +ippon-card({ shadow: 'l1', size: 'small' }) Card level 1 small
 +ippon-card({ shadow: 'l2' }) Card level 2
 +ippon-card({ shadow: 'l3', size: 'large' }) Card level 3 large
@@ -7,3 +10,7 @@ include card.mixin.pug
 +ippon-card({ shadow: 'l5' }) Card level 5
 +ippon-card({ border: true }) Card with border
 +ippon-card({ shadow: 'l3', border: true, size: 'small' }) Card combination
++ippon-card-color('success')
++ippon-card-color('error')
++ippon-card-color('information')
++ippon-card-color('warning')

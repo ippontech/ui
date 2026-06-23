@@ -18,6 +18,10 @@ const meta = {
       control: 'select',
       options: [undefined, 'small', 'large'],
     },
+    color: {
+      control: 'select',
+      options: [undefined, 'success', 'error', 'information', 'warning'],
+    },
   },
 } satisfies Meta<typeof IpponCard>;
 

@@ -4,19 +4,42 @@
 .ippon-button-card {
   @include abstract-card.ippon-card;
 
+  --_hover-background-color: var(--ippon-color-neutral-surface-primary-hover);
+  --_active-background-color: var(--ippon-color-neutral-surface-primary-active);
+
   display: inline-block;
   cursor: pointer;
 
   &:hover {
-    background-color: var(--ippon-color-neutral-surface-primary-hover);
+    background-color: var(--_hover-background-color);
   }
 
   &:active {
-    background-color: var(--ippon-color-neutral-surface-primary-active);
+    background-color: var(--_active-background-color);
   }
 
   &.-full-width {
     display: block;
     width: 100%;
+  }
+
+  &.-success {
+    --_hover-background-color: var(--ippon-color-success-surface-secondary-hover);
+    --_active-background-color: var(--ippon-color-success-surface-secondary-active);
+  }
+
+  &.-error {
+    --_hover-background-color: var(--ippon-color-error-surface-secondary-hover);
+    --_active-background-color: var(--ippon-color-error-surface-secondary-active);
+  }
+
+  &.-information {
+    --_hover-background-color: var(--ippon-color-information-surface-secondary-hover);
+    --_active-background-color: var(--ippon-color-information-surface-secondary-active);
+  }
+
+  &.-warning {
+    --_hover-background-color: var(--ippon-color-warning-surface-secondary-hover);
+    --_active-background-color: var(--ippon-color-warning-surface-secondary-active);
   }
 }

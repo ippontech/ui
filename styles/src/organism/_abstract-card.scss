@@ -6,11 +6,12 @@
   --_padding--inner-v: calc(var(--_padding-v) - var(--_border-width));
   --_padding-h: var(--ippon-size-16);
   --_padding--inner-h: calc(var(--_padding-h) - var(--_border-width));
+  --_background-color: var(--ippon-color-neutral-surface-primary);
 
   box-sizing: border-box;
   border: var(--_border-width) solid var(--ippon-color-neutral-border);
   border-radius: var(--ippon-radius-l);
-  background-color: var(--ippon-color-neutral-surface-primary);
+  background-color: var(--_background-color);
   padding: var(--_padding-v) var(--_padding-h);
   color: var(--ippon-color-neutral-text-icon-on-primary);
 
@@ -28,6 +29,22 @@
   &.-large {
     --_padding-v: var(--ippon-size-20);
     --_padding-h: var(--ippon-size-24);
+  }
+
+  &.-success {
+    --_background-color: var(--ippon-color-success-surface-secondary);
+  }
+
+  &.-error {
+    --_background-color: var(--ippon-color-error-surface-secondary);
+  }
+
+  &.-information {
+    --_background-color: var(--ippon-color-information-surface-secondary);
+  }
+
+  &.-warning {
+    --_background-color: var(--ippon-color-warning-surface-secondary);
   }
 }
 

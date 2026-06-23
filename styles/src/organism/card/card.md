@@ -21,3 +21,11 @@ A basic card component that serves as a container for content. It provides a con
 
 - No border (default)
 - Border `-border`
+
+**Color:**
+
+- No color (default)
+- Success `-success`
+- Error `-error`
+- Info `-info`
+- Warning `-warning`
