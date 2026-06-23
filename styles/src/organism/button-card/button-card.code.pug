@@ -14,6 +14,9 @@ mixin ippon-button-card-example(options)
         +ippon-text({ variant: 'label', size: 'large' }) Description value
       +ippon-icon({ name: 'chevron-forward', size: 24 })
 
+mixin ippon-button-card-example-color(color)
+  +ippon-button-card-example({ shadow: 'l1', color })
+
 +ippon-button-card-example({ shadow: 'l1', size: 'small' })
 
 +ippon-button-card-example({ shadow: 'l2' })
@@ -29,3 +32,8 @@ mixin ippon-button-card-example(options)
 +ippon-button-card-example({ border: true, shadow: 'l5' })
 
 +ippon-button-card-example({ border: true, fullWidth: true })
+
++ippon-button-card-example-color('success')
++ippon-button-card-example-color('error')
++ippon-button-card-example-color('information')
++ippon-button-card-example-color('warning')

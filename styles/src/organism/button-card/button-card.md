@@ -26,3 +26,11 @@ A clickable card component that acts as an interactive surface. It extends the b
 
 - Inline (default)
 - Full width `-full-width`
+
+**Color:**
+
+- No color (default)
+- Success `-success`
+- Error `-error`
+- Info `-info`
+- Warning `-warning`

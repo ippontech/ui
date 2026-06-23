@@ -1,6 +1,6 @@
 {
   "name": "@ippon-ui/styles",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Ippon UI Pattern Library",
   "repository": {
     "type": "git",
@@ -52,6 +52,9 @@
     "test:unit": "vitest",
     "test:unit:ci": "vitest run",
     "start:component-test": "tikui-core serve"
+  },
+  "peerDependencies": {
+    "@ippon-ui/icons": "~0.0.2"
   },
   "devDependencies": {
     "@fontsource/open-sans": "5.2.7",

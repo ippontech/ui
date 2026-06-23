@@ -5,13 +5,14 @@ import {
   toAlternativeClass,
 } from './CAP.ts';
 import { clsx } from 'clsx';
-import type { IpponCardShadowLevel, IpponCardSize } from './Card.ts';
+import type { IpponCardColor, IpponCardShadowLevel, IpponCardSize } from './Card.ts';
 
 export type IpponButtonCardProps = DataSelectableWithChildren<{
   onClick?: () => void;
   shadow?: IpponCardShadowLevel;
   border?: boolean;
   size?: IpponCardSize;
+  color?: IpponCardColor;
   fullWidth?: boolean;
 }>;
 
@@ -25,6 +26,7 @@ export const IpponButtonCard = (props: IpponButtonCardProps) => (
         [toAlternativeClass('full-width')]: props.fullWidth,
       },
       optionalToAlternativeClass(props.size),
+      optionalToAlternativeClass(props.color),
     )}
     onClick={props.onClick}
     data-selector={props.dataSelector}

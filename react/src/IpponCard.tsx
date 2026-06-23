@@ -5,12 +5,13 @@ import {
   optionalToAlternativeClass,
   toAlternativeClass,
 } from './CAP.ts';
-import type { IpponCardShadowLevel, IpponCardSize } from './Card.ts';
+import type { IpponCardShadowLevel, IpponCardSize, IpponCardColor } from './Card.ts';
 
 type IpponCardProps = DataSelectableWithChildren<{
   shadow?: IpponCardShadowLevel;
   border?: boolean;
   size?: IpponCardSize;
+  color?: IpponCardColor;
 }>;
 
 export const IpponCard = (props: IpponCardProps) => (
@@ -22,6 +23,7 @@ export const IpponCard = (props: IpponCardProps) => (
         [toAlternativeClass('border')]: props.border,
       },
       optionalToAlternativeClass(props.size),
+      optionalToAlternativeClass(props.color),
     )}
     data-selector={props.dataSelector}
   >
