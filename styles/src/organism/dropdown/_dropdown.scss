@@ -1,0 +1,17 @@
+.ippon-dropdown {
+  flex-direction: column;
+  gap: var(--ippon-size-4);
+  margin: var(--ippon-size-8) 0 0;
+  border: 0;
+  border-radius: var(--ippon-radius-l);
+  box-shadow: var(--ippon-shadow-l2);
+  background-color: var(--ippon-color-neutral-surface-primary);
+  padding: var(--ippon-size-8);
+  color: var(--ippon-color-neutral-text-icon-on-primary);
+  position-area: block-end span-inline-end;
+  position-try-fallbacks: flip-block, flip-inline;
+
+  &:popover-open {
+    display: flex;
+  }
+}

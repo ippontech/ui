@@ -130,6 +130,37 @@ In HTML:
 </button>
 ```
 
+## Ion
+
+Beyond CAP, a component can expose an **ion**: a class that starts with `---`, followed by the name of the ion in `kebab-case` (e.g. `ippon-dropdown---buttons`).
+
+An ion is set on a container and _ionizes_ the descendants that opt in. Unlike a part, the ionized behavior is **not declared by the container**: each affected component declares, in its own SCSS, how it reacts when it is ionized. This inverts the dependency, so a container never reaches into a descendant (no `> .ippon-child` selector).
+
+An example with a `dropdown` organism that ionizes the `button` atom it contains:
+
+The container carries the ion (in the `dropdown` mixin):
+
+```html
+<div class="ippon-dropdown ippon-dropdown---buttons" popover>
+  <button class="ippon-button -text">Item</button>
+</div>
+```
+
+The atom declares its ionized behavior (in `atom/button/_button.scss`, **not** in the organism):
+
+```scss
+.ippon-button {
+  // button styles
+
+  .ippon-dropdown---buttons & {
+    justify-content: flex-start;
+    width: 100%;
+  }
+}
+```
+
+Note: an ion is a naming convention, unrelated to the `atom/ion` component (which renders Ionicons icons).
+
 ## Tikui
 
 To document with Tikui, simply include the component's Markdown file in the file where you want to document it.

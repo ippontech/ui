@@ -1,7 +1,7 @@
 {
   "name": "@ippon-ui/react",
   "description": "Ippon UI React Component Library",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
@@ -15,7 +15,8 @@
     "build": "pnpm run build:lib && pnpm run build:storybook",
     "build:lib": "tsc -b && vite build",
     "build:storybook": "storybook build",
-    "lint": "eslint .",
+    "lint": "eslint . --fix",
+    "lint:ci": "eslint .",
     "preview": "vite preview",
     "test:unit": "vitest",
     "test:unit:ci": "vitest run"
@@ -38,7 +39,7 @@
   },
   "peerDependencies": {
     "@ippon-ui/icons": "~0.0.2",
-    "@ippon-ui/styles": "~0.0.5",
+    "@ippon-ui/styles": "~0.0.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },

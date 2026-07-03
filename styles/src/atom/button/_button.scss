@@ -85,7 +85,7 @@
     --_icon-size: var(--ippon-size-24);
   }
 
-  &:hover {
+  &:is(:hover, :focus-visible) {
     --_background-color: var(--_color-primary-hover);
     --_border-color: var(--_color-primary-hover);
   }
@@ -108,7 +108,7 @@
     --_border-color: var(--_color-secondary);
     --_color: var(--_color-text-secondary);
 
-    &:hover {
+    &:is(:hover, :focus-visible) {
       --_background-color: var(--_color-secondary-hover);
       --_border-color: var(--_color-secondary-hover);
     }
@@ -130,7 +130,7 @@
     --_color: var(--_color-text-secondary);
     --_border-color: var(--_color-border);
 
-    &:hover {
+    &:is(:hover, :focus-visible) {
       --_background-color: var(--_color-secondary-hover);
     }
 
@@ -150,7 +150,7 @@
     --_border-color: transparent;
     --_color: var(--_color-text-secondary);
 
-    &:hover {
+    &:is(:hover, :focus-visible) {
       --_background-color: var(--_color-secondary-hover);
       --_border-color: transparent;
     }
@@ -238,5 +238,10 @@
     --_color-text-primary: var(--ippon-color-neutral-text-icon-on-primary);
     --_color-text-secondary: var(--ippon-color-neutral-text-icon-on-secondary);
     --_color-border: var(--ippon-color-neutral-border);
+  }
+
+  .ippon-dropdown---buttons & {
+    justify-content: flex-start;
+    width: 100%;
   }
 }

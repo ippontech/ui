@@ -539,6 +539,30 @@ describe('IpponButton', () => {
     });
   });
 
+  describe('Popover trigger', () => {
+    it('should not set popover attributes by default', () => {
+      render(<IpponButton dataSelector="ippon-button">Default</IpponButton>);
+
+      const button = getIpponButton();
+
+      expect(button).not.toHaveAttribute('popovertarget');
+      expect(button).not.toHaveAttribute('popovertargetaction');
+    });
+
+    it('should set popover target and action', () => {
+      render(
+        <IpponButton popoverTarget="menu" popoverTargetAction="toggle" dataSelector="ippon-button">
+          Open
+        </IpponButton>,
+      );
+
+      const button = getIpponButton();
+
+      expect(button).toHaveAttribute('popovertarget', 'menu');
+      expect(button).toHaveAttribute('popovertargetaction', 'toggle');
+    });
+  });
+
   describe('Combinations', () => {
     it('should combine color, variant and size', () => {
       render(

@@ -24,7 +24,7 @@ Run from the **monorepo root** unless noted otherwise.
 | Format (check only)          | `mise format-ci`    |
 | Lint (fix)                   | `mise lint`         |
 | Lint (check only)            | `mise lint-ci`      |
-| Unit tests (not interactive) | `mise unit-test-ci` |
+| Unit tests (not interactive) | `mise test-unit-ci` |
 
 ## Pattern Library (`styles`)
 
