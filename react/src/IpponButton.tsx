@@ -25,6 +25,8 @@ type IpponButtonVanillaProps = {
   iconLeft?: IpponButtonIcon;
   iconRight?: IpponButtonIcon;
   onClick?: () => void | Promise<void>;
+  popoverTarget?: string;
+  popoverTargetAction?: 'toggle' | 'show' | 'hide';
 };
 
 export type IpponButtonProps = DataSelectableWithChildren<IpponButtonVanillaProps>;
@@ -79,6 +81,8 @@ export const IpponButton = (props: IpponButtonProps) => {
       disabled={isDisabled}
       aria-busy={loading || undefined}
       data-selector={props.dataSelector}
+      popoverTarget={props.popoverTarget}
+      popoverTargetAction={props.popoverTargetAction}
       onClick={handleClick}
     >
       <OptionalButtonIcon icon={props.iconLeft} />

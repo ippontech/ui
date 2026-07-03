@@ -1,0 +1,9 @@
+include /atom/button/button.mixin.pug
+include /atom/separator/separator.mixin.pug
+include dropdown.mixin.pug
+
++ippon-button({ command: 'toggle-popover', commandfor: 'dropdown', variant: 'outline', iconRight: { name: 'chevron-down' } }) Dropdown
++ippon-dropdown({ id: 'dropdown' })
+  +ippon-button({ variant: 'text', color: 'neutral', iconLeft: { name: 'ellipse' } }) Item
+  +ippon-separator
+  +ippon-button({ variant: 'text', color: 'error', iconLeft: { name: 'trash' } }) Destructive item
