@@ -1,0 +1,7 @@
+@use '../../quark/typography';
+
+.ippon-label {
+  @include typography.body-medium;
+
+  color: var(--ippon-color-neutral-text-icon-tertiary);
+}

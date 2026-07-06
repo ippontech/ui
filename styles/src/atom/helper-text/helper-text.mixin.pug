@@ -1,0 +1,5 @@
+mixin ippon-helper-text(options)
+  - const { id, variant } = options || {};
+  - const variantClass = variant ? `-${variant}` : null;
+  span.ippon-helper-text(class=variantClass, id=id)
+    block

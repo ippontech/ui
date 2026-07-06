@@ -1,0 +1,18 @@
+include /atom/helper-text/helper-text.mixin.pug
+include /atom/input-text/input-text.mixin.pug
+include /atom/label/label.mixin.pug
+
+include field.mixin.pug
+
+mixin ippon-field-example(options)
+  - const { id, helper, variant, ...inputOptions } = options || {};
+  - const helperId = `${id}-helper`;
+  +ippon-field
+    +ippon-label({ for: id }) Label
+    +ippon-input-text({ id, variant, describedBy: helperId, ...inputOptions })
+    +ippon-helper-text({ id: helperId, variant })= helper
+
++ippon-field-example({ id: 'default-input', placeholder: 'Placeholder', helper: 'Helper text' })
++ippon-field-example({ id: 'error-input', placeholder: 'Placeholder', value: 'Value', helper: 'Error message', variant: 'error' })
++ippon-field-example({ id: 'success-input', placeholder: 'Placeholder', value: 'Value', helper: 'Helper text', variant: 'success' })
++ippon-field-example({ id: 'disabled-input', placeholder: 'Placeholder', helper: 'Helper text', disabled: true })

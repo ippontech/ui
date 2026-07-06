@@ -1,0 +1,14 @@
+mixin ippon-input-text(options)
+  - const { id, type, placeholder, value, variant, disabled, describedBy } = options || {};
+  - const variantClass = variant ? `-${variant}` : null;
+  - const invalid = variant === 'error' ? 'true' : null;
+  input.ippon-input-text(
+    class=variantClass,
+    id=id,
+    type=type || 'text',
+    placeholder=placeholder,
+    value=value,
+    disabled=disabled,
+    aria-describedby=describedBy,
+    aria-invalid=invalid
+  )

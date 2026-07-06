@@ -4,6 +4,17 @@ All notable changes to the Ippon UI packages are documented in this file, so con
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), with one entry per release listing the affected package versions.
 
+## 2026-07-08 — @ippon-ui/styles 0.0.9 · @ippon-ui/react 0.0.8
+
+### Added
+
+- `input-text` atom: native 48px text field carrying the visual container (border, 4px radius, background), full-width by default, with hover, focus (brand outline, hidden placeholder) and `disabled` (dimmed) states. The `-error` (setting `aria-invalid="true"`) and `-success` alternatives carry a status border and a status-colored text and placeholder, and show a tinted status background while the placeholder is visible (empty, unfocused field).
+- `label` atom: names a form control, linked to it through `for`/`id`.
+- `helper-text` atom: contextual help or feedback message linked to its control through `aria-describedby`, with `-error` and `-success` alternatives.
+- `field` molecule: vertical composition of a label, any form control and a helper text; the caller wires `for`/`id`, `aria-describedby` and the variant.
+- `IpponInputText` React component forwarding native `input` props, deriving `aria-invalid` from the `error` variant.
+- `IpponLabel`, `IpponHelperText` and `IpponField` React components.
+
 ## 2026-07-07 — @ippon-ui/styles 0.0.8 · @ippon-ui/react 0.0.7
 
 ### Added

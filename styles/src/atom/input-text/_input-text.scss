@@ -1,0 +1,79 @@
+@use '../../quark/typography';
+
+.ippon-input-text {
+  box-sizing: border-box;
+  border: 1px solid var(--ippon-color-neutral-border);
+  border-radius: var(--ippon-radius-m);
+  background-color: var(--ippon-color-neutral-surface-primary);
+  padding: var(--ippon-size-12) var(--ippon-size-16);
+  width: 100%;
+  height: var(--ippon-size-48);
+  color: var(--ippon-color-neutral-text-icon-primary);
+
+  @include typography.body-medium;
+
+  &::placeholder {
+    color: var(--ippon-color-neutral-text-icon-tertiary);
+  }
+
+  &:enabled:hover {
+    background-color: var(--ippon-color-neutral-surface-primary-hover);
+  }
+
+  &:enabled:focus {
+    outline: 2px solid var(--ippon-color-brand-border);
+    outline-offset: 2px;
+    border-color: var(--ippon-color-brand-border);
+
+    &::placeholder {
+      color: transparent;
+    }
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  &.-error {
+    border-color: var(--ippon-color-error-border);
+    color: var(--ippon-color-error-text-icon-on-secondary);
+
+    &::placeholder {
+      color: var(--ippon-color-error-text-icon-on-secondary);
+    }
+
+    &:enabled:placeholder-shown:not(:focus) {
+      background-color: var(--ippon-color-error-surface-secondary);
+
+      &:hover {
+        background-color: var(--ippon-color-error-surface-secondary-hover);
+      }
+    }
+
+    &:enabled:focus {
+      border-color: var(--ippon-color-error-border);
+    }
+  }
+
+  &.-success {
+    border-color: var(--ippon-color-success-border);
+    color: var(--ippon-color-success-text-icon-on-secondary);
+
+    &::placeholder {
+      color: var(--ippon-color-success-text-icon-on-secondary);
+    }
+
+    &:enabled:placeholder-shown:not(:focus) {
+      background-color: var(--ippon-color-success-surface-secondary);
+
+      &:hover {
+        background-color: var(--ippon-color-success-surface-secondary-hover);
+      }
+    }
+
+    &:enabled:focus {
+      border-color: var(--ippon-color-success-border);
+    }
+  }
+}
