@@ -1,0 +1,15 @@
+@use '../../quark/typography';
+
+.ippon-helper-text {
+  @include typography.body-small;
+
+  color: var(--ippon-color-neutral-text-icon-tertiary);
+
+  &.-error {
+    color: var(--ippon-color-error-text-icon-on-secondary);
+  }
+
+  &.-success {
+    color: var(--ippon-color-success-text-icon-on-secondary);
+  }
+}
