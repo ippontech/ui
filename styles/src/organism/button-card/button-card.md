@@ -27,6 +27,10 @@ A clickable card component that acts as an interactive surface. It extends the b
 - Inline (default)
 - Full width `-full-width`
 
+**Link:**
+
+Use an `<a href="…">` tag instead of a `<button>` when the card navigates to another page. The classes stay the same.
+
 **Color:**
 
 - No color (default)

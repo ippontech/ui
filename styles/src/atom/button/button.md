@@ -21,6 +21,10 @@
 - Loading `-loading` (adds `disabled` and `aria-busy="true"`)
   - When a right icon is present, replace it with a `sync` icon (the CSS animation is handled by `-loading`)
 
+**Link:**
+
+Use an `<a href="…">` tag instead of a `<button>` when the button navigates to another page. The classes stay the same.
+
 **Icons:**
 
 If you use [icons]([[TIKUI_BASEPATH]]icons/index.html), don't forget to wrap each child in a **part**:

@@ -9,6 +9,8 @@ export { IpponHSpace, IpponHSpaceSlot } from './IpponHSpace.tsx';
 export { IpponIcon } from './IpponIcon.tsx';
 export { IpponImportFile } from './IpponImportFile.tsx';
 export { IpponIon } from './IpponIon.tsx';
+export { IpponLinkButton } from './IpponLinkButton.tsx';
+export { IpponLinkButtonCard } from './IpponLinkButtonCard.tsx';
 export { IpponMeter } from './IpponMeter.tsx';
 export { IpponProgress } from './IpponProgress.tsx';
 export { IpponSeparator } from './IpponSeparator.tsx';

@@ -37,6 +37,14 @@ export const SaveButton = () => (
 );
 ```
 
+To navigate to another page instead of triggering a callback, use the link counterparts `IpponLinkButton` and `IpponLinkButtonCard`, which render an `<a href>` with the same look:
+
+```tsx
+import { IpponLinkButton } from '@ippon-ui/react';
+
+export const SettingsLink = () => <IpponLinkButton href="/settings">Settings</IpponLinkButton>;
+```
+
 ## Documentation
 
 Every component is documented in [Storybook](https://storybook.js.org). Stories live in

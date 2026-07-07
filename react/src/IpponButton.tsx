@@ -1,21 +1,14 @@
 import type { DataSelectableWithChildren } from './DataSelectable.ts';
-import type { IconClassic, IconLogo, IconVariant } from '@ippon-ui/icons';
-import type { IpponIonProps } from './IpponIon.tsx';
-import { IpponIon } from './IpponIon.tsx';
+import type {
+  IpponButtonColor,
+  IpponButtonIcon,
+  IpponButtonSize,
+  IpponButtonVariant,
+} from './Button.tsx';
+import { OptionalButtonIcon } from './Button.tsx';
 import { optionalToAlternativeClass } from './CAP.ts';
 import { clsx } from 'clsx';
 import { useState } from 'react';
-
-type IpponButtonIcon = {
-  name: IconClassic | IconLogo;
-  variant?: IconVariant;
-};
-
-type IpponButtonColor = 'success' | 'error' | 'information' | 'warning' | 'neutral';
-
-type IpponButtonVariant = 'secondary' | 'outline' | 'text';
-
-type IpponButtonSize = 'small' | 'large';
 
 type IpponButtonVanillaProps = {
   color?: IpponButtonColor;
@@ -33,20 +26,6 @@ export type IpponButtonProps = DataSelectableWithChildren<IpponButtonVanillaProp
 
 const isPromise = (value: unknown): value is Promise<void> =>
   value !== null && value !== undefined && typeof (value as Promise<void>).then === 'function';
-
-const ButtonIcon = ({ icon, loading }: { icon: IpponButtonIcon; loading?: boolean }) => (
-  <IpponIon
-    {...(icon as IpponIonProps)}
-    className={clsx('ippon-button--icon', { '-loading': loading })}
-  />
-);
-
-const OptionalButtonIcon = ({ icon, loading }: { icon?: IpponButtonIcon; loading?: boolean }) => {
-  if (icon === undefined) {
-    return null;
-  }
-  return <ButtonIcon icon={icon} loading={loading} />;
-};
 
 const LOADING_ICON: IpponButtonIcon = { name: 'sync' };
 
