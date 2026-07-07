@@ -6,12 +6,13 @@ include /organism/v-space/v-space.mixin.pug
 include button-card.mixin.pug
 
 mixin ippon-button-card-example(options)
+  - const { key, value } = options || {};
   +ippon-button-card(options)
     +ippon-h-space({ gap: 16, align: 'middle' })
       +ippon-icon({ name: 'hardware-chip', variant: 'sharp', size: 24, color: 'brand-primary' })
       +ippon-v-space({ gap: 4, align: 'left' })
-        +ippon-text({ variant: 'body', color: 'neutral-tertiary-inversed' }) Some key
-        +ippon-text({ variant: 'label', size: 'large' }) Description value
+        +ippon-text({ variant: 'body', color: 'neutral-tertiary-inversed' })= key || 'Some key'
+        +ippon-text({ variant: 'label', size: 'large' })= value || 'Description value'
       +ippon-icon({ name: 'chevron-forward', size: 24 })
 
 mixin ippon-button-card-example-color(color)
@@ -32,6 +33,8 @@ mixin ippon-button-card-example-color(color)
 +ippon-button-card-example({ border: true, shadow: 'l5' })
 
 +ippon-button-card-example({ border: true, fullWidth: true })
+
++ippon-button-card-example({ border: true, href: '#', key: 'Link card', value: 'Navigates to a page' })
 
 +ippon-button-card-example-color('success')
 +ippon-button-card-example-color('error')

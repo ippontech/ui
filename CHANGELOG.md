@@ -4,6 +4,13 @@ All notable changes to the Ippon UI packages are documented in this file, so con
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), with one entry per release listing the affected package versions.
 
+## 2026-07-07 — @ippon-ui/styles 0.0.8 · @ippon-ui/react 0.0.7
+
+### Added
+
+- `button` atom and `button-card` organism can be used as links: an `<a href>` carrying the same classes renders without underline, and the Pattern Library documentation shows link examples.
+- `IpponLinkButton` and `IpponLinkButtonCard` React components: link (`<a href>`) counterparts of `IpponButton` and `IpponButtonCard`, sharing their look but exposing only link-relevant props (no `disabled`, loading or popover behavior).
+
 ## 2026-07-03 — @ippon-ui/styles 0.0.7 · @ippon-ui/react 0.0.6
 
 ### Added

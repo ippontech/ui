@@ -1,9 +1,13 @@
 mixin ippon-button-card(options)
-  - const { shadow, border, size, fullWidth, color } = options || {};
+  - const { shadow, border, size, fullWidth, color, href } = options || {};
+  - const selector = href ? 'a' : 'button';
   - const shadowClass = shadow ? `-shadow-${shadow}` : null;
   - const borderClass = border ? '-border' : null;
   - const sizeClass = size ? `-${size}` : null;
   - const fullWidthClass = fullWidth ? '-full-width' : null;
   - const colorClass = color ? `-${color}` : null;
-  button.ippon-button-card(class=[shadowClass, borderClass, sizeClass, fullWidthClass, colorClass])
+  #{selector}.ippon-button-card(
+    class=[shadowClass, borderClass, sizeClass, fullWidthClass, colorClass],
+    href=href
+  )
     block

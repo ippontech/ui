@@ -1,7 +1,8 @@
 include /atom/ion/ion.mixin.pug
 
 mixin ippon-button(options)
-  - const { disabled, loading, color, variant, icon, iconLeft, iconRight, size, command, commandfor } = options || {};
+  - const { disabled, loading, color, variant, icon, iconLeft, iconRight, size, command, commandfor, href } = options || {};
+  - const selector = href ? 'a' : 'button';
   - const colorClass = color ? `-${color}` : null;
   - const variantClass = variant ? `-${variant}` : null;
   - const sizeClass = size ? `-${size}` : null;
@@ -11,8 +12,9 @@ mixin ippon-button(options)
   - const iconRightClass = loading && iconRight ? 'ippon-button--icon -loading' : 'ippon-button--icon';
   - const hasIcon = !!(realIconLeft || realIconRight);
 
-  button.ippon-button(
+  #{selector}.ippon-button(
     class=[colorClass, variantClass, sizeClass, loadingClass],
+    href=href,
     disabled=disabled || loading,
     aria-busy=loading ? 'true' : undefined,
     command=command,
