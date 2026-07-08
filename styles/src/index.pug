@@ -1,59 +1,70 @@
 extends /layout-documentation
 
+include /organism/button-card/button-card.mixin.pug
+include /organism/h-space/h-space.mixin.pug
+include /atom/text/text.mixin.pug
+include /atom/icon/icon.mixin.pug
+
+mixin doc-section-card(url, name)
+  li
+    +ippon-button-card({ border: true, fullWidth: true, href: url })
+      +ippon-h-space({ gap: 16, align: 'middle' })
+        +ippon-h-space--slot({ expand: true })
+          +ippon-text({ variant: 'label', size: 'large' })= name
+        +ippon-icon({ name: 'chevron-forward', size: 24 })
+
 block title
-  title Tikui
+  title Ippon UI
 
 block content
-  .tikui-vertical-spacing.-s32
-    .tikui-vertical-spacing--line
-      h1.tikui-title-main Tikui pattern library
-    .tikui-vertical-spacing--line
-      .tikui-vertical-spacing.-s24
-        .tikui-vertical-spacing--line
-          h2.tikui-title-section Use
-        .tikui-vertical-spacing--line
-          p.tikui-paragraph Import style using #[strong &lt;link&gt;] tag and replace #[strong {DOMAIN}] with the current domain:
-        .tikui-vertical-spacing--line
-          p.tikui-paragraph
-            em HTML
-        .tikui-vertical-spacing--line
-          pre
-            code.language-html
-              | #{ '<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />' }
-              |
-              | #{ '<link href="{DOMAIN}/fonts/open-sans/400.css" rel="stylesheet" />' }
-              | #{ '<link href="{DOMAIN}/fonts/open-sans/600.css" rel="stylesheet" />' }
-              | #{ '<link href="{DOMAIN}/fonts/open-sans/700.css" rel="stylesheet" />' }
-              | #{ '<link href="{DOMAIN}/fonts/saira-extra-condensed/700.css" rel="stylesheet" />' }
-              | #{ '<link href="{DOMAIN}/icons/ionicons.css" rel="stylesheet" />' }
-              | #{ '<link rel="stylesheet" href="{DOMAIN}/tikui.css" />' }
-        .tikui-vertical-spacing--line
-          p.tikui-paragraph
-            em Pug
-        .tikui-vertical-spacing--line
-          pre
-            code.language-pug.
-              meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  .ippon-v-space.-gap-32
+    h1.ippon-title Ippon UI pattern library
+    .ippon-v-space.-gap-24
+      h2.ippon-title Use
+      h3.ippon-title With Node
+      p.ippon-text.-body The package is bundled into your application, so install it as a dev dependency:
+      pre.ipp-doc-snippet
+        code.language-shell npm install -D @ippon-ui/styles
+      p.ippon-text.-body Then import the fonts, icons and the compiled stylesheet once in your application entry point:
+      pre.ipp-doc-snippet
+        code.language-js
+          | import '@ippon-ui/styles/fonts/open-sans/400.css';
+          | import '@ippon-ui/styles/fonts/open-sans/600.css';
+          | import '@ippon-ui/styles/fonts/open-sans/700.css';
+          | import '@ippon-ui/styles/fonts/saira-extra-condensed/700.css';
+          | import '@ippon-ui/styles/icons/ionicons.css';
+          | import '@ippon-ui/styles/tikui.css';
+      h3.ippon-title With a stylesheet link
+      p.ippon-text.-body Import style using #[strong &lt;link&gt;] tag and replace #[strong {DOMAIN}] with the current domain:
+      p.ippon-text.-body
+        em HTML
+      pre.ipp-doc-snippet
+        code.language-html
+          | #{ '<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />' }
+          |
+          | #{ '<link href="{DOMAIN}/fonts/open-sans/400.css" rel="stylesheet" />' }
+          | #{ '<link href="{DOMAIN}/fonts/open-sans/600.css" rel="stylesheet" />' }
+          | #{ '<link href="{DOMAIN}/fonts/open-sans/700.css" rel="stylesheet" />' }
+          | #{ '<link href="{DOMAIN}/fonts/saira-extra-condensed/700.css" rel="stylesheet" />' }
+          | #{ '<link href="{DOMAIN}/icons/ionicons.css" rel="stylesheet" />' }
+          | #{ '<link rel="stylesheet" href="{DOMAIN}/tikui.css" />' }
+      p.ippon-text.-body
+        em Pug
+      pre.ipp-doc-snippet
+        code.language-pug.
+          meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
 
-              link(href='{DOMAIN}/fonts/open-sans/400.css' rel='stylesheet')
-              link(href='{DOMAIN}/fonts/open-sans/600.css' rel='stylesheet')
-              link(href='{DOMAIN}/fonts/open-sans/700.css' rel='stylesheet')
-              link(href='{DOMAIN}/fonts/saira-extra-condensed/700.css' rel='stylesheet')
-              link(href='{DOMAIN}/icons/ionicons.css' rel='stylesheet')
-              link(rel='stylesheet' href='{DOMAIN}/tikui.css')
-        .tikui-vertical-spacing--line
-          h2.tikui-title-section Documentation
-        .tikui-vertical-spacing--line
-          p.tikui-paragraph The Style have an #[a.tikui-link(href='http://atomicdesign.bradfrost.com', target='_blank') Atomic Design] structure.
-        .tikui-vertical-spacing--line
-          ul.tikui-list
-            li
-              a.tikui-link(href='[[TIKUI_BASEPATH]]token/token.html') Tokens
-            li
-              a.tikui-link(href='[[TIKUI_BASEPATH]]atom/atom.html') Atoms
-            li
-              a.tikui-link(href='[[TIKUI_BASEPATH]]molecule/molecule.html') Molecules
-            li
-              a.tikui-link(href='[[TIKUI_BASEPATH]]organism/organism.html') Organisms
-            li
-              a.tikui-link(href='[[TIKUI_BASEPATH]]template/template.html') Templates
+          link(href='{DOMAIN}/fonts/open-sans/400.css' rel='stylesheet')
+          link(href='{DOMAIN}/fonts/open-sans/600.css' rel='stylesheet')
+          link(href='{DOMAIN}/fonts/open-sans/700.css' rel='stylesheet')
+          link(href='{DOMAIN}/fonts/saira-extra-condensed/700.css' rel='stylesheet')
+          link(href='{DOMAIN}/icons/ionicons.css' rel='stylesheet')
+          link(rel='stylesheet' href='{DOMAIN}/tikui.css')
+      h2.ippon-title Documentation
+      p.ippon-text.-body The Style have an #[a(href='http://atomicdesign.bradfrost.com', target='_blank') Atomic Design] structure.
+      ul.ippon-v-space.-gap-16
+        +doc-section-card('[[TIKUI_BASEPATH]]token/token.html', 'Tokens')
+        +doc-section-card('[[TIKUI_BASEPATH]]atom/atom.html', 'Atoms')
+        +doc-section-card('[[TIKUI_BASEPATH]]molecule/molecule.html', 'Molecules')
+        +doc-section-card('[[TIKUI_BASEPATH]]organism/organism.html', 'Organisms')
+        +doc-section-card('[[TIKUI_BASEPATH]]template/template.html', 'Templates')

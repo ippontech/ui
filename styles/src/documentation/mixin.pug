@@ -1,0 +1,15 @@
+include /organism/header/header.mixin.pug
+include /molecule/tabs/tabs.mixin.pug
+include /atom/tab/tab.mixin.pug
+
+mixin ippon-doc-navbar(url, title)
+  +ippon-header
+    +ippon-header--slot
+      a.ippon-title-display.-small.-color-brand-primary(href=url)= title
+    +ippon-header--slot
+      nav
+        +ippon-tabs({ id: 'doc-navigation' })
+          block
+
+mixin ippon-doc-navbar-item(url, name, selected)
+  +ippon-tab({ controls: 'doc-navigation', href: url, selected: selected })= name

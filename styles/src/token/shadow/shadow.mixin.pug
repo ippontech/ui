@@ -3,8 +3,8 @@ mixin ippon-shadow(level)
   - const shadowVar = `--ippon-shadow-${level}`;
   section
     h3= level
-    table.ipp-doc-table
-      tbody(id=id)
+    table.ippon-table
+      tbody.ippon-table--body(id=id)
     script(type='module').
       import { ipponTokenShadow } from '[[TIKUI_BASEPATH]]token/shadow/shadow.js';
       (() => {

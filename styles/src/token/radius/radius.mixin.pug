@@ -3,8 +3,8 @@ mixin ippon-radius(radius)
   - const radiusVar = `--ippon-radius-${radius}`;
   section
     h3= radius
-    table.ipp-doc-table
-      tbody(id=id)
+    table.ippon-table
+      tbody.ippon-table--body(id=id)
     script(type='module').
       import { ipponTokenRadius } from '[[TIKUI_BASEPATH]]token/radius/radius.js';
 

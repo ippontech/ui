@@ -4,22 +4,17 @@ block append vars
   - active = 'token';
 
 block title
-  title Tikui - Tokens
+  title Ippon UI - Tokens
 
 block content
-  .tikui-vertical-spacing.-s32
-    .tikui-vertical-spacing--line
-      h1#tokens.tikui-title-main Tokens
-    .tikui-vertical-spacing--line
-      figure.tikui-quote
-        blockquote.tikui-quote--text
-          p « Design Tokens are a methodology. IMHO, saying “design tokens are just variables” is like saying “responsive design is just media queries”. It’s a technology-agnostic architecture and process for scaling design across multiple platforms and devices, including native, and more. »
-        figcaption.tikui-quote--author Jina Anne
-    .tikui-vertical-spacing--line
-      include color/color
-    .tikui-vertical-spacing--line
-      include radius/radius
-    .tikui-vertical-spacing--line
-      include shadow/shadow
-    .tikui-vertical-spacing--line
-      include typography/typography
+  .ippon-v-space.-gap-32
+    h1#tokens.ippon-title Tokens
+    .ippon-card.-information.-shadow-l1
+      .ippon-v-space.-gap-8
+        blockquote.ippon-v-space.-gap-8
+          p.ippon-text.-body « Design Tokens are a methodology. IMHO, saying “design tokens are just variables” is like saying “responsive design is just media queries”. It’s a technology-agnostic architecture and process for scaling design across multiple platforms and devices, including native, and more. »
+        .ippon-text.-body.-small.-color-neutral-tertiary Jina Anne
+    include color/color
+    include radius/radius
+    include shadow/shadow
+    include typography/typography

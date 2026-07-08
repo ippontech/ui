@@ -6,8 +6,8 @@ mixin ippon-typography(typography)
     h3(
       style=`font-size: var(${typographyVar}-size); font-family: var(${typographyVar}-font); font-weight: var(${typographyVar}-weight); line-height: var(${typographyVar}-line-height); text-transform: var(${typographyVar}-transform);`
     )= ucFirstTypography
-    table.ipp-doc-table
-      tbody(id=id)
+    table.ippon-table
+      tbody.ippon-table--body(id=id)
     script(type='module').
       import { ipponTokenTypography } from '[[TIKUI_BASEPATH]]token/typography/typography.js';
 

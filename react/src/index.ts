@@ -20,5 +20,6 @@ export { IpponProgress } from './IpponProgress.tsx';
 export { IpponSeparator } from './IpponSeparator.tsx';
 export { IpponText } from './IpponText.tsx';
 export { IpponTitle } from './IpponTitle.tsx';
+export { IpponTitleDisplay } from './IpponTitleDisplay.tsx';
 export { IpponVSpace, IpponVSpaceSlot } from './IpponVSpace.tsx';
 export { type DataSelectableWithChildren } from './DataSelectable.ts';

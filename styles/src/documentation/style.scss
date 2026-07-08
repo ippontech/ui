@@ -1,0 +1,130 @@
+@use 'sass:map';
+@use '../quark/breakpoint';
+@use '../quark/typography';
+
+body {
+  margin: 0;
+}
+
+.ipp-doc-page {
+  @include typography.body-medium;
+
+  &--nav {
+    margin-bottom: var(--ippon-size-24);
+  }
+
+  &--container {
+    min-width: 0;
+  }
+
+  &--content {
+    margin: 0 auto;
+    max-width: 70rem;
+  }
+
+  @media (min-width: map.get(breakpoint.$media-breakpoints, 'desktop-s')) {
+    display: flex;
+    gap: var(--ippon-size-48);
+    align-items: flex-start;
+
+    &--nav {
+      position: sticky;
+      top: 0;
+      flex-shrink: 0;
+      margin-bottom: 0;
+      padding-bottom: var(--ippon-size-32);
+      width: 14rem;
+      max-height: calc(100dvh - 8rem);
+      overflow: auto;
+    }
+
+    &--container {
+      flex: 1;
+    }
+  }
+}
+
+.ipp-doc-nav {
+  &--item {
+    &.-level-2 {
+      padding-left: var(--ippon-size-16);
+    }
+
+    &.-level-3 {
+      padding-left: var(--ippon-size-32);
+    }
+  }
+
+  &--link {
+    text-decoration: none;
+
+    &:hover {
+      color: var(--ippon-color-brand-text-icon-primary);
+    }
+  }
+}
+
+.ipp-doc-iframe {
+  border: 1px solid var(--ippon-color-neutral-border);
+  border-radius: var(--ippon-radius-m);
+  background-color: var(--ippon-color-neutral-surface-primary);
+  width: 100%;
+  resize: both;
+}
+
+.ipp-doc-snippet {
+  box-sizing: border-box;
+  margin: 0;
+  border-radius: var(--ippon-radius-l);
+  width: 100%;
+  max-height: 15rem;
+  overflow: auto;
+}
+
+.markdown {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    margin: 0 0 var(--ippon-size-8);
+  }
+
+  h1 {
+    @include typography.title-1;
+  }
+
+  h2 {
+    @include typography.title-2;
+  }
+
+  h3 {
+    @include typography.title-3;
+  }
+
+  h4 {
+    @include typography.title-4;
+  }
+
+  h5 {
+    @include typography.title-5;
+  }
+
+  p {
+    margin: 0 0 var(--ippon-size-8);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  a {
+    color: var(--ippon-color-brand-text-icon-primary);
+  }
+
+  code {
+    border-radius: var(--ippon-radius-m);
+    background-color: var(--ippon-color-neutral-surface-secondary);
+    padding: 0 var(--ippon-size-4);
+  }
+}
