@@ -10,12 +10,16 @@ mixin ippon-table--row
   tr.ippon-table--row
     block
 
-mixin ippon-table--header
-  th.ippon-table--header
+mixin ippon-table--header(options)
+  - const { minimal } = options || {};
+  - const minimalClass = minimal ? '-minimal' : null;
+  th.ippon-table--header(class=minimalClass)
     block
 
-mixin ippon-table--cell
-  td.ippon-table--cell
+mixin ippon-table--cell(options)
+  - const { minimal } = options || {};
+  - const minimalClass = minimal ? '-minimal' : null;
+  td.ippon-table--cell(class=minimalClass)
     block
 
 mixin ippon-table

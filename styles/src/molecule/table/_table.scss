@@ -30,17 +30,24 @@
     box-sizing: border-box;
     padding: var(--ippon-size-8) var(--ippon-size-12);
     text-align: left;
+
+    &.-minimal {
+      width: 0;
+    }
   }
 
   &--header {
     border-bottom: var(--_border);
-  }
 
-  &--row:last-child &--cell {
-    border-bottom: 0;
+    @include typography.body-medium-bold;
   }
 
   &--cell {
     border-bottom: var(--_border);
+  }
+
+  &--body &--row:last-child &--header,
+  &--body &--row:last-child &--cell {
+    border-bottom: 0;
   }
 }

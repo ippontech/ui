@@ -4,29 +4,18 @@ block append vars
   - active = 'organism';
 
 block title
-  title Tikui - Organisms
+  title Ippon UI - Organisms
 
 block content
-  .tikui-vertical-spacing.-s32
-    .tikui-vertical-spacing--line
-      h1#organisms.tikui-title-main Organisms
-    .tikui-vertical-spacing--line
-      include /documentation/atomic-design/quote/organism
-    .tikui-vertical-spacing--line
-      include:componentDoc(height=540) button-card/button-card.md
-    .tikui-vertical-spacing--line
-      include:componentDoc(height=280) card/card.md
-    .tikui-vertical-spacing--line
-      include:componentDoc(height=110) container/container.md
-    .tikui-vertical-spacing--line
-      include:componentDoc(height=200) dropdown/dropdown.md
-    .tikui-vertical-spacing--line
-      include:componentDoc header/header.md
-    .tikui-vertical-spacing--line
-      include:componentDoc(height=400) modal/modal.md
-    .tikui-vertical-spacing--line
-      include:componentDoc(height=800) h-space/h-space.md
-    .tikui-vertical-spacing--line
-      include:componentDoc(height=1120) v-space/v-space.md
-    .tikui-vertical-spacing--line
-      include:componentDoc(height=550) grid/grid.md
+  .ippon-v-space.-gap-32
+    h1#organisms.ippon-title Organisms
+    include /documentation/atomic-design/quote/organism
+    include:componentDoc(height=540) button-card/button-card.md
+    include:componentDoc(height=280) card/card.md
+    include:componentDoc(height=110) container/container.md
+    include:componentDoc(height=200) dropdown/dropdown.md
+    include:componentDoc(height=130) header/header.md
+    include:componentDoc(height=400) modal/modal.md
+    include:componentDoc(height=800) h-space/h-space.md
+    include:componentDoc(height=1120) v-space/v-space.md
+    include:componentDoc(height=550) grid/grid.md

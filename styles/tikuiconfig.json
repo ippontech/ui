@@ -1,5 +1,4 @@
 {
-  "documentation": "tikui",
   "port": 4220,
   "reloadPort": 4221,
   "expose": {

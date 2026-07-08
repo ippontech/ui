@@ -3,13 +3,13 @@ mixin ippon-color(color)
   - const colorVar = `--ippon-color-${color}`;
   section
     h3= color
-    table.ipp-doc-table
-      thead
-        tr
-          th.ipp-doc-table--cell Name
-          th.ipp-doc-table--cell Value
-          th.ipp-doc-table--cell Preview
-      tbody(id=id)
+    table.ippon-table
+      thead.ippon-table--head
+        tr.ippon-table--row
+          th.ippon-table--header Name
+          th.ippon-table--header Value
+          th.ippon-table--header Preview
+      tbody.ippon-table--body(id=id)
     script(type='module').
       import { ipponTokenColor } from '[[TIKUI_BASEPATH]]token/color/color.js';
 

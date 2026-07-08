@@ -174,9 +174,6 @@ importers:
       stylelint-scss:
         specifier: 7.0.0
         version: 7.0.0(stylelint@17.6.0(typescript@6.0.3))
-      tikuidoc-tikui:
-        specifier: 9.0.1
-        version: 9.0.1(sass@1.99.0)
       vitest:
         specifier: 4.1.4
         version: 4.1.4(@types/node@24.12.4)(jsdom@29.1.1)(vite@8.0.13(@types/node@24.12.4)(esbuild@0.27.7)(jiti@2.6.1)(sass@1.99.0)(yaml@2.8.4))
@@ -4370,12 +4367,6 @@ packages:
 
   through2@4.0.2:
     resolution: {integrity: sha512-iOqSav00cVxEEICeD7TjLB1sueEL+81Wpzp2bY17uZjZN0pWZPuo4suZ/61VujxmqSGFfgOcNuTZ85QJwNZQpw==}
-
-  tikuidoc-tikui@9.0.1:
-    resolution: {integrity: sha512-ldD+h5O2Ze4y+WmkROl8PGs1puehVuV9hFeUEvwDuk0z3iTVjJdu7VU62kRkmlE/Vb7gKj9XXAG5XTHbY/MQPQ==}
-    engines: {node: '>=18.0.0'}
-    peerDependencies:
-      sass: '>=1.45.0 <2.0.0'
 
   timers-ext@0.1.8:
     resolution: {integrity: sha512-wFH7+SEAcKfJpfLPkrgMPvvwnEtj8W4IurvEyrKsDleXnKLCDw71w8jltvfLa8Rm4qQxxT4jmDBYbJG/z7qoww==}
@@ -9244,10 +9235,6 @@ snapshots:
   through2@4.0.2:
     dependencies:
       readable-stream: 3.6.2
-
-  tikuidoc-tikui@9.0.1(sass@1.99.0):
-    dependencies:
-      sass: 1.99.0
 
   timers-ext@0.1.8:
     dependencies:

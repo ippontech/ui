@@ -4,6 +4,20 @@ All notable changes to the Ippon UI packages are documented in this file, so con
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), with one entry per release listing the affected package versions.
 
+## 2026-07-08 — @ippon-ui/styles 0.0.10 · @ippon-ui/react 0.0.9
+
+### Added
+
+- `table` molecule: `-minimal` alternative on `ippon-table--header` and `ippon-table--cell` shrinks the column to its content width (`{ minimal: true }` on the mixins).
+- `table` molecule: a body row can start with a row header (`ippon-table--header` as first cell); row headers are bold and follow the same border rules as cells.
+- `title-display` atom: color alternatives, the same classes as `text` (e.g. `-color-brand-primary`, `-color-neutral-tertiary`), with a `color` option on the mixin.
+- `IpponTitleDisplay` React component: display title with `tag` (`h1`/`h2`/`h3` drive the size), `size` and `color` props.
+
+### Changed
+
+- `title` and `title-display` atoms are never underlined, so they can be used as links (`<a>` tag) without extra styling.
+- The Pattern Library documentation site is fully restyled with the Ippon UI design system (Ippon UI branding, components and tokens) and its home page documents the npm installation (`npm install -D @ippon-ui/styles`) alongside the stylesheet-link usage.
+
 ## 2026-07-08 — @ippon-ui/styles 0.0.9 · @ippon-ui/react 0.0.8
 
 ### Added

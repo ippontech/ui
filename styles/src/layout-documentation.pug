@@ -6,9 +6,9 @@ block header
   block vars
     - let active = '';
     - const isActive = (current) => current === active;
-  +tikui-navbar('[[TIKUI_BASEPATH]]index.html', 'Tikui')
-    +tikui-navbar-item('[[TIKUI_BASEPATH]]token/token.html', 'Tokens', isActive('token'))
-    +tikui-navbar-item('[[TIKUI_BASEPATH]]atom/atom.html', 'Atoms', isActive('atom'))
-    +tikui-navbar-item('[[TIKUI_BASEPATH]]molecule/molecule.html', 'Molecules', isActive('molecule'))
-    +tikui-navbar-item('[[TIKUI_BASEPATH]]organism/organism.html', 'Organisms', isActive('organism'))
-    +tikui-navbar-item('[[TIKUI_BASEPATH]]template/template.html', 'Templates', isActive('template'))
+  +ippon-doc-navbar('[[TIKUI_BASEPATH]]index.html', 'Ippon UI')
+    +ippon-doc-navbar-item('[[TIKUI_BASEPATH]]token/token.html', 'Tokens', isActive('token'))
+    +ippon-doc-navbar-item('[[TIKUI_BASEPATH]]atom/atom.html', 'Atoms', isActive('atom'))
+    +ippon-doc-navbar-item('[[TIKUI_BASEPATH]]molecule/molecule.html', 'Molecules', isActive('molecule'))
+    +ippon-doc-navbar-item('[[TIKUI_BASEPATH]]organism/organism.html', 'Organisms', isActive('organism'))
+    +ippon-doc-navbar-item('[[TIKUI_BASEPATH]]template/template.html', 'Templates', isActive('template'))

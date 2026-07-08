@@ -1,4 +1,4 @@
-import { makeTextTd } from '../token.js';
+import { makeLine, makeTextTd } from '../token.js';
 
 export const ipponTokenColor = (colorsList, color) => {
   const colors = [0, 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 999].flatMap((quantity) => {
@@ -11,7 +11,7 @@ export const ipponTokenColor = (colorsList, color) => {
   });
 
   const addToColorsList = ({ prop, value }) => {
-    const tr = document.createElement('tr');
+    const tr = makeLine();
     const tdName = makeTextTd({ text: prop });
     const tdValue = makeTextTd({ text: value.toString(), minimal: true });
     const tdPreview = makeTextTd({ minimal: true });

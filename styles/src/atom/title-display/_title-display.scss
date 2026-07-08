@@ -1,3 +1,4 @@
+@use '../../quark/font';
 @use '../../quark/typography';
 
 @mixin ippon-title-display($level, $size) {
@@ -10,7 +11,10 @@
 }
 
 .ippon-title-display {
+  @include font.colors;
+
   margin: 0;
+  text-decoration: none;
 }
 
 @include ippon-title-display(1, 'large') {

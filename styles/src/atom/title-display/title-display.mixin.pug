@@ -1,6 +1,7 @@
 mixin ippon-title-display(options)
-  - const { tag = 'div', size } = options || {};
+  - const { tag = 'div', size, color } = options || {};
   - const displayTag = `Title display ${tag}`;
   - const displayName = size ? `${displayTag} (alternative ${size})` : displayTag;
   - const alternativeClass = size ? `-${size}` : null;
-  #{tag}.ippon-title-display(class=[alternativeClass])= displayName
+  - const colorClass = color ? `-color-${color}` : null;
+  #{tag}.ippon-title-display(class=[alternativeClass, colorClass])= displayName
