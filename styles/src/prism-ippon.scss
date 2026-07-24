@@ -1,0 +1,112 @@
+code[class*='language-'],
+pre[class*='language-'] {
+  tab-size: 4;
+  text-align: left;
+  line-height: 1.5;
+  word-spacing: normal;
+  white-space: pre;
+  word-break: normal;
+  hyphens: none;
+  color: var(--ippon-color-neutral-text-icon-primary);
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-size: 1em;
+}
+
+code[class*='language-']::selection,
+code[class*='language-'] ::selection,
+pre[class*='language-']::selection,
+pre[class*='language-'] ::selection {
+  background: var(--ippon-color-neutral-200);
+}
+
+pre[class*='language-'] {
+  margin: var(--ippon-size-8) 0;
+  border: 1px solid var(--ippon-color-neutral-border);
+  border-radius: var(--ippon-radius-m);
+  background: var(--ippon-color-neutral-surface-primary);
+  padding: var(--ippon-size-16);
+  overflow: auto;
+}
+
+:not(pre) > code[class*='language-'] {
+  border-radius: var(--ippon-radius-m);
+  background: var(--ippon-color-neutral-surface-secondary);
+  padding: 0 var(--ippon-size-4);
+  white-space: normal;
+}
+
+.token {
+  &.comment,
+  &.prolog,
+  &.cdata {
+    color: var(--ippon-color-neutral-text-icon-tertiary);
+    font-style: italic;
+  }
+
+  &.punctuation,
+  &.operator {
+    color: var(--ippon-color-neutral-600);
+  }
+
+  &.namespace {
+    opacity: 0.7;
+  }
+
+  &.keyword,
+  &.tag,
+  &.doctype,
+  &.atrule {
+    color: var(--ippon-color-brand-text-icon-primary);
+  }
+
+  &.string,
+  &.char,
+  &.attr-value,
+  &.builtin,
+  &.inserted {
+    color: var(--ippon-color-positive-700);
+  }
+
+  &.attr-name,
+  &.property,
+  &.variable,
+  &.url {
+    color: var(--ippon-color-information-2-700);
+  }
+
+  &.function,
+  &.class-name,
+  &.selector,
+  &.attr-id,
+  &.attr-class,
+  &.filter-name {
+    color: var(--ippon-color-information-700);
+  }
+
+  &.number,
+  &.boolean,
+  &.constant,
+  &.symbol,
+  &.regex,
+  &.deleted {
+    color: var(--ippon-color-negative-700);
+  }
+
+  &.important {
+    color: var(--ippon-color-negative-700);
+    font-weight: bold;
+  }
+
+  &.bold {
+    font-weight: bold;
+  }
+
+  &.italic {
+    font-style: italic;
+  }
+
+  &.entity {
+    color: var(--ippon-color-neutral-600);
+    cursor: help;
+  }
+}

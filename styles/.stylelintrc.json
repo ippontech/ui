@@ -9,7 +9,7 @@
     "selector-no-qualifying-type": [
       true,
       {
-        "ignore": ["class"]
+        "ignore": ["class", "attribute"]
       }
     ],
     "order/order": [
