@@ -4,6 +4,16 @@ All notable changes to the Ippon UI packages are documented in this file, so con
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), with one entry per release listing the affected package versions.
 
+## 2026-07-24 — @ippon-ui/styles 0.0.11
+
+### Added
+
+- `prism-ippon.css` stylesheet: a light [Prism](https://prismjs.com) theme on white background built on the Ippon UI color tokens, importable with `@ippon-ui/styles/prism-ippon.css`.
+
+### Changed
+
+- The Pattern Library documentation code snippets use the new `prism-ippon.css` light theme instead of the dark `okaidia` theme.
+
 ## 2026-07-08 — @ippon-ui/styles 0.0.10 · @ippon-ui/react 0.0.9
 
 ### Added

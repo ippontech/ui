@@ -30,6 +30,14 @@ Then use the CSS classes in your markup. Classes follow an alternative-prefix co
 <span class="ippon-badge -success">Done</span>
 ```
 
+### Prism theme
+
+If you highlight code with [Prism](https://prismjs.com), a light theme based on the Ippon UI tokens is available:
+
+```ts
+import '@ippon-ui/styles/prism-ippon.css';
+```
+
 ## License
 
 [Apache-2.0](./LICENCE) © Ippon Technologies
