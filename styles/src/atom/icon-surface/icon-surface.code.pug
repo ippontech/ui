@@ -1,0 +1,14 @@
+include /atom/icon/icon.mixin.pug
+
+include icon-surface.mixin.pug
+
+mixin ippon-icon-surface-example(options)
+  - const { color, name } = options || {};
+  +ippon-icon-surface({ color })
+    +ippon-icon({ name, variant: 'outline', size: 24 })
+
++ippon-icon-surface-example({ name: 'document-text' })
++ippon-icon-surface-example({ color: 'success', name: 'checkmark-circle' })
++ippon-icon-surface-example({ color: 'error', name: 'warning' })
++ippon-icon-surface-example({ color: 'information', name: 'information-circle' })
++ippon-icon-surface-example({ color: 'warning', name: 'alert-circle' })

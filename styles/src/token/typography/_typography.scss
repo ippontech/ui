@@ -3,6 +3,7 @@
 :root {
   --ippon-typography-display-font: 'Saira Extra Condensed', sans-serif;
   --ippon-typography-font: 'Open Sans', sans-serif;
+  --ippon-typography-code-font: monospace;
   --ippon-typography-weight-normal: 400;
   --ippon-typography-weight-semi-bold: 600;
   --ippon-typography-weight-bold: 700;
@@ -100,4 +101,9 @@
   --ippon-typography-label-small-size: var(--ippon-size-12);
   --ippon-typography-label-small-font: var(--ippon-typography-font);
   --ippon-typography-label-small-weight: var(--ippon-typography-weight-semi-bold);
+
+  // Code
+  --ippon-typography-code-line-height: var(--ippon-size-20);
+  --ippon-typography-code-size: var(--ippon-size-12);
+  --ippon-typography-code-weight: var(--ippon-typography-weight-normal);
 }

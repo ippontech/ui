@@ -78,6 +78,9 @@ importers:
       '@types/node':
         specifier: ^24.12.3
         version: 24.12.4
+      '@types/prismjs':
+        specifier: ^1.26.6
+        version: 1.26.6
       '@types/react':
         specifier: ^19.2.14
         version: 19.2.14
@@ -111,6 +114,9 @@ importers:
       jsdom:
         specifier: ^29.1.1
         version: 29.1.1
+      prismjs:
+        specifier: 1.30.0
+        version: 1.30.0
       react:
         specifier: ^19.0.0
         version: 19.2.6
@@ -153,6 +159,9 @@ importers:
       postcss-scss:
         specifier: 4.0.9
         version: 4.0.9(postcss@8.5.15)
+      prismjs:
+        specifier: 1.30.0
+        version: 1.30.0
       sass:
         specifier: 1.99.0
         version: 1.99.0
@@ -1729,6 +1738,9 @@ packages:
 
   '@types/node@24.12.4':
     resolution: {integrity: sha512-GUUEShf+PBCGW2KaXwcIt3Yk+e3pkKwWKb9GSyM9WQVE+ep2jzmHdGsHzu4wgcZy5fN9FBdVzjpBQsYlpfpgLA==}
+
+  '@types/prismjs@1.26.6':
+    resolution: {integrity: sha512-vqlvI7qlMvcCBbVe0AKAb4f97//Hy0EBTaiW8AalRnG/xAN5zOiWWyrNqNXeq8+KAuvRewjCVY1+IPxk4RdNYw==}
 
   '@types/react-dom@19.2.3':
     resolution: {integrity: sha512-jp2L/eY6fn+KgVVQAOqYItbF0VY/YApe5Mz2F0aykSO8gx31bYCZyvSeYxCHKvzHG5eZjc+zyaS5BrBWya2+kQ==}
@@ -6252,6 +6264,8 @@ snapshots:
   '@types/node@24.12.4':
     dependencies:
       undici-types: 7.16.0
+
+  '@types/prismjs@1.26.6': {}
 
   '@types/react-dom@19.2.3(@types/react@19.2.14)':
     dependencies:

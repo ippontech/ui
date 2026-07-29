@@ -1,0 +1,6 @@
+mixin ippon-code(options)
+  - const { language, additionalClass } = options || {};
+  - const languageClass = language ? `language-${language}` : null;
+  pre.ippon-code(class=[additionalClass, languageClass])
+    code
+      block

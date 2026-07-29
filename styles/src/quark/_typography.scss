@@ -144,3 +144,10 @@ $-body-small-weights: (
   font-size: var(--ippon-typography-label-small-size);
   font-weight: var(--ippon-typography-label-small-weight);
 }
+
+@mixin code {
+  line-height: var(--ippon-typography-code-line-height);
+  font-family: var(--ippon-typography-code-font);
+  font-size: var(--ippon-typography-code-size);
+  font-weight: var(--ippon-typography-code-weight);
+}

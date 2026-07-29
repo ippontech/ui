@@ -1,0 +1,52 @@
+@use 'sass:map';
+@use '../../quark/breakpoint';
+
+.ippon-error-area {
+  --_animation-duration: 200ms;
+  --_animation-easing: ease-in-out;
+
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--ippon-size-16);
+  text-align: center;
+
+  &--detail {
+    align-self: stretch;
+    min-width: 0;
+    text-align: left;
+  }
+
+  &--summary {
+    display: flex;
+    gap: var(--ippon-size-8);
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    cursor: pointer;
+  }
+
+  &--summary::-webkit-details-marker {
+    display: none;
+  }
+
+  &--chevron {
+    transition: rotate var(--_animation-duration) var(--_animation-easing);
+    line-height: 1;
+    font-size: var(--ippon-size-16);
+  }
+
+  &--detail[open] &--chevron {
+    rotate: 90deg;
+  }
+
+  &--code {
+    margin-top: var(--ippon-size-8);
+    max-block-size: 15rem;
+  }
+
+  @container (min-width: #{map.get(breakpoint.$container-breakpoints, 'm')}) {
+    padding: var(--ippon-size-32);
+  }
+}

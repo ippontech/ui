@@ -4,6 +4,23 @@ All notable changes to the Ippon UI packages are documented in this file, so con
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), with one entry per release listing the affected package versions.
 
+## 2026-07-29 — @ippon-ui/styles 0.1.0 · @ippon-ui/react 0.1.0
+
+### Added
+
+- `error-area` molecule: fills a zone whose content could not be loaded, with a title, a description and no frame of its own so it sits inside the card or grid cell that already draws one. An action (a retry button) and a detail are both optional; the detail hides a stack trace or an error payload behind a native `details` disclosure. Its padding grows once the surrounding `container` is wide enough.
+- `IpponErrorArea` React component: `title` and `description` props, children rendered as the action slot, and an optional `detailMessage` accepting a `string` or an `Error` (rendering its `stack`, falling back to its `message`) together with the required `detailLabel` and an optional `language`.
+- `icon-surface` atom: an icon laid on a rounded surface, with `-success`, `-error`, `-information` and `-warning` alternatives on a neutral default.
+- `IpponIconSurface` React component with a `color` prop.
+- `code` atom: a preformatted code block carrying the frame and the monospace typography, scrolling instead of stretching its container. Giving a language adds the `language-*` class [Prism](https://prismjs.com) styles and reads. Its documentation lists the stylesheet and scripts a page must load for Prism to colorize anything, and what the theme takes over on the typography.
+- `IpponCode` React component with `language` and `className` props.
+- `code` typography tokens (`--ippon-typography-code-font`, `-size`, `-line-height`, `-weight`).
+
+### Changed
+
+- `prism-ippon.css` uses the new `--ippon-typography-code-font` token instead of a hard-coded font stack. That token is currently `monospace` alone, so highlighted code now renders with the browser default monospace font rather than the previous `Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono'` stack.
+- **Breaking** — `import-file` molecule renders its icon through the new `icon-surface` atom, which changes the markup it expects. Hand-written HTML must replace `ippon-import-file--icon` with `ippon-icon-surface` on the icon wrapper, and add `ippon-import-file---icon-surface` next to `ippon-import-file` on the root label. Without the first change the round surface behind the icon disappears; without the second it stops turning blue on hover and drag over. `IpponImportFile` consumers have nothing to do, unless they select `.ippon-import-file--icon` from their own CSS or tests.
+
 ## 2026-07-24 — @ippon-ui/styles 0.0.11
 
 ### Added

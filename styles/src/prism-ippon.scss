@@ -8,7 +8,7 @@ pre[class*='language-'] {
   word-break: normal;
   hyphens: none;
   color: var(--ippon-color-neutral-text-icon-primary);
-  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-family: var(--ippon-typography-code-font);
   font-size: 1em;
 }
 

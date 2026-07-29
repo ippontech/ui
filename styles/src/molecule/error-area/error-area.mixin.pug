@@ -1,0 +1,24 @@
+include /atom/code/code.mixin.pug
+include /atom/icon/icon.mixin.pug
+include /atom/icon-surface/icon-surface.mixin.pug
+include /atom/ion/ion.mixin.pug
+include /atom/text/text.mixin.pug
+include /organism/v-space/v-space.mixin.pug
+
+mixin ippon-error-area(options)
+  - const { title, description, detailLabel, detailMessage, language } = options || {};
+  .ippon-error-area
+    +ippon-v-space({ gap: 12, align: 'center' })
+      +ippon-icon-surface({ color: 'error' })
+        +ippon-icon({ name: 'warning', variant: 'outline', size: 24 })
+      +ippon-v-space({ gap: 4, align: 'center' })
+        +ippon-text({ variant: 'body', weight: 'bold' })= title
+        +ippon-text({ variant: 'body', size: 'small', color: 'neutral-tertiary-inversed' })= description
+      if detailMessage
+        details.ippon-error-area--detail
+          summary.ippon-error-area--summary
+            +ippon-ion({ name: 'chevron-forward', additionalClass: 'ippon-error-area--chevron' })
+            +ippon-text({ variant: 'body', size: 'small', weight: 'bold' })= detailLabel
+          +ippon-code({ language, additionalClass: 'ippon-error-area--code' })= detailMessage
+      if block
+        block
