@@ -1,0 +1,13 @@
+include /atom/button/button.mixin.pug
+
+include error-area.mixin.pug
+
+- const stackTrace = "TypeError: Cannot read properties of undefined (reading 'id')\n    at renderItem (list.js:42:18)\n    at Array.map (<anonymous>)\n    at ItemList (list.js:35:24)";
+
++ippon-error-area({ title: 'Loading error', description: 'Something went wrong. Please try again.' })
+
++ippon-error-area({ title: 'Loading error', description: 'Something went wrong. Please try again.' })
+  +ippon-button({ color: 'neutral', variant: 'outline' }) Retry
+
++ippon-error-area({ title: 'Loading error', description: 'Something went wrong. Please try again.', detailLabel: 'Show details', detailMessage: stackTrace })
+  +ippon-button({ color: 'neutral', variant: 'outline' }) Retry

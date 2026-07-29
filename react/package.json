@@ -1,7 +1,7 @@
 {
   "name": "@ippon-ui/react",
   "description": "Ippon UI React Component Library",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
@@ -39,15 +39,12 @@
   },
   "peerDependencies": {
     "@ippon-ui/icons": "~0.0.2",
-    "@ippon-ui/styles": "~0.0.10",
+    "@ippon-ui/styles": "~0.1.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
     "@babel/core": "^7.29.0",
-    "vite-plugin-dts": "^5.0.1",
     "@eslint/js": "^10.0.1",
     "@ippon-ui/icons": "workspace:*",
     "@ippon-ui/styles": "workspace:*",
@@ -58,6 +55,7 @@
     "@testing-library/react": "^16.3.2",
     "@types/babel__core": "^7.20.5",
     "@types/node": "^24.12.3",
+    "@types/prismjs": "^1.26.6",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.1",
@@ -69,10 +67,14 @@
     "eslint-plugin-storybook": "^10.4.4",
     "globals": "^17.6.0",
     "jsdom": "^29.1.1",
+    "prismjs": "1.30.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "storybook": "^10.4.4",
     "typescript": "~6.0.2",
     "typescript-eslint": "^8.59.2",
     "vite": "^8.0.12",
+    "vite-plugin-dts": "^5.0.1",
     "vitest": "4.1.6"
   }
 }

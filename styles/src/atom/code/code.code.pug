@@ -1,0 +1,6 @@
+include code.mixin.pug
+
+- const jsonContent = '{\n  "status": 404,\n  "error": "Not Found"\n}';
+
++ippon-code npm install --save-dev @ippon-ui/styles
++ippon-code({ language: 'json' })= jsonContent

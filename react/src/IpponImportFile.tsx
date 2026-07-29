@@ -4,6 +4,7 @@ import { useRef, useState } from 'react';
 import { Optional } from './Optional.ts';
 import type { DataSelectable } from './DataSelectable.ts';
 import { IpponIcon } from './IpponIcon.tsx';
+import { IpponIconSurface } from './IpponIconSurface.tsx';
 import { IpponText } from './IpponText.tsx';
 import { IpponVSpace } from './IpponVSpace.tsx';
 import { toAlternativeClass } from './CAP.ts';
@@ -92,7 +93,7 @@ export const IpponImportFile = (props: IpponImportFileProps) => {
 
   return (
     <label
-      className={clsx('ippon-import-file', {
+      className={clsx('ippon-import-file', 'ippon-import-file---icon-surface', {
         [toAlternativeClass('dragover')]: isDragover,
       })}
       data-selector={props.dataSelector}
@@ -102,9 +103,9 @@ export const IpponImportFile = (props: IpponImportFileProps) => {
       onDrop={handleDrop}
     >
       <IpponVSpace gap={8} align="center">
-        <div className="ippon-import-file--icon">
+        <IpponIconSurface>
           <IpponIcon name="cloud-upload" size={24} />
-        </div>
+        </IpponIconSurface>
         <IpponVSpace gap={4} align="center">
           <IpponText variant="body" weight="bold">
             {props.title}

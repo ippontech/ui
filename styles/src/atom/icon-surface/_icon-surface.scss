@@ -1,0 +1,37 @@
+.ippon-icon-surface {
+  --_color-background: var(--ippon-color-neutral-surface-secondary);
+  --_color-text-icon: var(--ippon-color-neutral-text-icon-on-secondary);
+
+  display: inline-flex;
+  border-radius: var(--ippon-radius-pill);
+  background-color: var(--_color-background);
+  padding: var(--ippon-size-12);
+  line-height: 0;
+  color: var(--_color-text-icon);
+
+  &.-success {
+    --_color-background: var(--ippon-color-success-surface-secondary);
+    --_color-text-icon: var(--ippon-color-success-text-icon-on-secondary);
+  }
+
+  &.-error {
+    --_color-background: var(--ippon-color-error-surface-secondary);
+    --_color-text-icon: var(--ippon-color-error-text-icon-on-secondary);
+  }
+
+  &.-information {
+    --_color-background: var(--ippon-color-information-surface-secondary);
+    --_color-text-icon: var(--ippon-color-information-text-icon-on-secondary);
+  }
+
+  &.-warning {
+    --_color-background: var(--ippon-color-warning-surface-secondary);
+    --_color-text-icon: var(--ippon-color-warning-text-icon-on-secondary);
+  }
+
+  .ippon-import-file---icon-surface:hover &,
+  .ippon-import-file---icon-surface.-dragover & {
+    --_color-background: var(--ippon-color-information-2-surface-primary);
+    --_color-text-icon: var(--ippon-color-information-2-text-icon-on-primary);
+  }
+}

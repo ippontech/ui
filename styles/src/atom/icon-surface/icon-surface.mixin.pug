@@ -1,0 +1,5 @@
+mixin ippon-icon-surface(options)
+  - const { color } = options || {};
+  - const colorClass = color ? `-${color}` : null;
+  .ippon-icon-surface(class=colorClass)
+    block

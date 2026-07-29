@@ -1,0 +1,13 @@
+@use '../../quark/typography';
+
+.ippon-code {
+  @include typography.code;
+
+  margin: 0;
+  border: 1px solid var(--ippon-color-neutral-border);
+  border-radius: var(--ippon-radius-m);
+  background-color: var(--ippon-color-neutral-surface-primary);
+  padding: var(--ippon-size-16);
+  overflow: auto;
+  color: var(--ippon-color-neutral-text-icon-primary);
+}

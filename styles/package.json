@@ -1,6 +1,6 @@
 {
   "name": "@ippon-ui/styles",
-  "version": "0.0.11",
+  "version": "0.1.0",
   "description": "Ippon UI Pattern Library",
   "repository": {
     "type": "git",
@@ -62,6 +62,7 @@
     "@ippon-ui/icons": "workspace:*",
     "@tikui/core": "7.0.1",
     "postcss-scss": "4.0.9",
+    "prismjs": "1.30.0",
     "sass": "1.99.0",
     "sass-true": "10.1.0",
     "stylelint": "17.6.0",
