@@ -44,11 +44,14 @@ export const IpponGrid = (props: IpponGridProps): ReactNode => (
 
 type IpponGridSlotProps = DataSelectableWithChildren<{
   col?: IpponGridCol;
+  stretch?: boolean;
 }>;
 
 export const IpponGridSlot = (props: IpponGridSlotProps): ReactNode => (
   <div
-    className={clsx('ippon-grid--slot', optionalToResponsiveClasses('col')(props.col))}
+    className={clsx('ippon-grid--slot', optionalToResponsiveClasses('col')(props.col), {
+      [toAlternativeClass('stretch')]: props.stretch,
+    })}
     data-selector={props.dataSelector}
   >
     {props.children}

@@ -1,4 +1,5 @@
 include grid.mixin.pug
+include ../card/card.mixin.pug
 
 mixin ippon-grid--slot-example(classes)
   .ippon-grid--slot(class=classes)
@@ -23,3 +24,13 @@ hr
   +ippon-grid--slot-example('-col-4 -col-m-6')
   +ippon-grid--slot-example('-col-1 -col-m-2')
   +ippon-grid--slot-example('-col-3 -col-m-10')
+
+hr
+
++ippon-grid('-media-12 -gap-16')
+  +ippon-grid--slot('-col-4 -stretch')
+    +ippon-card({ border: true }) Short content
+  +ippon-grid--slot('-col-4 -stretch')
+    +ippon-card({ border: true }) A much longer content that wraps over several lines and makes this card the tallest of the row
+  +ippon-grid--slot('-col-4 -stretch')
+    +ippon-card({ border: true }) A content long enough to wrap over two lines

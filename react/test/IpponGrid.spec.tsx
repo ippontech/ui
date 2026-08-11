@@ -136,5 +136,31 @@ describe('IpponGrid', () => {
       expect(slot).toHaveClass('-col-4');
       expect(slot).toHaveClass('-col-desktop-m-8');
     });
+
+    it('should not stretch content by default', () => {
+      render(
+        <IpponGrid>
+          <IpponGridSlot dataSelector="ippon-grid-slot">Slot</IpponGridSlot>
+        </IpponGrid>,
+      );
+
+      const slot = screen.getByTestId('ippon-grid-slot');
+
+      expect(slot).not.toHaveClass('-stretch');
+    });
+
+    it('should stretch content', () => {
+      render(
+        <IpponGrid>
+          <IpponGridSlot stretch dataSelector="ippon-grid-slot">
+            Slot
+          </IpponGridSlot>
+        </IpponGrid>,
+      );
+
+      const slot = screen.getByTestId('ippon-grid-slot');
+
+      expect(slot).toHaveClass('-stretch');
+    });
   });
 });

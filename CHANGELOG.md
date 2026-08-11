@@ -4,6 +4,13 @@ All notable changes to the Ippon UI packages are documented in this file, so con
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), with one entry per release listing the affected package versions.
 
+## 2026-08-11 — @ippon-ui/styles 0.1.1 · @ippon-ui/react 0.1.1
+
+### Added
+
+- `grid` organism: `-stretch` alternative on `ippon-grid--slot` makes the content of a slot fill its cell. A slot already takes the full height of its row, but its child kept its natural height, so cards of a same row ended at different heights. With `-stretch` the child fills the slot, whatever that child is (`ippon-card`, `ippon-button-card`, …). Slots without the alternative keep their previous behaviour.
+- `IpponGridSlot` React component: `stretch` prop for the `-stretch` alternative.
+
 ## 2026-07-29 — @ippon-ui/styles 0.1.0 · @ippon-ui/react 0.1.0
 
 ### Added
