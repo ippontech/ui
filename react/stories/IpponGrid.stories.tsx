@@ -50,6 +50,26 @@ export const TwelveColumns: Story = {
   },
 };
 
+export const Stretch: Story = {
+  args: {
+    media: 12,
+    gap: 16,
+    children: (
+      <>
+        <IpponGridSlot col={4} stretch>
+          <Cell label="Short content" />
+        </IpponGridSlot>
+        <IpponGridSlot col={4} stretch>
+          <Cell label="A much longer content that wraps over several lines and makes this card the tallest of the row" />
+        </IpponGridSlot>
+        <IpponGridSlot col={4} stretch>
+          <Cell label="A content long enough to wrap over two lines" />
+        </IpponGridSlot>
+      </>
+    ),
+  },
+};
+
 export const Responsive: Story = {
   args: {
     media: [4, 'desktop-s-12'],

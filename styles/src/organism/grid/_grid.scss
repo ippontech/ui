@@ -56,6 +56,10 @@ $ippon-grid-max-columns: math.max($ippon-grid-columns...);
 
   &--slot {
     @include ippon-grid-slot-column;
+
+    &.-stretch {
+      display: grid;
+    }
   }
 
   @each $breakpoint, $breakpoint-value in breakpoint.$media-breakpoints {
