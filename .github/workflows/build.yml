@@ -13,9 +13,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v4.4.0
+      - uses: pnpm/action-setup@v4.4.0
+      - uses: actions/setup-node@v4.4.0
         with:
           # renovate: datasource=node-version depName=node
           node-version: 24.14.1
@@ -25,7 +25,7 @@ jobs:
       - run: pnpm lint:ci
       - run: pnpm test:unit:ci
       - run: pnpm build
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v4.6.2
         with:
           name: build-artifacts
           path: |
@@ -43,16 +43,16 @@ jobs:
       id-token: write
       contents: read
     steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v4.4.0
+      - uses: pnpm/action-setup@v4.4.0
+      - uses: actions/setup-node@v4.4.0
         with:
           # renovate: datasource=node-version depName=node
           node-version: 24.14.1
           cache: pnpm
           registry-url: https://registry.npmjs.org
       - run: pnpm -r install --frozen-lockfile
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v4.3.0
         with:
           name: build-artifacts
       - run: pnpm -r publish --access public --no-git-checks

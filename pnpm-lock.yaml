@@ -15,7 +15,7 @@ importers:
         specifier: 24.12.2
         version: 24.12.2
       lefthook:
-        specifier: ^2.1.4
+        specifier: 2.1.6
         version: 2.1.6
       prettier:
         specifier: 3.8.2
@@ -46,10 +46,10 @@ importers:
         version: 2.1.1
     devDependencies:
       '@babel/core':
-        specifier: ^7.29.0
+        specifier: 7.29.6
         version: 7.29.6
       '@eslint/js':
-        specifier: ^10.0.1
+        specifier: 10.0.1
         version: 10.0.1(eslint@10.4.0(jiti@2.6.1))
       '@ippon-ui/icons':
         specifier: workspace:*
@@ -58,28 +58,28 @@ importers:
         specifier: workspace:*
         version: link:../styles
       '@rolldown/plugin-babel':
-        specifier: ^0.2.3
+        specifier: 0.2.3
         version: 0.2.3(@babel/core@7.29.6)(@babel/runtime@7.29.7)(rolldown@1.0.3)(vite@8.0.16(@types/node@24.12.4)(esbuild@0.27.7)(jiti@2.6.1)(sass@1.99.0)(yaml@2.8.4))
       '@storybook/addon-docs':
-        specifier: ^10.4.4
+        specifier: 10.4.4
         version: 10.4.4(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(esbuild@0.27.7)(storybook@10.4.4(@testing-library/dom@10.4.1)(@types/react@19.2.14)(prettier@3.8.2)(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(vite@8.0.16(@types/node@24.12.4)(esbuild@0.27.7)(jiti@2.6.1)(sass@1.99.0)(yaml@2.8.4))
       '@storybook/react-vite':
-        specifier: ^10.4.4
+        specifier: 10.4.4
         version: 10.4.4(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(esbuild@0.27.7)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(storybook@10.4.4(@testing-library/dom@10.4.1)(@types/react@19.2.14)(prettier@3.8.2)(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(typescript@6.0.3)(vite@8.0.16(@types/node@24.12.4)(esbuild@0.27.7)(jiti@2.6.1)(sass@1.99.0)(yaml@2.8.4))
       '@testing-library/jest-dom':
-        specifier: ^6.9.1
+        specifier: 6.9.1
         version: 6.9.1
       '@testing-library/react':
-        specifier: ^16.3.2
+        specifier: 16.3.2
         version: 16.3.2(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       '@types/babel__core':
-        specifier: ^7.20.5
+        specifier: 7.20.5
         version: 7.20.5
       '@types/node':
-        specifier: ^24.12.3
+        specifier: 24.12.4
         version: 24.12.4
       '@types/prismjs':
-        specifier: ^1.26.6
+        specifier: 1.26.6
         version: 1.26.6
       '@types/react':
         specifier: ^19.2.14
@@ -88,55 +88,55 @@ importers:
         specifier: ^19.2.3
         version: 19.2.3(@types/react@19.2.14)
       '@vitejs/plugin-react':
-        specifier: ^6.0.1
+        specifier: 6.0.2
         version: 6.0.2(@rolldown/plugin-babel@0.2.3(@babel/core@7.29.6)(@babel/runtime@7.29.7)(rolldown@1.0.3)(vite@8.0.16(@types/node@24.12.4)(esbuild@0.27.7)(jiti@2.6.1)(sass@1.99.0)(yaml@2.8.4)))(babel-plugin-react-compiler@1.0.0)(vite@8.0.16(@types/node@24.12.4)(esbuild@0.27.7)(jiti@2.6.1)(sass@1.99.0)(yaml@2.8.4))
       '@vitest/coverage-istanbul':
-        specifier: ^4.1.4
+        specifier: 4.1.6
         version: 4.1.6(vitest@4.1.6)
       babel-plugin-react-compiler:
-        specifier: ^1.0.0
+        specifier: 1.0.0
         version: 1.0.0
       eslint:
-        specifier: ^10.3.0
+        specifier: 10.4.0
         version: 10.4.0(jiti@2.6.1)
       eslint-plugin-react-hooks:
-        specifier: ^7.1.1
+        specifier: 7.1.1
         version: 7.1.1(eslint@10.4.0(jiti@2.6.1))
       eslint-plugin-react-refresh:
-        specifier: ^0.5.2
+        specifier: 0.5.2
         version: 0.5.2(eslint@10.4.0(jiti@2.6.1))
       eslint-plugin-storybook:
-        specifier: ^10.4.4
+        specifier: 10.4.4
         version: 10.4.4(eslint@10.4.0(jiti@2.6.1))(storybook@10.4.4(@testing-library/dom@10.4.1)(@types/react@19.2.14)(prettier@3.8.2)(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(typescript@6.0.3)
       globals:
-        specifier: ^17.6.0
+        specifier: 17.6.0
         version: 17.6.0
       jsdom:
-        specifier: ^29.1.1
+        specifier: 29.1.1
         version: 29.1.1
       prismjs:
         specifier: 1.30.0
         version: 1.30.0
       react:
-        specifier: ^19.0.0
+        specifier: 19.2.6
         version: 19.2.6
       react-dom:
-        specifier: ^19.0.0
+        specifier: 19.2.6
         version: 19.2.6(react@19.2.6)
       storybook:
-        specifier: ^10.4.4
+        specifier: 10.4.4
         version: 10.4.4(@testing-library/dom@10.4.1)(@types/react@19.2.14)(prettier@3.8.2)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       typescript:
-        specifier: ~6.0.2
+        specifier: 6.0.3
         version: 6.0.3
       typescript-eslint:
-        specifier: ^8.59.2
+        specifier: 8.59.4
         version: 8.59.4(eslint@10.4.0(jiti@2.6.1))(typescript@6.0.3)
       vite:
-        specifier: ^8.0.12
+        specifier: 8.0.16
         version: 8.0.16(@types/node@24.12.4)(esbuild@0.27.7)(jiti@2.6.1)(sass@1.99.0)(yaml@2.8.4)
       vite-plugin-dts:
-        specifier: ^5.0.1
+        specifier: 5.0.1
         version: 5.0.1(esbuild@0.27.7)(rolldown@1.0.3)(typescript@6.0.3)(vite@8.0.16(@types/node@24.12.4)(esbuild@0.27.7)(jiti@2.6.1)(sass@1.99.0)(yaml@2.8.4))
       vitest:
         specifier: 4.1.6
@@ -241,16 +241,8 @@ packages:
     peerDependencies:
       '@babel/core': ^7.0.0
 
-  '@babel/helper-string-parser@7.27.1':
-    resolution: {integrity: sha512-qMlSxKbpRlAridDExk92nSobyDdpPijUq2DW6oDnUqd0iOGxmQjyqhMIihI9+zv4LPyZdRje2cavWPbCbWm3eA==}
-    engines: {node: '>=6.9.0'}
-
   '@babel/helper-string-parser@7.29.7':
     resolution: {integrity: sha512-Pb5ijPrZ89GDH8223L4UP8i6QApWxs04RbPQJTeWDV0/keR2E36MeKnyr6LYmUUvqRRI+Iv87SuF1W6ErINzYw==}
-    engines: {node: '>=6.9.0'}
-
-  '@babel/helper-validator-identifier@7.28.5':
-    resolution: {integrity: sha512-qSs4ifwzKJSV39ucNjsvc6WVHs6b7S03sOh2OcHF9UHfVPqWWALUsNUVzhSBiItjRZoLHx7nIarVjqKVusUZ1Q==}
     engines: {node: '>=6.9.0'}
 
   '@babel/helper-validator-identifier@7.29.7':
@@ -265,19 +257,10 @@ packages:
     resolution: {integrity: sha512-1k2lAGRMfHTcwuNYcCNUmaUffmQv8KWMfh2iJUUeRlwlwH4FdNG7mfPI10NPfLHJFThE4Tyr4mv7kTNZOiPuBg==}
     engines: {node: '>=6.9.0'}
 
-  '@babel/parser@7.29.3':
-    resolution: {integrity: sha512-b3ctpQwp+PROvU/cttc4OYl4MzfJUWy6FZg+PMXfzmt/+39iHVF0sDfqay8TQM3JA2EUOyKcFZt75jWriQijsA==}
-    engines: {node: '>=6.0.0'}
-    hasBin: true
-
   '@babel/parser@7.29.8':
     resolution: {integrity: sha512-E8lTAYNB1KW+FH+VGJuZM1ioAx2E6oVlvQFRrf5P8ZZmsiJXYAD9vTFV7yyEURNzgh1dFqMZuO6tUwcARbqFCA==}
     engines: {node: '>=6.0.0'}
     hasBin: true
-
-  '@babel/runtime@7.29.2':
-    resolution: {integrity: sha512-JiDShH45zKHWyGe4ZNVRrCjBz8Nh9TMmZG1kh4QTK8hCBTWBi8Da+i7s1fJw7/lYpM4ccepSNfqzZ/QvABBi5g==}
-    engines: {node: '>=6.9.0'}
 
   '@babel/runtime@7.29.7':
     resolution: {integrity: sha512-Nq8OhGWiZIZGV6hLHoyAKLLcJihP/xFeBMGJoUrxTX2psI8dCifzLhZISFb+VWS3wFMRDmCGw5R+dOySCqPLhw==}
@@ -289,10 +272,6 @@ packages:
 
   '@babel/traverse@7.29.8':
     resolution: {integrity: sha512-I5z7H3bf/41ktsNVLtpN0wAa336HkqIHQ5BuPLEhTkt1jVSyZpeNKIzTgEWmlxjdg81R0IgUCcaE+Ok3NvrfZg==}
-    engines: {node: '>=6.9.0'}
-
-  '@babel/types@7.29.0':
-    resolution: {integrity: sha512-LwdZHpScM4Qz8Xw2iKSzS+cfglZzJGvofQICy7W7v4caru4EaAmyUuO6BGrbyQ2mYV11W0U8j5mBhd14dd3B0A==}
     engines: {node: '>=6.9.0'}
 
   '@babel/types@7.29.8':
@@ -964,12 +943,6 @@ packages:
   '@napi-rs/nice@1.1.1':
     resolution: {integrity: sha512-xJIPs+bYuc9ASBl+cvGsKbGrJmS6fAKaSZCnT0lhahT5rhA2VVy9/EcIgd2JhtEuFOJNx7UHNn/qiTPTY4nrQw==}
     engines: {node: '>= 10'}
-
-  '@napi-rs/wasm-runtime@1.1.4':
-    resolution: {integrity: sha512-3NQNNgA1YSlJb/kMH1ildASP9HW7/7kYnRI2szWJaofaS1hWmbGI4H+d3+22aGzXXN9IJ+n+GiFVcGipJP18ow==}
-    peerDependencies:
-      '@emnapi/core': ^1.7.1
-      '@emnapi/runtime': ^1.7.1
 
   '@napi-rs/wasm-runtime@1.2.2':
     resolution: {integrity: sha512-JfB4kuJQjaoHuCTseIINHtHWeJnvgEcxjwA5t/Y00ZgaOO1Crz3fjT/p8kT28zA/Caz7oiUMn3d6H2yOVCVwuw==}
@@ -1718,9 +1691,6 @@ packages:
 
   '@tokenizer/token@0.3.0':
     resolution: {integrity: sha512-OvjF+z51L3ov0OyAU0duzsYuvO01PH7x4t6DJx+guahgTnBHkhJdG7soQeTSFLWN3efnHyibZ4Z8l2EuWwJN3A==}
-
-  '@tybys/wasm-util@0.10.2':
-    resolution: {integrity: sha512-RoBvJ2X0wuKlWFIjrwffGw1IqZHKQqzIchKaadZZfnNpsAYp2mM0h36JtPCjNDAHGgYez/15uMBpfGwchhiMgg==}
 
   '@tybys/wasm-util@0.10.3':
     resolution: {integrity: sha512-F3fo1MYrRJYL3zER0OUOmkutjr1Vp23m7OsSgp7nq4SP6OqX6C/56XFIPAl5bt3zaBRjmW7SGz3u/6LwFpYcOg==}
@@ -3374,10 +3344,6 @@ packages:
   lru-cache@10.4.3:
     resolution: {integrity: sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==}
 
-  lru-cache@11.3.5:
-    resolution: {integrity: sha512-NxVFwLAnrd9i7KUBxC4DrUhmgjzOs+1Qm50D3oF1/oL+r1NpZ4gA7xvG0/zJ8evR7zIKn4vLf7qTNduWFtCrRw==}
-    engines: {node: 20 || >=22}
-
   lru-cache@11.5.2:
     resolution: {integrity: sha512-4pfM1Ff0x50o0tQwb5ucw/RzNyD0/YJME6IVcStalZuMWxdt3sR3huStTtxz4PUmvZfRguvDejasvQ2kifR11g==}
     engines: {node: 20 || >=22}
@@ -4122,11 +4088,6 @@ packages:
 
   semver@6.3.1:
     resolution: {integrity: sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==}
-    hasBin: true
-
-  semver@7.7.4:
-    resolution: {integrity: sha512-vFKC2IEtQnVhpT78h1Yp8wzwrf8CM+MzKMHGJZfBtzhZNycRFnXsHk6E5TxIkkMsgNS7mdX3AGB7x2QM2di4lA==}
-    engines: {node: '>=10'}
     hasBin: true
 
   semver@7.8.5:
@@ -5011,7 +4972,7 @@ snapshots:
   '@asamuzakjp/css-color@5.1.11':
     dependencies:
       '@asamuzakjp/generational-cache': 1.0.1
-      '@csstools/css-calc': 3.2.0(@csstools/css-parser-algorithms@4.0.0(@csstools/css-tokenizer@4.0.0))(@csstools/css-tokenizer@4.0.0)
+      '@csstools/css-calc': 3.2.1(@csstools/css-parser-algorithms@4.0.0(@csstools/css-tokenizer@4.0.0))(@csstools/css-tokenizer@4.0.0)
       '@csstools/css-color-parser': 4.1.1(@csstools/css-parser-algorithms@4.0.0(@csstools/css-tokenizer@4.0.0))(@csstools/css-tokenizer@4.0.0)
       '@csstools/css-parser-algorithms': 4.0.0(@csstools/css-tokenizer@4.0.0)
       '@csstools/css-tokenizer': 4.0.0
@@ -5090,11 +5051,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@babel/helper-string-parser@7.27.1': {}
-
   '@babel/helper-string-parser@7.29.7': {}
-
-  '@babel/helper-validator-identifier@7.28.5': {}
 
   '@babel/helper-validator-identifier@7.29.7': {}
 
@@ -5105,15 +5062,9 @@ snapshots:
       '@babel/template': 7.29.7
       '@babel/types': 7.29.8
 
-  '@babel/parser@7.29.3':
-    dependencies:
-      '@babel/types': 7.29.0
-
   '@babel/parser@7.29.8':
     dependencies:
       '@babel/types': 7.29.8
-
-  '@babel/runtime@7.29.2': {}
 
   '@babel/runtime@7.29.7': {}
 
@@ -5134,11 +5085,6 @@ snapshots:
       debug: 4.4.3(supports-color@5.5.0)
     transitivePeerDependencies:
       - supports-color
-
-  '@babel/types@7.29.0':
-    dependencies:
-      '@babel/helper-string-parser': 7.27.1
-      '@babel/helper-validator-identifier': 7.28.5
 
   '@babel/types@7.29.8':
     dependencies:
@@ -5725,24 +5671,17 @@ snapshots:
       '@napi-rs/nice-win32-x64-msvc': 1.1.1
     optional: true
 
-  '@napi-rs/wasm-runtime@1.1.4(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)':
-    dependencies:
-      '@emnapi/core': 1.10.0
-      '@emnapi/runtime': 1.10.0
-      '@tybys/wasm-util': 0.10.2
-    optional: true
-
-  '@napi-rs/wasm-runtime@1.1.4(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)':
-    dependencies:
-      '@emnapi/core': 1.9.2
-      '@emnapi/runtime': 1.9.2
-      '@tybys/wasm-util': 0.10.2
-    optional: true
-
   '@napi-rs/wasm-runtime@1.2.2(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)':
     dependencies:
       '@emnapi/core': 1.10.0
       '@emnapi/runtime': 1.10.0
+      '@tybys/wasm-util': 0.10.3
+    optional: true
+
+  '@napi-rs/wasm-runtime@1.2.2(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)':
+    dependencies:
+      '@emnapi/core': 1.9.2
+      '@emnapi/runtime': 1.9.2
       '@tybys/wasm-util': 0.10.3
     optional: true
 
@@ -5824,7 +5763,7 @@ snapshots:
     dependencies:
       '@emnapi/core': 1.9.2
       '@emnapi/runtime': 1.9.2
-      '@napi-rs/wasm-runtime': 1.1.4(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)
+      '@napi-rs/wasm-runtime': 1.2.2(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)
     optional: true
 
   '@oxc-parser/binding-win32-arm64-msvc@0.127.0':
@@ -5892,7 +5831,7 @@ snapshots:
     dependencies:
       '@emnapi/core': 1.10.0
       '@emnapi/runtime': 1.10.0
-      '@napi-rs/wasm-runtime': 1.1.4(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)
+      '@napi-rs/wasm-runtime': 1.2.2(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)
     optional: true
 
   '@oxc-resolver/binding-win32-arm64-msvc@11.20.0':
@@ -6078,7 +6017,7 @@ snapshots:
   '@rolldown/plugin-babel@0.2.3(@babel/core@7.29.6)(@babel/runtime@7.29.7)(rolldown@1.0.3)(vite@8.0.16(@types/node@24.12.4)(esbuild@0.27.7)(jiti@2.6.1)(sass@1.99.0)(yaml@2.8.4))':
     dependencies:
       '@babel/core': 7.29.6
-      picomatch: 4.0.4
+      picomatch: 4.0.5
       rolldown: 1.0.3
     optionalDependencies:
       '@babel/runtime': 7.29.7
@@ -6249,7 +6188,7 @@ snapshots:
 
   '@testing-library/react@16.3.2(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)':
     dependencies:
-      '@babel/runtime': 7.29.2
+      '@babel/runtime': 7.29.7
       '@testing-library/dom': 10.4.1
       react: 19.2.6
       react-dom: 19.2.6(react@19.2.6)
@@ -6286,11 +6225,6 @@ snapshots:
 
   '@tokenizer/token@0.3.0': {}
 
-  '@tybys/wasm-util@0.10.2':
-    dependencies:
-      tslib: 2.8.1
-    optional: true
-
   '@tybys/wasm-util@0.10.3':
     dependencies:
       tslib: 2.8.1
@@ -6300,24 +6234,24 @@ snapshots:
 
   '@types/babel__core@7.20.5':
     dependencies:
-      '@babel/parser': 7.29.3
-      '@babel/types': 7.29.0
+      '@babel/parser': 7.29.8
+      '@babel/types': 7.29.8
       '@types/babel__generator': 7.27.0
       '@types/babel__template': 7.4.4
       '@types/babel__traverse': 7.28.0
 
   '@types/babel__generator@7.27.0':
     dependencies:
-      '@babel/types': 7.29.0
+      '@babel/types': 7.29.8
 
   '@types/babel__template@7.4.4':
     dependencies:
-      '@babel/parser': 7.29.3
-      '@babel/types': 7.29.0
+      '@babel/parser': 7.29.8
+      '@babel/types': 7.29.8
 
   '@types/babel__traverse@7.28.0':
     dependencies:
-      '@babel/types': 7.29.0
+      '@babel/types': 7.29.8
 
   '@types/chai@5.2.3':
     dependencies:
@@ -6697,7 +6631,7 @@ snapshots:
 
   babel-plugin-react-compiler@1.0.0:
     dependencies:
-      '@babel/types': 7.29.0
+      '@babel/types': 7.29.8
 
   babel-walk@3.0.0-canary-5:
     dependencies:
@@ -7245,7 +7179,7 @@ snapshots:
   eslint-plugin-react-hooks@7.1.1(eslint@10.4.0(jiti@2.6.1)):
     dependencies:
       '@babel/core': 7.29.6
-      '@babel/parser': 7.29.3
+      '@babel/parser': 7.29.8
       eslint: 10.4.0(jiti@2.6.1)
       hermes-parser: 0.25.1
       zod: 4.4.3
@@ -7430,10 +7364,6 @@ snapshots:
   fastq@1.20.1:
     dependencies:
       reusify: 1.1.0
-
-  fdir@6.5.0(picomatch@4.0.4):
-    optionalDependencies:
-      picomatch: 4.0.4
 
   fdir@6.5.0(picomatch@4.0.5):
     optionalDependencies:
@@ -7890,7 +7820,7 @@ snapshots:
       decimal.js: 10.6.0
       html-encoding-sniffer: 6.0.0
       is-potential-custom-element-name: 1.0.1
-      lru-cache: 11.3.5
+      lru-cache: 11.5.2
       parse5: 8.0.1
       saxes: 6.0.0
       symbol-tree: 3.2.4
@@ -8083,8 +8013,6 @@ snapshots:
   loupe@3.2.1: {}
 
   lru-cache@10.4.3: {}
-
-  lru-cache@11.3.5: {}
 
   lru-cache@11.5.2: {}
 
@@ -8940,8 +8868,6 @@ snapshots:
 
   semver@6.3.1: {}
 
-  semver@7.7.4: {}
-
   semver@7.8.5: {}
 
   send@1.2.1:
@@ -9072,7 +8998,7 @@ snapshots:
       oxc-parser: 0.127.0
       oxc-resolver: 11.20.0
       recast: 0.23.11
-      semver: 7.7.4
+      semver: 7.8.5
       use-sync-external-store: 1.6.0(react@19.2.6)
       ws: 8.18.3
     optionalDependencies:
@@ -9360,8 +9286,8 @@ snapshots:
 
   tinyglobby@0.2.16:
     dependencies:
-      fdir: 6.5.0(picomatch@4.0.4)
-      picomatch: 4.0.4
+      fdir: 6.5.0(picomatch@4.0.5)
+      picomatch: 4.0.5
 
   tinyglobby@0.2.17:
     dependencies:
