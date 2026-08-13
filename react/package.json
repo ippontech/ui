@@ -58,7 +58,7 @@
     "@types/prismjs": "1.26.6",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
-    "@vitejs/plugin-react": "6.0.2",
+    "@vitejs/plugin-react": "6.0.5",
     "@vitest/coverage-istanbul": "4.1.6",
     "babel-plugin-react-compiler": "1.0.0",
     "eslint": "10.4.0",
