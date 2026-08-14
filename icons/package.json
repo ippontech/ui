@@ -20,7 +20,7 @@
     "@types/node": "24.12.2",
     "ionicons": "8.0.13",
     "oslllo-svg-fixer": "6.0.1",
-    "svgtofont": "6.5.1",
+    "svgtofont": "6.5.3",
     "typescript": "5.9.3"
   },
   "files": [
