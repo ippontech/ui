@@ -39,7 +39,7 @@
     "pattern library"
   ],
   "license": "Apache-2.0",
-  "packageManager": "pnpm@10.33.0",
+  "packageManager": "pnpm@10.34.5",
   "author": "Ippon Technologies",
   "main": "./dist/tikui.css",
   "scripts": {
