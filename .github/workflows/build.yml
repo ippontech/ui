@@ -18,7 +18,7 @@ jobs:
       - uses: actions/setup-node@v4.4.0
         with:
           # renovate: datasource=node-version depName=node
-          node-version: 24.14.1
+          node-version: 24.19.0
           cache: pnpm
       - run: pnpm -r install --frozen-lockfile
       - run: pnpm format:ci
@@ -48,7 +48,7 @@ jobs:
       - uses: actions/setup-node@v4.4.0
         with:
           # renovate: datasource=node-version depName=node
-          node-version: 24.14.1
+          node-version: 24.19.0
           cache: pnpm
           registry-url: https://registry.npmjs.org
       - run: pnpm -r install --frozen-lockfile

@@ -1,5 +1,5 @@
 [tools]
-node = "24.14.1"
+node = "24.19.0"
 pnpm = "10.34.5"
 "npm:@tikui/cli" = "3.2.0"
 
