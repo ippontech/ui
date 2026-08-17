@@ -57,8 +57,8 @@
     "@ippon-ui/icons": "~0.0.2"
   },
   "devDependencies": {
-    "@fontsource/open-sans": "5.2.7",
-    "@fontsource/saira-extra-condensed": "5.2.7",
+    "@fontsource/open-sans": "5.3.0",
+    "@fontsource/saira-extra-condensed": "5.3.0",
     "@ippon-ui/icons": "workspace:*",
     "@tikui/core": "7.0.1",
     "postcss-scss": "4.0.9",
