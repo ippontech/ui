@@ -60,7 +60,7 @@
     "@fontsource/open-sans": "5.3.0",
     "@fontsource/saira-extra-condensed": "5.3.0",
     "@ippon-ui/icons": "workspace:*",
-    "@tikui/core": "7.0.1",
+    "@tikui/core": "8.0.0",
     "postcss-scss": "4.0.9",
     "prismjs": "1.30.0",
     "sass": "1.102.0",
