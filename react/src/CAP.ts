@@ -2,6 +2,8 @@ import { Optional } from './Optional';
 
 export const toAlternativeClass = (alternative: string): string => `-${alternative}`;
 
+export const toIonClass = (component: string, ion: string): string => `${component}---${ion}`;
+
 export const optionalToAlternativeClass = (alternative: string | undefined): string | undefined =>
   Optional.ofFalsifiable(alternative).map(toAlternativeClass).orUndefined();
 

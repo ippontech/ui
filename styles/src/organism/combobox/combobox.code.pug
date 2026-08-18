@@ -1,0 +1,35 @@
+include /atom/helper-text/helper-text.mixin.pug
+include /atom/label/label.mixin.pug
+include /molecule/field/field.mixin.pug
+include /molecule/option/option.mixin.pug
+include /molecule/option-list/option-list.mixin.pug
+
+include combobox.mixin.pug
+
+mixin ippon-combobox-example(options)
+  - const { id, helper, expanded, active, selected = [], ...controlOptions } = options || {};
+  - const listId = `${id}-list`;
+  - const helperId = `${id}-helper`;
+  - const selectionId = `${id}-selection`;
+  - const count = selected.length;
+  +ippon-field
+    +ippon-label({ for: id }) Label
+    +ippon-combobox
+      +ippon-combobox--control({ id, listId, expanded, count, selectionId, describedBy: helper ? helperId : null, activeDescendant: active ? `${id}-option-${active}` : null, ...controlOptions })
+      if count
+        +ippon-combobox--selection({ id: selectionId })= `${count} options selected`
+      +ippon-combobox--list({ id: listId })
+        +ippon-option-list
+          +ippon-option-list--scroll
+            +ippon-option-list--options({ id: `${id}-listbox`, multiple: true })
+              each index in [1, 2, 3, 4, 5]
+                +ippon-option({ id: `${id}-option-${index}`, label: `Option ${index}`, selected: selected.includes(index), active: active === index })
+    if helper
+      +ippon-helper-text({ id: helperId })= helper
+
++ippon-combobox-example({ id: 'combobox-closed', placeholder: 'Placeholder', helper: 'Helper text' })
++ippon-combobox-example({ id: 'combobox-value', value: 'Option 2, Option 3', selected: [2, 3] })
++ippon-combobox-example({ id: 'combobox-error', placeholder: 'Placeholder', variant: 'error', helper: 'Pick at least one option' })
++ippon-combobox-example({ id: 'combobox-readonly', value: 'Option 2', selected: [2], readonly: true })
++ippon-combobox-example({ id: 'combobox-disabled', placeholder: 'Placeholder', helper: 'Helper text', disabled: true })
++ippon-combobox-example({ id: 'combobox-open', placeholder: 'Placeholder', expanded: true, active: 3, selected: [2, 3] })

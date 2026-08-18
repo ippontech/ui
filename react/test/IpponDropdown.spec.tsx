@@ -27,6 +27,23 @@ describe('IpponDropdown', () => {
     expect(dropdown).toHaveTextContent('Content');
   });
 
+  it('should render the options ion as a manual popover', () => {
+    render(
+      <IpponDropdown
+        id="picker-list"
+        ion="options"
+        popover="manual"
+        dataSelector="ippon-dropdown"
+      />,
+    );
+
+    const dropdown = getIpponDropdown();
+
+    expect(dropdown).toHaveClass('ippon-dropdown', 'ippon-dropdown---options');
+    expect(dropdown).not.toHaveClass('ippon-dropdown---buttons');
+    expect(dropdown).toHaveAttribute('popover', 'manual');
+  });
+
   it('should merge additional className', () => {
     render(<IpponDropdown id="menu" className="-custom" dataSelector="ippon-dropdown" />);
 

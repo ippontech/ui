@@ -1,0 +1,109 @@
+@use '../../quark/checkbox';
+@use '../../quark/placeholder';
+@use '../../quark/typography';
+
+.ippon-option {
+  box-sizing: border-box;
+  display: flex;
+  gap: var(--ippon-size-12);
+  align-items: center;
+  padding: 0 var(--ippon-size-16);
+  width: 100%;
+  min-height: var(--ippon-size-48);
+  color: var(--ippon-color-neutral-text-icon-primary);
+  cursor: pointer;
+
+  &--check {
+    display: inline-flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+
+    @include checkbox.box;
+  }
+
+  &--glyph {
+    @include checkbox.glyph;
+  }
+
+  &--text {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &--label {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    @include typography.body-medium;
+  }
+
+  &--description {
+    display: block;
+    color: var(--ippon-color-neutral-text-icon-tertiary);
+
+    @include typography.body-small;
+  }
+
+  &--suffix {
+    flex: none;
+  }
+
+  &.-selected &--check {
+    @include checkbox.checked;
+  }
+
+  &.-selected &--glyph {
+    visibility: visible;
+  }
+
+  &.-single &--check {
+    border: 0;
+    background-color: transparent;
+    color: var(--ippon-color-brand-text-icon-primary);
+  }
+
+  &.-active,
+  &:hover {
+    background-color: var(--ippon-color-neutral-surface-primary-hover);
+  }
+
+  &.-disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+
+  &.-placeholder {
+    cursor: default;
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+
+  &.-placeholder &--check {
+    border-color: transparent;
+
+    @include placeholder.placeholder(var(--ippon-size-16));
+  }
+
+  &.-placeholder &--label {
+    width: 30%;
+    max-width: calc(8 * var(--ippon-size-24));
+
+    @include placeholder.placeholder(var(--ippon-size-12));
+  }
+
+  @media (forced-colors: active) {
+    &.-active {
+      outline: 2px solid Highlight;
+      outline-offset: -2px;
+    }
+  }
+}

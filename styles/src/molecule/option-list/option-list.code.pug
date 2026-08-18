@@ -1,0 +1,31 @@
+include /atom/button/button.mixin.pug
+include /atom/text/text.mixin.pug
+include /molecule/error-area/error-area.mixin.pug
+include /molecule/option/option.mixin.pug
+
+include option-list.mixin.pug
+
+mixin ippon-option-list-example(options)
+  - const { id, multiple, busy, count = 3, selected, footer, placeholderRows = 0 } = options || {};
+  +ippon-option-list
+    +ippon-option-list--scroll
+      +ippon-option-list--options({ id, multiple, busy })
+        each index in Array.from({ length: count }, (value, key) => key + 1)
+          +ippon-option({ id: `${id}-option-${index}`, label: `Option ${index}`, selected: selected === index })
+        each index in Array.from({ length: placeholderRows }, (value, key) => key + 1)
+          +ippon-option-placeholder
+      if footer
+        +ippon-option-list--footer
+          +ippon-button({ variant: 'text', color: 'neutral' })= footer
+    if block
+      +ippon-option-list--message
+        block
+
++ippon-option-list-example({ id: 'option-list-filled', multiple: true, selected: 2, count: 6 })
++ippon-option-list-example({ id: 'option-list-paginated', multiple: true, count: 4, footer: 'Load more' })
++ippon-option-list-example({ id: 'option-list-loading', busy: true, count: 0, placeholderRows: 5 })
++ippon-option-list-example({ id: 'option-list-loading-more', busy: true, count: 3, placeholderRows: 2, footer: 'Loading more' })
++ippon-option-list-example({ id: 'option-list-empty', count: 0 })
+  +ippon-text({ variant: 'body', size: 'small', color: 'neutral-tertiary-inversed' }) No option matches your search
++ippon-option-list-example({ id: 'option-list-failed', count: 0 })
+  +ippon-error-area({ title: 'Options could not be loaded', description: 'Check your connection and try again' })

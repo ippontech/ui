@@ -1,0 +1,25 @@
+include /atom/ion/ion.mixin.pug
+
+mixin ippon-input-search--suffix
+  span.ippon-input-search--suffix
+    block
+
+mixin ippon-input-search(options)
+  - const { id, icon, placeholder, value, variant, disabled, readonly, describedBy, additionalClass, inputAttributes } = options || {};
+  - const variantClass = variant ? `-${variant}` : null;
+  - const invalid = variant === 'error' ? 'true' : null;
+  .ippon-input-search(class=[variantClass, additionalClass])
+    +ippon-ion({ name: icon || 'search', additionalClass: 'ippon-input-search--icon' })
+    input.ippon-input-search--input(
+      id=id,
+      type='text',
+      placeholder=placeholder,
+      value=value,
+      disabled=disabled,
+      readonly=readonly,
+      aria-describedby=describedBy,
+      aria-invalid=invalid
+    )&attributes(inputAttributes || {})
+    if block
+      +ippon-input-search--suffix
+        block

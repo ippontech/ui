@@ -1,0 +1,7 @@
+extends /layout
+
+block body
+  div(style='display: flex; flex-direction: column; gap: 1.5rem; padding-bottom: 17rem')
+    include combobox.code.pug
+  script.
+    document.querySelectorAll('.ippon-combobox:has([aria-expanded="true"]) .ippon-combobox--list').forEach((list) => list.showPopover());

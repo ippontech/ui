@@ -1,0 +1,24 @@
+@use '../../quark/visually-hidden';
+
+.ippon-combobox {
+  anchor-scope: --ippon-combobox;
+
+  &--control {
+    anchor-name: --ippon-combobox;
+  }
+
+  &--selection {
+    @include visually-hidden.visually-hidden;
+  }
+
+  &--chevron {
+    line-height: 1;
+    color: var(--ippon-color-neutral-text-icon-tertiary);
+    font-size: var(--ippon-size-12);
+  }
+
+  &--list {
+    position-anchor: --ippon-combobox;
+    width: anchor-size(width);
+  }
+}

@@ -1,0 +1,30 @@
+include /atom/ion/ion.mixin.pug
+
+mixin ippon-option-placeholder
+  li.ippon-option.-placeholder(aria-hidden='true')
+    span.ippon-option--check
+    span.ippon-option--text
+      span.ippon-option--label
+
+mixin ippon-option(options)
+  - const { id, label, description, selected, active, disabled, single } = options || {};
+  - const selectedClass = selected ? '-selected' : null;
+  - const activeClass = active ? '-active' : null;
+  - const disabledClass = disabled ? '-disabled' : null;
+  - const singleClass = single ? '-single' : null;
+  li.ippon-option(
+    class=[selectedClass, activeClass, disabledClass, singleClass],
+    id=id,
+    role='option',
+    aria-selected=selected ? 'true' : 'false',
+    aria-disabled=disabled ? 'true' : null
+  )
+    span.ippon-option--check
+      +ippon-ion({ name: 'checkmark', additionalClass: 'ippon-option--glyph' })
+    span.ippon-option--text
+      span.ippon-option--label= label
+      if description
+        span.ippon-option--description= description
+    if block
+      span.ippon-option--suffix
+        block
