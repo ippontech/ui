@@ -13,6 +13,7 @@ type IpponIconLogo = {
 
 type IpponIconBase = {
   className?: string;
+  label?: string;
   onClick?: () => void;
 };
 
@@ -37,6 +38,7 @@ export const IpponIon = (props: IpponIonProps) => {
     /* NOSONAR */ <CustomTag
       role={props.onClick ? undefined : 'presentation'}
       type={props.onClick ? 'button' : undefined}
+      aria-label={props.label}
       className={clsx(toClassName(props), props.className)}
       data-selector={props.dataSelector}
       onClick={props.onClick}

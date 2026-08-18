@@ -14,4 +14,9 @@
   &:popover-open {
     display: flex;
   }
+
+  &.ippon-dropdown---options {
+    gap: 0;
+    padding: var(--ippon-size-4) 0;
+  }
 }

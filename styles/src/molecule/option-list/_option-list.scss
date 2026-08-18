@@ -1,0 +1,32 @@
+.ippon-option-list {
+  display: flex;
+  flex-direction: column;
+
+  &--scroll {
+    max-block-size: calc(5 * var(--ippon-size-48) + 2 * var(--ippon-size-4));
+    overflow-y: auto;
+  }
+
+  &--options {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  &--footer,
+  &--message {
+    padding: var(--ippon-size-12) var(--ippon-size-16);
+  }
+
+  &--message:empty {
+    padding: 0;
+  }
+
+  .ippon-dropdown---options & {
+    width: 100%;
+  }
+}

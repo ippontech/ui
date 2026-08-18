@@ -1,0 +1,15 @@
+include /atom/badge/badge.mixin.pug
+
+include option.mixin.pug
+
+ul(style='margin: 0; padding: 0; list-style: none')
+  +ippon-option({ id: 'option-rest', label: 'Option' })
+  +ippon-option({ id: 'option-active', label: 'Option', active: true })
+  +ippon-option({ id: 'option-selected', label: 'Option', selected: true })
+  +ippon-option({ id: 'option-selected-active', label: 'Option', selected: true, active: true })
+  +ippon-option({ id: 'option-description', label: 'Option', description: 'Secondary text' })
+  +ippon-option({ id: 'option-suffix', label: 'Option' })
+    +ippon-badge({ color: 'neutral' }) Badge
+  +ippon-option({ id: 'option-single', label: 'Option', selected: true, single: true })
+  +ippon-option({ id: 'option-disabled', label: 'Option', disabled: true })
+  +ippon-option-placeholder

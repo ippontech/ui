@@ -1,0 +1,54 @@
+@use '../../quark/checkbox';
+@use '../../quark/typography';
+
+.ippon-checkbox {
+  display: inline-flex;
+  gap: var(--ippon-size-8);
+  align-items: center;
+  color: var(--ippon-color-neutral-text-icon-primary);
+  cursor: pointer;
+
+  @include typography.body-medium;
+
+  &--input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  &--box {
+    display: inline-flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+
+    @include checkbox.box;
+  }
+
+  &--glyph {
+    @include checkbox.glyph;
+  }
+
+  &--input:checked + &--box {
+    @include checkbox.checked;
+  }
+
+  &--input:checked + &--box &--glyph {
+    visibility: visible;
+  }
+
+  &--input:focus-visible + &--box {
+    outline: 2px solid var(--ippon-color-brand-border);
+    outline-offset: 2px;
+  }
+
+  &:has(&--input:disabled) {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  &.-error &--box {
+    border-color: var(--ippon-color-error-border);
+  }
+}

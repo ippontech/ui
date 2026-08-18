@@ -1,4 +1,5 @@
 mixin ippon-dropdown(options)
-  - const { id } = options || {};
-  .ippon-dropdown.ippon-dropdown---buttons(popover, id=id)
+  - const { id, ion, popover, additionalClass } = options || {};
+  - const ionClass = `ippon-dropdown---${ion || 'buttons'}`;
+  .ippon-dropdown(class=[ionClass, additionalClass], popover=popover || true, id=id)
     block

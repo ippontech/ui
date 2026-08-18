@@ -1,0 +1,26 @@
+mixin ippon-option-list--options(options)
+  - const { id, multiple, busy, labelledBy } = options || {};
+  ul.ippon-option-list--options(
+    id=id,
+    role='listbox',
+    aria-multiselectable=multiple ? 'true' : null,
+    aria-busy=busy ? 'true' : null,
+    aria-labelledby=labelledBy
+  )
+    block
+
+mixin ippon-option-list--footer
+  .ippon-option-list--footer
+    block
+
+mixin ippon-option-list--scroll
+  .ippon-option-list--scroll
+    block
+
+mixin ippon-option-list--message
+  .ippon-option-list--message(role='status')
+    block
+
+mixin ippon-option-list
+  .ippon-option-list
+    block

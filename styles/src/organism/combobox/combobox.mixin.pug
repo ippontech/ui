@@ -1,0 +1,27 @@
+include /atom/badge/badge.mixin.pug
+include /atom/input-search/input-search.mixin.pug
+include /atom/ion/ion.mixin.pug
+include /organism/dropdown/dropdown.mixin.pug
+
+mixin ippon-combobox--control(options)
+  - const { id, listId, placeholder, value, variant, disabled, readonly, describedBy, expanded, activeDescendant, count, selectionId } = options || {};
+  - const selectionDescribedBy = [describedBy, count ? selectionId : null].filter(Boolean).join(' ') || null;
+  - const inputAttributes = { role: 'combobox', 'aria-expanded': expanded ? 'true' : 'false', 'aria-controls': listId, 'aria-autocomplete': 'list', 'aria-activedescendant': activeDescendant };
+  +ippon-input-search({ id, placeholder, value, variant, disabled, readonly, describedBy: selectionDescribedBy, additionalClass: 'ippon-combobox--control', inputAttributes })
+    if count
+      +ippon-badge({ iconRight: { name: 'close', clickable: true } })= count
+    +ippon-ion({ name: 'caret-down', additionalClass: 'ippon-combobox--chevron' })
+
+mixin ippon-combobox--selection(options)
+  - const { id } = options || {};
+  span.ippon-combobox--selection(id=id)
+    block
+
+mixin ippon-combobox--list(options)
+  - const { id } = options || {};
+  +ippon-dropdown({ id, alternative: 'options', popover: 'manual', additionalClass: 'ippon-combobox--list' })
+    block
+
+mixin ippon-combobox
+  .ippon-combobox
+    block

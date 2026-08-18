@@ -1,0 +1,53 @@
+@use '../../quark/control-box';
+
+.ippon-input-search {
+  display: flex;
+  gap: var(--ippon-size-8);
+  align-items: center;
+
+  @include control-box.box;
+  @include control-box.states(control-box.$wrapper);
+  @include control-box.status('error', control-box.$wrapper);
+  @include control-box.status('success', control-box.$wrapper);
+
+  &--icon {
+    flex: none;
+    line-height: 1;
+    color: var(--ippon-color-neutral-text-icon-tertiary-inversed);
+    font-size: var(--ippon-size-16);
+  }
+
+  &--input {
+    flex: 1;
+    outline: none;
+    border: 0;
+    background: none;
+    padding: 0;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: inherit;
+    font: inherit;
+  }
+
+  &--suffix {
+    display: flex;
+    flex: none;
+    gap: var(--ippon-size-8);
+    align-items: center;
+  }
+
+  &:focus-within &--icon,
+  &:has(&--input:not(:placeholder-shown)) &--icon {
+    color: var(--ippon-color-neutral-text-icon-primary);
+  }
+
+  &:has(&--input[readonly]) {
+    background-color: var(--ippon-color-neutral-surface-secondary);
+    cursor: default;
+
+    &:hover {
+      background-color: var(--ippon-color-neutral-surface-secondary);
+    }
+  }
+}

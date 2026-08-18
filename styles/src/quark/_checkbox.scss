@@ -1,0 +1,20 @@
+@mixin box {
+  box-sizing: border-box;
+  border: 1px solid var(--ippon-color-neutral-border);
+  border-radius: var(--ippon-radius-m);
+  background-color: var(--ippon-color-neutral-surface-primary);
+  width: var(--ippon-size-16);
+  height: var(--ippon-size-16);
+}
+
+@mixin checked {
+  border-color: var(--ippon-color-brand-surface-primary);
+  background-color: var(--ippon-color-brand-surface-primary);
+  color: var(--ippon-color-brand-text-icon-on-primary);
+}
+
+@mixin glyph {
+  visibility: hidden;
+  line-height: 1;
+  font-size: var(--ippon-size-12);
+}
