@@ -11,8 +11,7 @@ export type IpponGridResponsiveContainer = `${IpponGridContainerBreakpoint}-${Ip
 export type IpponGridMedia = IpponGridColumns | (IpponGridColumns | IpponGridResponsiveMedia)[];
 
 export type IpponGridContainer =
-  | IpponGridColumns
-  | (IpponGridColumns | IpponGridResponsiveContainer)[];
+  IpponGridColumns | (IpponGridColumns | IpponGridResponsiveContainer)[];
 
 type IpponGridGapSize = number;
 
@@ -29,5 +28,4 @@ type IpponGridSlotBreakpoint = IpponGridMediaBreakpoint | IpponGridContainerBrea
 type IpponGridResponsiveSlotColumn = `${IpponGridSlotBreakpoint}-${IpponGridSlotColumn}`;
 
 export type IpponGridCol =
-  | IpponGridSlotColumn
-  | (IpponGridSlotColumn | IpponGridResponsiveSlotColumn)[];
+  IpponGridSlotColumn | (IpponGridSlotColumn | IpponGridResponsiveSlotColumn)[];
