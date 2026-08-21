@@ -1,7 +1,7 @@
 [tools]
 node = "24.19.0"
 pnpm = "10.34.5"
-"npm:@tikui/cli" = "3.2.0"
+"npm:@tikui/cli" = "4.0.0"
 
 [tasks.setup]
 run = "pnpm -r install"
