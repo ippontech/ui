@@ -5,5 +5,16 @@ packages:
 
 includeWorkspaceRoot: true
 
-onlyBuiltDependencies:
-  - '@parcel/watcher'
+# pnpm 11 asks for a verdict on every dependency that ships a build script, and
+# refuses to install while one is left undecided. Each entry below is that verdict.
+allowBuilds:
+  # native file watcher, and the binary is what the package is for
+  '@parcel/watcher': true
+  # downloads and links its own platform binary
+  esbuild: true
+  # installs the git hooks the repository relies on
+  lefthook: true
+  # compiles the converter used to build the icon fonts
+  ttf2woff2: true
+  # its install script only prints a message, so nothing is lost by refusing it
+  es5-ext: false
