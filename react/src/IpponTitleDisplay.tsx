@@ -21,8 +21,7 @@ type IpponTitleDisplayWithNonHeadingProps = DataSelectableWithChildren<{
 }>;
 
 type IpponTitleDisplayProps =
-  | IpponTitleDisplayWithHeadingProps
-  | IpponTitleDisplayWithNonHeadingProps;
+  IpponTitleDisplayWithHeadingProps | IpponTitleDisplayWithNonHeadingProps;
 
 export const IpponTitleDisplay = (props: IpponTitleDisplayProps) => {
   const CustomTag: keyof JSX.IntrinsicElements = (props.tag ||
