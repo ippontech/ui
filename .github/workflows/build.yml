@@ -25,7 +25,7 @@ jobs:
       - run: pnpm lint:ci
       - run: pnpm test:unit:ci
       - run: pnpm build
-      - uses: actions/upload-artifact@v4.6.2
+      - uses: actions/upload-artifact@v7.0.1
         with:
           name: build-artifacts
           path: |
@@ -52,7 +52,7 @@ jobs:
           cache: pnpm
           registry-url: https://registry.npmjs.org
       - run: pnpm -r install --frozen-lockfile
-      - uses: actions/download-artifact@v4.3.0
+      - uses: actions/download-artifact@v8.0.1
         with:
           name: build-artifacts
       - run: pnpm -r publish --access public --no-git-checks
