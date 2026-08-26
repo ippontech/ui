@@ -1,0 +1,7 @@
+include /atom/ion/ion.mixin.pug
+
+mixin ippon-icon-tile(options)
+  - const { color, size, icon } = options || {};
+  - const colorClass = color ? `-${color}` : null;
+  - const sizeClass = size ? `-${size}` : null;
+  +ippon-ion({ ...icon, additionalClass: ['ippon-icon-tile', colorClass, sizeClass] })

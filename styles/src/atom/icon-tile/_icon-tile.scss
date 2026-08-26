@@ -1,0 +1,51 @@
+.ippon-icon-tile {
+  --_color-background: var(--ippon-color-brand-surface-secondary);
+  --_color-text-icon: var(--ippon-color-brand-text-icon-on-secondary);
+  --_icon-size: var(--ippon-size-20);
+  --_padding: var(--ippon-size-8);
+
+  display: inline-flex;
+  border-radius: var(--ippon-radius-m);
+  background-color: var(--_color-background);
+  padding: var(--_padding);
+  vertical-align: middle;
+  line-height: 1;
+  color: var(--_color-text-icon);
+  font-size: var(--_icon-size);
+  font-weight: 400;
+
+  &.-small {
+    --_icon-size: var(--ippon-size-16);
+    --_padding: var(--ippon-size-8);
+  }
+
+  &.-large {
+    --_icon-size: var(--ippon-size-24);
+    --_padding: var(--ippon-size-12);
+  }
+
+  &.-success {
+    --_color-background: var(--ippon-color-success-surface-secondary);
+    --_color-text-icon: var(--ippon-color-success-text-icon-on-secondary);
+  }
+
+  &.-error {
+    --_color-background: var(--ippon-color-error-surface-secondary);
+    --_color-text-icon: var(--ippon-color-error-text-icon-on-secondary);
+  }
+
+  &.-information {
+    --_color-background: var(--ippon-color-information-2-surface-secondary);
+    --_color-text-icon: var(--ippon-color-information-2-text-icon-on-secondary);
+  }
+
+  &.-warning {
+    --_color-background: var(--ippon-color-warning-surface-secondary);
+    --_color-text-icon: var(--ippon-color-warning-text-icon-on-secondary);
+  }
+
+  &.-neutral {
+    --_color-background: var(--ippon-color-neutral-surface-secondary);
+    --_color-text-icon: var(--ippon-color-neutral-text-icon-on-secondary);
+  }
+}
