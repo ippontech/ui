@@ -1,11 +1,7 @@
 import type { DataSelectableWithChildren } from './DataSelectable.ts';
-import type {
-  IpponButtonColor,
-  IpponButtonIcon,
-  IpponButtonSize,
-  IpponButtonVariant,
-} from './Button.tsx';
+import type { IpponButtonColor, IpponButtonSize, IpponButtonVariant } from './Button.tsx';
 import { OptionalButtonIcon } from './Button.tsx';
+import type { IpponIonIcon } from './IpponIon.tsx';
 import { optionalToAlternativeClass } from './CAP.ts';
 import { clsx } from 'clsx';
 
@@ -14,8 +10,8 @@ export type IpponLinkButtonProps = DataSelectableWithChildren<{
   color?: IpponButtonColor;
   variant?: IpponButtonVariant;
   size?: IpponButtonSize;
-  iconLeft?: IpponButtonIcon;
-  iconRight?: IpponButtonIcon;
+  iconLeft?: IpponIonIcon;
+  iconRight?: IpponIonIcon;
 }>;
 
 export const IpponLinkButton = (props: IpponLinkButtonProps) => {

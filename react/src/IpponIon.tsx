@@ -19,6 +19,11 @@ type IpponIconBase = {
 
 export type IpponIonProps = DataSelectable<(IpponIconClassic | IpponIconLogo) & IpponIconBase>;
 
+export type IpponIonIcon = {
+  name: IconClassic | IconLogo;
+  variant?: IconVariant;
+};
+
 type IpponIconInfo = {
   name: string;
   variant?: string;

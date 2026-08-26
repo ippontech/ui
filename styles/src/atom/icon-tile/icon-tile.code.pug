@@ -1,0 +1,20 @@
+include icon-tile.mixin.pug
+
+mixin ippon-icon-tile-example-colors(options)
+  - const { size } = options || {};
+  - const colors = [null, 'success', 'error', 'information', 'warning', 'neutral'];
+  each color in colors
+    +ippon-icon-tile({ color, size, icon: { name: 'hardware-chip' } })
+
+mixin ippon-icon-tile-example-icons
+  +ippon-icon-tile({ size: 'large', icon: { name: 'hardware-chip' } })
+  +ippon-icon-tile({ size: 'large', icon: { name: 'hardware-chip', variant: 'outline' } })
+  +ippon-icon-tile({ size: 'large', icon: { name: 'rocket' } })
+  +ippon-icon-tile({ size: 'large', icon: { name: 'flash', variant: 'outline' } })
+  +ippon-icon-tile({ size: 'large', icon: { name: 'cube' } })
+  +ippon-icon-tile({ size: 'large', icon: { name: 'git-branch', variant: 'sharp' } })
+
++ippon-icon-tile-example-colors({ size: 'small' })
++ippon-icon-tile-example-colors
++ippon-icon-tile-example-colors({ size: 'large' })
++ippon-icon-tile-example-icons

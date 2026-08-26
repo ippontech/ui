@@ -4,6 +4,13 @@ All notable changes to the Ippon UI packages are documented in this file, so con
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), with one entry per release listing the affected package versions.
 
+## 2026-08-26 — @ippon-ui/styles 0.1.3 · @ippon-ui/react 0.1.3
+
+### Added
+
+- `icon-tile` atom: a static icon on a rounded surface, borrowing the icon-only geometry of the `button` — `radius-m`, and the same padding and icon size per size alternative — with none of its states. It is what a block needing a visual anchor in the brand colour had to fake with a disabled button until now, which carried an affordance the anchor does not have. It is a separate atom from `icon-surface` rather than a shape alternative on it, because the two disagree on more than their radius: `icon-tile` defaults to brand where `icon-surface` defaults to neutral, and its `-information` maps to the `information-2` tokens like the `button` does rather than to `information`. It declares no border, no state and no focus, and renders the ion `<span>` itself instead of wrapping one, so the tile and the glyph are a single element carrying `role="presentation"` — the icon is decorative, and the accessible text belongs to the surrounding block. Colors: brand (default), `-success`, `-error`, `-information`, `-warning`, `-neutral`. Sizes: `-small` (16px icon), default (20px icon), `-large` (24px icon). The icon is passed the same way as on a `button`, as a `{ name, variant }` object, so the two spell an icon identically.
+- `IpponIconTile` React component, with `icon`, `color` and `size` props. Its `icon` takes the `{ name, variant }` object `IpponButton` already takes, so an icon is passed the same way whichever component receives it.
+
 ## 2026-08-21 — @ippon-ui/styles 0.1.2 · @ippon-ui/react 0.1.2
 
 ### Added

@@ -14,6 +14,7 @@ export { IpponHSpace, IpponHSpaceSlot } from './IpponHSpace.tsx';
 export { IpponHelperText } from './IpponHelperText.tsx';
 export { IpponIcon } from './IpponIcon.tsx';
 export { IpponIconSurface } from './IpponIconSurface.tsx';
+export { IpponIconTile } from './IpponIconTile.tsx';
 export { IpponImportFile } from './IpponImportFile.tsx';
 export { IpponInputSearch } from './IpponInputSearch.tsx';
 export { IpponInputText } from './IpponInputText.tsx';
