@@ -66,6 +66,24 @@ the body or footer when relevant.
 - Keep it scoped to a single issue and link the issue with `Closes #<number>`.
 - Make sure CI is green before requesting a review.
 
+## Accessibility
+
+A component often exists twice: once in the Pattern Library as a Pug mixin, once
+in the Component Library as a React component. **Both must produce the same
+accessibility semantics** — the same roles, the same ARIA attributes, the same
+states. A difference between the two is a bug in whichever side is wrong, not a
+choice, and it is fixed rather than documented.
+
+Two consequences worth stating:
+
+- Every control reaches assistive technology with a name. A `button` or a link
+  holding only an icon has no text, so it takes an explicit one (`label` on the
+  `ippon-ion` and `ippon-button` mixins, `label` on `IpponButton`). There is no
+  default: a control given no name is announced as none.
+- The Pattern Library examples are what people copy, so they are held to the
+  same bar as the mixins they demonstrate. `styles/test/markup/` renders them and
+  fails on a control left unnamed.
+
 ## Package guides
 
 Each package documents its own conventions:

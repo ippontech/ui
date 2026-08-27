@@ -8,20 +8,22 @@ include combobox.mixin.pug
 
 mixin ippon-combobox-example(options)
   - const { id, helper, expanded, active, selected = [], ...controlOptions } = options || {};
-  - const listId = `${id}-list`;
+  - const labelId = `${id}-label`;
+  - const dropdownId = `${id}-list`;
+  - const listId = `${id}-listbox`;
   - const helperId = `${id}-helper`;
   - const selectionId = `${id}-selection`;
   - const count = selected.length;
   +ippon-field
-    +ippon-label({ for: id }) Label
+    +ippon-label({ id: labelId, for: id }) Label
     +ippon-combobox
-      +ippon-combobox--control({ id, listId, expanded, count, selectionId, describedBy: helper ? helperId : null, activeDescendant: active ? `${id}-option-${active}` : null, ...controlOptions })
+      +ippon-combobox--control({ id, listId, expanded, count, selectionId, clearLabel: 'Clear selection', describedBy: helper ? helperId : null, activeDescendant: active ? `${id}-option-${active}` : null, ...controlOptions })
       if count
         +ippon-combobox--selection({ id: selectionId })= `${count} options selected`
-      +ippon-combobox--list({ id: listId })
+      +ippon-combobox--list({ id: dropdownId })
         +ippon-option-list
           +ippon-option-list--scroll
-            +ippon-option-list--options({ id: `${id}-listbox`, multiple: true })
+            +ippon-option-list--options({ id: listId, labelledBy: labelId, multiple: true })
               each index in [1, 2, 3, 4, 5]
                 +ippon-option({ id: `${id}-option-${index}`, label: `Option ${index}`, selected: selected.includes(index), active: active === index })
     if helper

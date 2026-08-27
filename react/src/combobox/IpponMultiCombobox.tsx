@@ -3,6 +3,7 @@ import type { KeyboardEventHandler, ReactNode } from 'react';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import type { DataSelectable } from '../DataSelectable.ts';
 import { toChildSelector } from '../DataSelectable.ts';
+import { toSlot } from '../Slot.ts';
 import { toActiveOption, toMovedKey } from './ComboboxActiveOption.ts';
 import { dismissOn, scrollActiveOptionIntoView, syncPopover } from './ComboboxDom.ts';
 import { toComboboxFieldHandlers } from './ComboboxField.ts';
@@ -65,8 +66,8 @@ export const IpponMultiCombobox = <Option extends IpponComboboxOption>(
   const hasContent =
     props.options.length > 0 ||
     (props.placeholderRows ?? 0) > 0 ||
-    props.message !== undefined ||
-    props.footer !== undefined;
+    toSlot(props.message).isPresent() ||
+    toSlot(props.footer).isPresent();
 
   const expanded = open && interactive && hasContent;
 

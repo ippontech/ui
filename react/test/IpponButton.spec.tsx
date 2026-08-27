@@ -41,6 +41,22 @@ describe('IpponButton', () => {
     expectToHaveTextContent('Default');
   });
 
+  it('should carry no name of its own by default', () => {
+    render(<IpponButton dataSelector="ippon-button">Default</IpponButton>);
+
+    expect(getIpponButton()).not.toHaveAttribute('aria-label');
+  });
+
+  it('should take a name for a button its icon alone would leave unnamed', () => {
+    render(
+      <IpponButton dataSelector="ippon-button" label="Like" iconLeft={{ name: 'heart' }}>
+        {null}
+      </IpponButton>,
+    );
+
+    expect(getIpponButton()).toHaveAttribute('aria-label', 'Like');
+  });
+
   it('should click', () => {
     const onClick = vi.fn();
 

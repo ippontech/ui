@@ -28,7 +28,7 @@ mixin ippon-button-example-links
       = `Link ${variant || 'primary'}`
 
 mixin ippon-button-example-icons(size)
-  +ippon-button({ size, icon: { name: 'heart' } })
+  +ippon-button({ size, icon: { name: 'heart' }, label: 'Like' })
   +ippon-button({ size, variant: 'secondary', iconLeft: { name: 'logo-angular' } }) Icon left
   +ippon-button({ size, variant: 'outline', iconRight: { name: 'search' } }) Icon right
   +ippon-button({ size, variant: 'text', iconLeft: { name: 'remove' }, iconRight: { name: 'add' } }) Icon both

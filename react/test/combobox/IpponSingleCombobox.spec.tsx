@@ -387,6 +387,14 @@ describe('IpponSingleCombobox', () => {
     expect(getInput()).toHaveAttribute('aria-expanded', 'true');
   });
 
+  it('should open no panel for slots the caller renders as nothing', () => {
+    render(<Combobox options={[]} message={null} footer={false} />);
+
+    openCombobox();
+
+    expect(getInput()).toHaveAttribute('aria-expanded', 'false');
+  });
+
   it('should render the message the caller hands over', () => {
     render(<Combobox options={[]} message="No option matches your search" />);
 

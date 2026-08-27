@@ -7,7 +7,7 @@ The box is drawn by a quark shared with the _Option_ molecule, so a checked opti
 **Alternatives:**
 
 - Default
-- Error `-error` (error border on the box)
+- Error `-error` (error border on the box, adds `aria-invalid="true"` on the input)
 
 **States:**
 

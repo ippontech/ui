@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 import type { DataSelectableWithChildren } from './DataSelectable.ts';
 import { toChildSelector } from './DataSelectable.ts';
 import { IpponOptionPlaceholder } from './IpponOption.tsx';
+import { toSlot } from './Slot.ts';
 
 type IpponOptionListVanillaProps = {
   id: string;
@@ -45,14 +46,16 @@ export const IpponOptionList = (props: IpponOptionListProps) => (
           <IpponOptionPlaceholder key={index} />
         ))}
       </ul>
-      {props.footer === undefined ? null : (
-        <div
-          className="ippon-option-list--footer"
-          data-selector={toFooterSelector(props.dataSelector)}
-        >
-          {props.footer}
-        </div>
-      )}
+      {toSlot(props.footer)
+        .map((footer) => (
+          <div
+            className="ippon-option-list--footer"
+            data-selector={toFooterSelector(props.dataSelector)}
+          >
+            {footer}
+          </div>
+        ))
+        .orUndefined()}
     </div>
     <div
       role="status"

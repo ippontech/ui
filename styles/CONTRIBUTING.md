@@ -107,6 +107,16 @@ mise styles-lint           # Stylelint (auto-fix)
 mise styles-test-unit-ci   # Vitest + sass-true
 ```
 
+Two kinds of tests live in `test/`:
+
+- `test/function/` — Sass functions, checked with `sass-true`.
+- `test/markup/` — the markup the mixins render, checked by rendering Pug and
+  querying the result. Stylelint reads the SCSS and nothing reads the Pug, so
+  this is what keeps a renamed mixin option, a missing ARIA attribute or an
+  unnamed control from reaching a release. `test/markup/accessible-name.spec.ts`
+  sweeps every `*.code.pug` and fails on a `button` or a link with no accessible
+  name.
+
 ## License
 
 Contributions are licensed under [Apache-2.0](./LICENCE).

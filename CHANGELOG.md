@@ -4,6 +4,26 @@ All notable changes to the Ippon UI packages are documented in this file, so con
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), with one entry per release listing the affected package versions.
 
+## 2026-08-27 — @ippon-ui/styles 0.2.0 · @ippon-ui/react 0.2.0
+
+### Fixed
+
+- `combobox`: its Pug mixin ionized the floating panel as a panel of actions. It handed the dropdown an `alternative` option the dropdown never read, so `ippon-dropdown---buttons` applied and the panel kept the gap and the horizontal padding a list of options has to drop. `IpponSingleCombobox` and `IpponMultiCombobox` were already right; the Pattern Library markup matches them now, and the option rows fill the panel edge to edge.
+- `combobox`: the `listbox` of the documented example reached assistive technology with no name. The _Label_ atom naming the field carried no `id` and the example passed no `labelledBy`, which _Option list_ documents as the way to name a list — a `for` association names the input and names nothing else. The example also pointed `aria-controls` at the floating panel rather than at the `listbox` it holds, where the React components had always pointed at the list.
+- `checkbox`: the `-error` alternative changed the class alone in Pug, where `IpponCheckbox` and the `input-text` mixin both set `aria-invalid="true"`. The validation error was visible and announced to nobody.
+- Icon buttons with no accessible name: the clear cross of the `combobox` counter, the one of the `input-search` example, the two clickable icons of the `badge` example, the icon-only `button` examples and the two `modal` close buttons. Each carries a name now.
+
+### Added
+
+- `combobox`: `clearLabel` option on `ippon-combobox--control`, naming the clear cross of the counter badge. It is the counterpart of `labels.clear` on `IpponMultiCombobox`; the library invents no user-facing wording, since it cannot know the language.
+- `button`: `label` option on the `ippon-button` mixin and `label` prop on `IpponButton`, both setting `aria-label`. A button is named by its text, and an icon-only button has none.
+- `label`: `id` option on the `ippon-label` mixin, so a `listbox` can be named by it through `aria-labelledby`. `IpponLabel` already took one.
+
+### Changed
+
+- **Breaking** — `IpponSingleCombobox`, `IpponMultiCombobox` and `IpponOptionList` read a `message` or a `footer` that renders nothing — `null`, `false`, an empty string — as absent now, where only `undefined` counted as absent before. `{condition && <p/>}` yields `false` and `{condition ? <p/> : null}` yields `null`, so the ordinary React way of saying "nothing here" was counting as content: a combobox holding no option opened an empty panel, and an _Option list_ drew an empty footer box under its rows. Nothing to do for a caller who omits the slot or fills it; a caller passing `message={null}` to keep the panel opening has to pass the content that panel should hold instead.
+- `combobox`: `ippon-combobox--selection` is a `status` region in Pug, as it already was in React, so a count that appears after the first render is announced.
+
 ## 2026-08-26 — @ippon-ui/styles 0.1.3 · @ippon-ui/react 0.1.3
 
 ### Added
