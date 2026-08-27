@@ -5,5 +5,9 @@ packages:
 
 includeWorkspaceRoot: true
 
-onlyBuiltDependencies:
-  - '@parcel/watcher'
+allowBuilds:
+  '@parcel/watcher': true
+  es5-ext: false
+  esbuild: true
+  lefthook: true
+  ttf2woff2: true
