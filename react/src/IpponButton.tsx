@@ -11,6 +11,7 @@ type IpponButtonVanillaProps = {
   variant?: IpponButtonVariant;
   size?: IpponButtonSize;
   disabled?: boolean;
+  label?: string;
   iconLeft?: IpponIonIcon;
   iconRight?: IpponIonIcon;
   onClick?: () => void | Promise<void>;
@@ -54,6 +55,7 @@ export const IpponButton = (props: IpponButtonProps) => {
         { '-loading': loading },
       )}
       disabled={isDisabled}
+      aria-label={props.label}
       aria-busy={loading || undefined}
       data-selector={props.dataSelector}
       popoverTarget={props.popoverTarget}

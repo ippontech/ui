@@ -3,6 +3,7 @@ include /atom/ion/ion.mixin.pug
 mixin ippon-checkbox(options)
   - const { id, name, value, checked, disabled, variant, describedBy } = options || {};
   - const variantClass = variant ? `-${variant}` : null;
+  - const invalid = variant === 'error' ? 'true' : null;
   label.ippon-checkbox(class=variantClass, for=id)
     input.ippon-checkbox--input(
       id=id,
@@ -11,7 +12,8 @@ mixin ippon-checkbox(options)
       value=value,
       checked=checked,
       disabled=disabled,
-      aria-describedby=describedBy
+      aria-describedby=describedBy,
+      aria-invalid=invalid
     )
     span.ippon-checkbox--box
       +ippon-ion({ name: 'checkmark', additionalClass: 'ippon-checkbox--glyph' })

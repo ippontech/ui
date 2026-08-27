@@ -21,6 +21,10 @@
 - Loading `-loading` (adds `disabled` and `aria-busy="true"`)
   - When a right icon is present, replace it with a `sync` icon (the CSS animation is handled by `-loading`)
 
+**Name:**
+
+A button is named by its text. An icon-only button has none, so give it `label`, which renders `aria-label` — the same prop the React `IpponButton` takes.
+
 **Link:**
 
 Use an `<a href="…">` tag instead of a `<button>` when the button navigates to another page. The classes stay the same.

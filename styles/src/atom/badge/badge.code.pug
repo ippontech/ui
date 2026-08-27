@@ -7,8 +7,8 @@ mixin ippon-badge-with-options(options)
   - const text = `${variantText}${colorText}`;
   - const iconLeft = { name: 'alert-circle', variant: 'outline' };
   - const iconRight = { name: 'close', variant: 'outline' };
-  - const iconLeftClickable = { name: 'alert-circle', variant: 'outline', clickable: true };
-  - const iconRightClickable = { name: 'close', variant: 'outline', clickable: true };
+  - const iconLeftClickable = { name: 'alert-circle', variant: 'outline', clickable: true, label: 'More information' };
+  - const iconRightClickable = { name: 'close', variant: 'outline', clickable: true, label: 'Remove' };
 
   +ippon-badge({ variant, color })= text
   +ippon-badge({ variant, color, iconLeft })= `${text} icon left`

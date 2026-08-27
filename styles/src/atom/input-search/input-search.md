@@ -29,3 +29,4 @@ The container is shared with _Input text_ through a quark, so both fields have t
 - Name the field with a _Label_ atom linked through `for`/`id`
 - Describe it with a _Helper text_ atom linked through `aria-describedby`
 - The leading icon is decorative and carries no name of its own
+- A trailing _Badge_ whose cross is `clickable` is a button: give that icon a `label`, otherwise the only control clearing the field has no name

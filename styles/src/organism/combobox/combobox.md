@@ -30,7 +30,7 @@ Multiple is the case the design draws: a check box on every row and one counter 
 **Parts:**
 
 - `--control` the field, which carries the anchor name
-- `--selection` the selection stated in words for assistive technology, so the count is not carried by the badge alone
+- `--selection` the selection stated in words for assistive technology, so the count is not carried by the badge alone. It is a `status` region, mounted even while empty, so a later count is announced
 - `--chevron` the trailing caret
 - `--list` the floating panel
 
@@ -38,7 +38,9 @@ The panel also takes a footer through _Option list_, for a "load more" button or
 
 **Accessibility:**
 
-- `role="combobox"` on the input, with `aria-expanded`, `aria-controls` pointing at the list and `aria-autocomplete="list"`
+- `role="combobox"` on the input, with `aria-expanded`, `aria-controls` pointing at the `listbox` itself — not at the floating panel holding it — and `aria-autocomplete="list"`
+- The `listbox` is named through `aria-labelledby`, pointing at the same _Label_ atom that names the field: `for` names the input and names nothing else, so the list would otherwise be announced without a name
+- The clear cross of the counter is a button: name it through `clearLabel`, which the component hands to the _Badge_ icon
 - DOM focus never leaves the input: the active option is tracked with `aria-activedescendant`, which is why no option row may hold a focusable control
 - Keyboard: `ArrowDown` / `ArrowUp` move the active option and open a closed panel, wrapping around — which is how the last option is reached without a key of its own, `Enter` selects the active option, `Escape` closes and leaves focus in the input — and keeps closing it even when nothing inside the panel holds focus any more, so an orphaned focus never leaves a panel that only a pointer could dismiss
 - `Home` and `End` are left alone, even while the panel is open: the field is a text field, and the combobox pattern gives those two keys to the text cursor. Taking them for the list would cost the reader the only way to reach the start and the end of a long search

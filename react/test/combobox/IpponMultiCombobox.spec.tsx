@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { render, screen, configure, cleanup, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/vitest';
@@ -23,8 +24,11 @@ const defaultLabels: IpponMultiComboboxLabels = {
 
 type MultiComboboxOverrides = {
   query?: string;
+  options?: IpponComboboxOption[];
   selection?: IpponComboboxOption[];
   labels?: IpponMultiComboboxLabels;
+  message?: ReactNode;
+  footer?: ReactNode;
   onSelectionChange?: (selection: IpponComboboxOption[]) => void;
 };
 
@@ -34,10 +38,12 @@ const MultiCombobox = (props: MultiComboboxOverrides) => (
     id="picker"
     query={props.query ?? ''}
     onQueryChange={noop}
-    options={options}
+    options={props.options ?? options}
     selection={props.selection ?? []}
     onSelectionChange={props.onSelectionChange ?? noop}
     labels={props.labels ?? defaultLabels}
+    message={props.message}
+    footer={props.footer}
   />
 );
 
@@ -133,5 +139,13 @@ describe('IpponMultiCombobox', () => {
     render(<MultiCombobox selection={[options[0], options[1]]} />);
 
     expect(getInput()).toHaveValue('Option 1, Option 2');
+  });
+
+  it('should open no panel for slots the caller renders as nothing', () => {
+    render(<MultiCombobox options={[]} message={null} footer={false} />);
+
+    openCombobox();
+
+    expect(getInput()).toHaveAttribute('aria-expanded', 'false');
   });
 });

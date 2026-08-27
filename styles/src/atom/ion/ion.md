@@ -9,3 +9,8 @@ There is two kinds of icons:
   - `-outline` for the **outline** version.
   - `-sharp` for the **sharp** version.
 - Logo ones: start with `ippon-ion-logo-` followed by the name of the logo.
+
+**Accessibility:**
+
+- An icon at rest is decorative: it is a `span` carrying `role="presentation"`, and the text around it carries the meaning
+- A `clickable` icon is a `button`, and a button with no text needs a name of its own: pass `label`, which renders `aria-label`. There is no sensible default, so an icon button given no label reaches assistive technology unnamed

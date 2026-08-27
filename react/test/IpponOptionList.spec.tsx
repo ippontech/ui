@@ -84,6 +84,12 @@ describe('IpponOptionList', () => {
     expect(screen.queryByTestId('ippon-option-list.footer')).toBeNull();
   });
 
+  it('should render no footer for a footer the caller renders as nothing', () => {
+    render(<IpponOptionList dataSelector="ippon-option-list" id="picker-listbox" footer={null} />);
+
+    expect(screen.queryByTestId('ippon-option-list.footer')).toBeNull();
+  });
+
   it('should render a footer inside the scrolling area and outside the listbox', () => {
     render(
       <IpponOptionList

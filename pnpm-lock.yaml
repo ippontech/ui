@@ -156,12 +156,21 @@ importers:
       '@tikui/core':
         specifier: 8.0.0
         version: 8.0.0(sass@1.103.1)
+      '@types/pug':
+        specifier: 2.0.10
+        version: 2.0.10
+      jsdom:
+        specifier: 30.0.1
+        version: 30.0.1
       postcss-scss:
         specifier: 4.0.9
         version: 4.0.9(postcss@8.5.26)
       prismjs:
         specifier: 1.30.0
         version: 1.30.0
+      pug:
+        specifier: 3.0.4
+        version: 3.0.4
       sass:
         specifier: 1.103.1
         version: 1.103.1
@@ -1800,6 +1809,9 @@ packages:
 
   '@types/prismjs@1.26.6':
     resolution: {integrity: sha512-vqlvI7qlMvcCBbVe0AKAb4f97//Hy0EBTaiW8AalRnG/xAN5zOiWWyrNqNXeq8+KAuvRewjCVY1+IPxk4RdNYw==}
+
+  '@types/pug@2.0.10':
+    resolution: {integrity: sha512-Sk/uYFOBAB7mb74XcpizmH0KOR2Pv3D2Hmrh1Dmy5BmK3MpdSa5kqZcg6EKBdklU0bFXX9gCfzvpnyUehrPIuA==}
 
   '@types/react-dom@19.2.5':
     resolution: {integrity: sha512-fMPwH9v7r/pp43yUd2/Mbiex5KouJwwR3dzHkhLREUC6764VyDsqxhAxv6OFEYR1RhjOyD1naqba8ECDBe7ZQg==}
@@ -6411,6 +6423,8 @@ snapshots:
       undici-types: 7.18.2
 
   '@types/prismjs@1.26.6': {}
+
+  '@types/pug@2.0.10': {}
 
   '@types/react-dom@19.2.5(@types/react@19.2.18)':
     dependencies:
