@@ -1,6 +1,6 @@
 variables:
   # renovate: datasource=npm depName=pnpm
-  PNPM_VERSION: '11.23.0'
+  PNPM_VERSION: '11.24.0'
   PNPM_IMAGE: docker-registry.ippon.fr/ui/dockerfiles/pnpm:${PNPM_VERSION}
 
 workflow:
