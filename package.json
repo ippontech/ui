@@ -23,7 +23,7 @@
   "keywords": [],
   "author": "Ippon Technologies",
   "license": "Apache-2.0",
-  "packageManager": "pnpm@11.23.0",
+  "packageManager": "pnpm@11.24.0",
   "devDependencies": {
     "@prettier/plugin-pug": "3.4.2",
     "@types/node": "24.13.3",
