@@ -52,7 +52,7 @@
     "@storybook/addon-docs": "10.5.10",
     "@storybook/react-vite": "10.5.10",
     "@testing-library/jest-dom": "7.0.1",
-    "@testing-library/react": "16.3.2",
+    "@testing-library/react": "16.3.3",
     "@types/babel__core": "7.20.5",
     "@types/node": "24.13.3",
     "@types/prismjs": "1.26.6",
