@@ -68,7 +68,7 @@
     "pug": "3.0.4",
     "sass": "1.104.0",
     "sass-true": "10.1.0",
-    "stylelint": "17.14.1",
+    "stylelint": "17.15.0",
     "stylelint-config-concentric-order": "5.5.0",
     "stylelint-config-standard-scss": "17.0.0",
     "stylelint-order": "8.1.1",
