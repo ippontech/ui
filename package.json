@@ -27,7 +27,7 @@
   "devDependencies": {
     "@prettier/plugin-pug": "3.4.2",
     "@types/node": "24.19.1",
-    "lefthook": "2.1.16",
+    "lefthook": "2.1.17",
     "prettier": "3.9.9"
   }
 }
