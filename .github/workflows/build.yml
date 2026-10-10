@@ -52,7 +52,7 @@ jobs:
           cache: pnpm
           registry-url: https://registry.npmjs.org
       - run: pnpm -r install --frozen-lockfile
-      - uses: actions/download-artifact@v8.0.1
+      - uses: actions/download-artifact@v8.0.2
         with:
           name: build-artifacts
       - run: pnpm -r publish --access public --no-git-checks
