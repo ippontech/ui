@@ -25,7 +25,7 @@
   "license": "Apache-2.0",
   "packageManager": "pnpm@11.28.5",
   "devDependencies": {
-    "@prettier/plugin-pug": "3.4.2",
+    "@prettier/plugin-pug": "3.6.0",
     "@types/node": "24.19.1",
     "lefthook": "2.1.17",
     "prettier": "3.9.9"
