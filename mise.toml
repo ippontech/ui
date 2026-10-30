@@ -1,6 +1,6 @@
 [tools]
 node = "24.22.1"
-pnpm = "11.28.8"
+pnpm = "11.28.9"
 "npm:@tikui/cli" = "4.0.0"
 
 [tasks.setup]
