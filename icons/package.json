@@ -17,7 +17,7 @@
   "license": "Apache-2.0",
   "packageManager": "pnpm@11.28.9",
   "devDependencies": {
-    "@types/node": "24.19.2",
+    "@types/node": "26.6.6",
     "ionicons": "8.1.0",
     "oslllo-svg-fixer": "6.0.1",
     "svgtofont": "6.5.3",
