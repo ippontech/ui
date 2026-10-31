@@ -26,7 +26,7 @@
   "packageManager": "pnpm@11.28.9",
   "devDependencies": {
     "@prettier/plugin-pug": "3.4.2",
-    "@types/node": "24.19.2",
+    "@types/node": "26.6.6",
     "lefthook": "2.2.2",
     "prettier": "3.9.10"
   }
